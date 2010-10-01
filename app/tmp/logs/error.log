@@ -2,3 +2,7 @@
 2010-10-01 12:10:10 Warning: Warning (2): mysql_select_db() expects parameter 2 to be resource, boolean given in [/cake/1.3.x.x/cake/libs/model/datasources/dbo/dbo_mysql.php, line 546]
 2010-10-01 12:10:10 Warning: Warning (2): mysql_query() expects parameter 2 to be resource, boolean given in [/cake/1.3.x.x/cake/libs/model/datasources/dbo/dbo_mysql.php, line 588]
 2010-10-01 12:10:10 Warning: Warning (2): mysql_get_server_info() expects parameter 1 to be resource, boolean given in [/cake/1.3.x.x/cake/libs/model/datasources/dbo/dbo_mysql.php, line 554]
+2010-10-01 12:22:28 Warning: Warning (2): mysql_pconnect() [<a href='http://php.net/function.mysql-pconnect'>function.mysql-pconnect</a>]: Access denied for user 'root'@'localhost' (using password: NO) in [/cake/1.3.x.x/cake/libs/model/datasources/dbo/dbo_mysql.php, line 543]
+2010-10-01 12:22:28 Warning: Warning (2): mysql_select_db() expects parameter 2 to be resource, boolean given in [/cake/1.3.x.x/cake/libs/model/datasources/dbo/dbo_mysql.php, line 546]
+2010-10-01 12:22:28 Warning: Warning (2): mysql_query() expects parameter 2 to be resource, boolean given in [/cake/1.3.x.x/cake/libs/model/datasources/dbo/dbo_mysql.php, line 588]
+2010-10-01 12:22:28 Warning: Warning (2): mysql_get_server_info() expects parameter 1 to be resource, boolean given in [/cake/1.3.x.x/cake/libs/model/datasources/dbo/dbo_mysql.php, line 554]
