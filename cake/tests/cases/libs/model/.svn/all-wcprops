@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model
+END
+model_read.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/model_read.test.php
+END
+model_behavior.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/model_behavior.test.php
+END
+model.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/model.test.php
+END
+model_delete.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/model_delete.test.php
+END
+cake_schema.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/cake_schema.test.php
+END
+model_integration.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/model_integration.test.php
+END
+db_acl.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/db_acl.test.php
+END
+models.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/models.php
+END
+connection_manager.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/connection_manager.test.php
+END
+model_validation.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/model_validation.test.php
+END
+model_write.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/model_write.test.php
+END

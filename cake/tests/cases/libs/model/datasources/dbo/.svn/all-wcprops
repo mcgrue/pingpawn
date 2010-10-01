@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/datasources/dbo
+END
+dbo_mysqli.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/datasources/dbo/dbo_mysqli.test.php
+END
+dbo_mssql.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/datasources/dbo/dbo_mssql.test.php
+END
+dbo_sqlite.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/datasources/dbo/dbo_sqlite.test.php
+END
+dbo_mysql.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/datasources/dbo/dbo_mysql.test.php
+END
+dbo_oracle.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/datasources/dbo/dbo_oracle.test.php
+END
+dbo_postgres.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/datasources/dbo/dbo_postgres.test.php
+END

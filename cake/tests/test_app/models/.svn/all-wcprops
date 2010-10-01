@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/models
+END
+persister_two.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/models/persister_two.php
+END
+persister_one.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/models/persister_one.php
+END
+comment.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/models/comment.php
+END
+post.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/models/post.php
+END

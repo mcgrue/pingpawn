@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/themagicalcards/!svn/ver/1/cake/libs/model/datasources/dbo
+END
+dbo_mysql.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/themagicalcards/!svn/ver/1/cake/libs/model/datasources/dbo/dbo_mysql.php
+END
+dbo_oracle.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/themagicalcards/!svn/ver/1/cake/libs/model/datasources/dbo/dbo_oracle.php
+END
+dbo_postgres.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/themagicalcards/!svn/ver/1/cake/libs/model/datasources/dbo/dbo_postgres.php
+END
+dbo_mysqli.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/themagicalcards/!svn/ver/1/cake/libs/model/datasources/dbo/dbo_mysqli.php
+END
+dbo_mssql.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/themagicalcards/!svn/ver/1/cake/libs/model/datasources/dbo/dbo_mssql.php
+END
+dbo_sqlite.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/themagicalcards/!svn/ver/1/cake/libs/model/datasources/dbo/dbo_sqlite.php
+END

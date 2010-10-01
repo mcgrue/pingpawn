@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups
+END
+acl.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups/acl.group.php
+END
+model.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups/model.group.php
+END
+xml.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups/xml.group.php
+END
+helpers.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups/helpers.group.php
+END
+console.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups/console.group.php
+END
+bake.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups/bake.group.php
+END
+cache.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups/cache.group.php
+END
+database.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups/database.group.php
+END
+lib.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups/lib.group.php
+END
+javascript.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups/javascript.group.php
+END
+no_cross_contamination.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups/no_cross_contamination.group.php
+END
+view.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups/view.group.php
+END
+i18n.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups/i18n.group.php
+END
+configure.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups/configure.group.php
+END
+behaviors.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups/behaviors.group.php
+END
+controller.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups/controller.group.php
+END
+components.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups/components.group.php
+END
+socket.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups/socket.group.php
+END
+test_suite.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups/test_suite.group.php
+END
+routing_system.group.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/themagicalcards/!svn/ver/1/cake/tests/groups/routing_system.group.php
+END

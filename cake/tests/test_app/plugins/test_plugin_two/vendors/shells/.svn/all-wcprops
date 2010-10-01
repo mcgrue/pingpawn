@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/plugins/test_plugin_two/vendors/shells
+END
+example.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/plugins/test_plugin_two/vendors/shells/example.php
+END
+welcome.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/plugins/test_plugin_two/vendors/shells/welcome.php
+END

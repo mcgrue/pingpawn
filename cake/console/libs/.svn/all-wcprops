@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/themagicalcards/!svn/ver/1/cake/console/libs
+END
+api.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/themagicalcards/!svn/ver/1/cake/console/libs/api.php
+END
+testsuite.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/themagicalcards/!svn/ver/1/cake/console/libs/testsuite.php
+END
+acl.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/themagicalcards/!svn/ver/1/cake/console/libs/acl.php
+END
+i18n.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/themagicalcards/!svn/ver/1/cake/console/libs/i18n.php
+END
+schema.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/themagicalcards/!svn/ver/1/cake/console/libs/schema.php
+END
+bake.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/themagicalcards/!svn/ver/1/cake/console/libs/bake.php
+END
+console.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/themagicalcards/!svn/ver/1/cake/console/libs/console.php
+END
+shell.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/themagicalcards/!svn/ver/1/cake/console/libs/shell.php
+END

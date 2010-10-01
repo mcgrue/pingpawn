@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/controller
+END
+controller_merge_vars.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/controller/controller_merge_vars.test.php
+END
+scaffold.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/controller/scaffold.test.php
+END
+component.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/controller/component.test.php
+END
+pages_controller.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/controller/pages_controller.test.php
+END
+controller.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/controller/controller.test.php
+END

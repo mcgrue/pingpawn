@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/themagicalcards/!svn/ver/1/cake/tests/lib
+END
+test_manager.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/themagicalcards/!svn/ver/1/cake/tests/lib/test_manager.php
+END
+cake_web_test_case.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/themagicalcards/!svn/ver/1/cake/tests/lib/cake_web_test_case.php
+END
+cake_test_case.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/themagicalcards/!svn/ver/1/cake/tests/lib/cake_test_case.php
+END
+code_coverage_manager.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/themagicalcards/!svn/ver/1/cake/tests/lib/code_coverage_manager.php
+END
+cake_test_suite_dispatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/themagicalcards/!svn/ver/1/cake/tests/lib/cake_test_suite_dispatcher.php
+END
+cake_test_model.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/themagicalcards/!svn/ver/1/cake/tests/lib/cake_test_model.php
+END
+cake_test_fixture.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/themagicalcards/!svn/ver/1/cake/tests/lib/cake_test_fixture.php
+END

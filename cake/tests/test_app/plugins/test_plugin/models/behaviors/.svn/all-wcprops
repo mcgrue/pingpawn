@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/plugins/test_plugin/models/behaviors
+END
+test_plugin_persister_one.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/plugins/test_plugin/models/behaviors/test_plugin_persister_one.php
+END
+test_plugin_persister_two.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/plugins/test_plugin/models/behaviors/test_plugin_persister_two.php
+END

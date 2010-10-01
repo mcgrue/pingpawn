@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/plugins/test_plugin/libs/log
+END
+test_plugin_log.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/plugins/test_plugin/libs/log/test_plugin_log.php
+END

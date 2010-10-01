@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/plugins/test_plugin/controllers/components
+END
+test_plugin_component.php
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/plugins/test_plugin/controllers/components/test_plugin_component.php
+END
+test_plugin_other_component.php
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/plugins/test_plugin/controllers/components/test_plugin_other_component.php
+END
+other_component.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/plugins/test_plugin/controllers/components/other_component.php
+END
+plugins_component.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/plugins/test_plugin/controllers/components/plugins_component.php
+END

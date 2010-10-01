@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/console/libs/tasks
+END
+template.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/console/libs/tasks/template.test.php
+END
+plugin.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/console/libs/tasks/plugin.test.php
+END
+test.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/console/libs/tasks/test.test.php
+END
+model.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/console/libs/tasks/model.test.php
+END
+controller.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/console/libs/tasks/controller.test.php
+END
+fixture.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/console/libs/tasks/fixture.test.php
+END
+project.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/console/libs/tasks/project.test.php
+END
+db_config.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/console/libs/tasks/db_config.test.php
+END
+extract.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/console/libs/tasks/extract.test.php
+END
+view.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/console/libs/tasks/view.test.php
+END

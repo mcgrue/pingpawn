@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/plugins/test_plugin/webroot/css
+END
+theme_one.htc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/plugins/test_plugin/webroot/css/theme_one.htc
+END
+test_plugin_asset.css
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/plugins/test_plugin/webroot/css/test_plugin_asset.css
+END
+unknown.extension
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/plugins/test_plugin/webroot/css/unknown.extension
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases
+END
+basics.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/basics.test.php
+END
+dispatcher.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/dispatcher.test.php
+END

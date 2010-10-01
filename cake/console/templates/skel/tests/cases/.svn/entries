@@ -1,0 +1,49 @@
+10
+
+dir
+40
+http://www.verge-rpg.com/svn/themagicalcards/cake/console/templates/skel/tests/cases
+http://www.verge-rpg.com/svn/themagicalcards
+
+
+
+2010-06-08T20:57:07.978081Z
+1
+mcgrue
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ffb0bf32-27e2-48d5-903a-b6c62aa5942b
+
+behaviors
+dir
+
+helpers
+dir
+
+models
+dir
+
+components
+dir
+
+controllers
+dir
+
+shells
+dir
+
+datasources
+dir
+

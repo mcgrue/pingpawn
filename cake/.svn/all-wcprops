@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/themagicalcards/!svn/ver/1/cake
+END
+LICENSE.txt
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/themagicalcards/!svn/ver/1/cake/LICENSE.txt
+END
+VERSION.txt
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/themagicalcards/!svn/ver/1/cake/VERSION.txt
+END
+bootstrap.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/themagicalcards/!svn/ver/1/cake/bootstrap.php
+END
+basics.php
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/themagicalcards/!svn/ver/1/cake/basics.php
+END
+dispatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/themagicalcards/!svn/ver/1/cake/dispatcher.php
+END

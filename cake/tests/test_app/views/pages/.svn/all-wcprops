@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/views/pages
+END
+extract.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/views/pages/extract.ctp
+END
+home.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/views/pages/home.ctp
+END
+empty
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/views/pages/empty
+END

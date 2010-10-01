@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/views/elements/email/text
+END
+custom.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/views/elements/email/text/custom.ctp
+END
+default.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/views/elements/email/text/default.ctp
+END
+wide.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/themagicalcards/!svn/ver/1/cake/tests/test_app/views/elements/email/text/wide.ctp
+END

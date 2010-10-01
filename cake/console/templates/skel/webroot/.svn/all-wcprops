@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/themagicalcards/!svn/ver/1/cake/console/templates/skel/webroot
+END
+test.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/themagicalcards/!svn/ver/1/cake/console/templates/skel/webroot/test.php
+END
+.htaccess
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/themagicalcards/!svn/ver/1/cake/console/templates/skel/webroot/.htaccess
+END
+index.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/themagicalcards/!svn/ver/1/cake/console/templates/skel/webroot/index.php
+END
+css.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/themagicalcards/!svn/ver/1/cake/console/templates/skel/webroot/css.php
+END
+favicon.ico
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/themagicalcards/!svn/ver/1/cake/console/templates/skel/webroot/favicon.ico
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/themagicalcards/!svn/ver/1/cake/tests/lib/reporter
+END
+cake_html_reporter.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/themagicalcards/!svn/ver/1/cake/tests/lib/reporter/cake_html_reporter.php
+END
+cake_text_reporter.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/themagicalcards/!svn/ver/1/cake/tests/lib/reporter/cake_text_reporter.php
+END
+cake_cli_reporter.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/themagicalcards/!svn/ver/1/cake/tests/lib/reporter/cake_cli_reporter.php
+END
+cake_base_reporter.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/themagicalcards/!svn/ver/1/cake/tests/lib/reporter/cake_base_reporter.php
+END

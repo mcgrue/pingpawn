@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs
+END
+folder.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/folder.test.php
+END
+cake_socket.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/cake_socket.test.php
+END
+multibyte.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/multibyte.test.php
+END
+i18n.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/i18n.test.php
+END
+file.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/file.test.php
+END
+code_coverage_manager.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/code_coverage_manager.test.php
+END
+router.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/router.test.php
+END
+configure.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/configure.test.php
+END
+debugger.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/debugger.test.php
+END
+inflector.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/inflector.test.php
+END
+magic_db.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/magic_db.test.php
+END
+sanitize.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/sanitize.test.php
+END
+http_socket.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/http_socket.test.php
+END
+error.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/error.test.php
+END
+validation.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/validation.test.php
+END
+set.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/set.test.php
+END
+class_registry.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/class_registry.test.php
+END
+cake_test_case.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/cake_test_case.test.php
+END
+overloadable.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/overloadable.test.php
+END
+xml.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/xml.test.php
+END
+cache.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/cache.test.php
+END
+cake_log.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/cake_log.test.php
+END
+cake_session.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/cake_session.test.php
+END
+object.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/object.test.php
+END
+string.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/string.test.php
+END
+security.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/security.test.php
+END
+cake_test_fixture.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/cake_test_fixture.test.php
+END
+test_manager.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/test_manager.test.php
+END
+l10n.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/l10n.test.php
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/behaviors
+END
+translate.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/behaviors/translate.test.php
+END
+acl.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/behaviors/acl.test.php
+END
+containable.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/behaviors/containable.test.php
+END
+tree.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/model/behaviors/tree.test.php
+END

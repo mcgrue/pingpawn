@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/themagicalcards/!svn/ver/1/cake/console/templates/skel/config/schema
+END
+db_acl.sql
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/themagicalcards/!svn/ver/1/cake/console/templates/skel/config/schema/db_acl.sql
+END
+sessions.sql
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/themagicalcards/!svn/ver/1/cake/console/templates/skel/config/schema/sessions.sql
+END
+i18n.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/themagicalcards/!svn/ver/1/cake/console/templates/skel/config/schema/i18n.php
+END
+db_acl.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/themagicalcards/!svn/ver/1/cake/console/templates/skel/config/schema/db_acl.php
+END
+sessions.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/themagicalcards/!svn/ver/1/cake/console/templates/skel/config/schema/sessions.php
+END
+i18n.sql
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/themagicalcards/!svn/ver/1/cake/console/templates/skel/config/schema/i18n.sql
+END

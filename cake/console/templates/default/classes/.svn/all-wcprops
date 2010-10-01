@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/themagicalcards/!svn/ver/1/cake/console/templates/default/classes
+END
+test.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/themagicalcards/!svn/ver/1/cake/console/templates/default/classes/test.ctp
+END
+model.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/themagicalcards/!svn/ver/1/cake/console/templates/default/classes/model.ctp
+END
+controller.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/themagicalcards/!svn/ver/1/cake/console/templates/default/classes/controller.ctp
+END
+fixture.ctp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/themagicalcards/!svn/ver/1/cake/console/templates/default/classes/fixture.ctp
+END

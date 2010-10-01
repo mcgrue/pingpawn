@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/themagicalcards/!svn/ver/1/cake/libs
+END
+error.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/themagicalcards/!svn/ver/1/cake/libs/error.php
+END
+overloadable_php4.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/themagicalcards/!svn/ver/1/cake/libs/overloadable_php4.php
+END
+validation.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/themagicalcards/!svn/ver/1/cake/libs/validation.php
+END
+overloadable_php5.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/themagicalcards/!svn/ver/1/cake/libs/overloadable_php5.php
+END
+set.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/themagicalcards/!svn/ver/1/cake/libs/set.php
+END
+class_registry.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/themagicalcards/!svn/ver/1/cake/libs/class_registry.php
+END
+overloadable.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/themagicalcards/!svn/ver/1/cake/libs/overloadable.php
+END
+xml.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/themagicalcards/!svn/ver/1/cake/libs/xml.php
+END
+cache.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/themagicalcards/!svn/ver/1/cake/libs/cache.php
+END
+cake_log.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/themagicalcards/!svn/ver/1/cake/libs/cake_log.php
+END
+cake_session.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/themagicalcards/!svn/ver/1/cake/libs/cake_session.php
+END
+object.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/themagicalcards/!svn/ver/1/cake/libs/object.php
+END
+string.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/themagicalcards/!svn/ver/1/cake/libs/string.php
+END
+security.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/themagicalcards/!svn/ver/1/cake/libs/security.php
+END
+l10n.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/themagicalcards/!svn/ver/1/cake/libs/l10n.php
+END
+folder.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/themagicalcards/!svn/ver/1/cake/libs/folder.php
+END
+cake_socket.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/themagicalcards/!svn/ver/1/cake/libs/cake_socket.php
+END
+multibyte.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/themagicalcards/!svn/ver/1/cake/libs/multibyte.php
+END
+i18n.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/themagicalcards/!svn/ver/1/cake/libs/i18n.php
+END
+file.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/themagicalcards/!svn/ver/1/cake/libs/file.php
+END
+router.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/themagicalcards/!svn/ver/1/cake/libs/router.php
+END
+configure.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/themagicalcards/!svn/ver/1/cake/libs/configure.php
+END
+debugger.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/themagicalcards/!svn/ver/1/cake/libs/debugger.php
+END
+magic_db.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/themagicalcards/!svn/ver/1/cake/libs/magic_db.php
+END
+inflector.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/themagicalcards/!svn/ver/1/cake/libs/inflector.php
+END
+sanitize.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/themagicalcards/!svn/ver/1/cake/libs/sanitize.php
+END
+http_socket.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/themagicalcards/!svn/ver/1/cake/libs/http_socket.php
+END

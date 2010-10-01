@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/cache
+END
+xcache.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/cache/xcache.test.php
+END
+file.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/cache/file.test.php
+END
+memcache.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/cache/memcache.test.php
+END
+apc.test.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/themagicalcards/!svn/ver/1/cake/tests/cases/libs/cache/apc.test.php
+END
