@@ -11,4 +11,4 @@ class DATABASE_CONFIG {
 		'encoding' => 'UTF-8'
 	);
 }
-?>
+
