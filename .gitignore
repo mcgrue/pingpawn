@@ -1,2 +1,3 @@
 /app/config/database.php
 *database.php
+app/tmp/*
