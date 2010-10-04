@@ -20,9 +20,11 @@
     <div id="container">
         
         <div id="leftbar">
+            <a href="/">
             <div id="leftbar_top">
                 <h1>PING PAWN</h1>
             </div>
+            </a>
                         
             <div id="leftbar_bottom">
                 <div id="menu">
