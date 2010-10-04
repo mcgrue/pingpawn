@@ -22,6 +22,14 @@
 /**
  * Use the DS to separate the directories in other defines
  */
+
+    function pr2($data, $title=NULL) {
+        if($title!=NULL) echo("<h1>$title</h1>");
+        print '<pre>';
+        print_r($data);
+        die();
+    }
+
 	if (!defined('DS')) {
 		define('DS', DIRECTORY_SEPARATOR);
 	}

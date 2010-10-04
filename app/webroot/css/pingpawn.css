@@ -111,10 +111,11 @@ body {
     color: #bbb;
 }
 
-#twitter .call_to_action {
+#twitter .call_to_action a {
     font-family: 'ChunkFiveRegular', sans-serif;
     font-size: 12px;
     color: #b1d0b1;
+    text-decoration: none;
 }
 
 #rightbar {

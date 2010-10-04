@@ -51,7 +51,7 @@
         
         <div id="content">
             <div id="twitter">
-                <div class="call_to_action">follow @sexymans on twitter</div>
+                <div class="call_to_action"><a href="http://twitter.com/sexymans/">follow @sexymans on twitter</a></div>
                 <div class="current_quote">&lt;Hahn&gt; Hmm... assassins are cool because they have two asses.</div>
                 <div class="when">Last posted like a day ago, dude</div>
             </div>
