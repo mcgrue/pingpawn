@@ -41,7 +41,7 @@
                             'http://www.egometry.com/',
                             array('target' => '_blank', 'escape' => false)
                         );
-                    ?>, All content &copy; their respective posters and/or actors.
+                    ?><br /> All content &copy; their respective posters and/or actors.
                 </div>
             </div>
         </div>
@@ -59,7 +59,7 @@
         </div>
         
         <div id="rightbar">
-            <h2>Add quote?</h2>
+            <h2>ADD QUOTE?</h2>
         </div>
     </div>
     
