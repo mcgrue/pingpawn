@@ -32,7 +32,7 @@
                         <li><?= $html->link('Register', '/users/Register')  ?></li>
                         <li><?= $html->link('Login', '/users/Login')  ?></li>
                         <li>&nbsp;</li>
-                        <li>Random</li>
+                        <li><?= $html->link('Random', '/random')  ?></li>
                         <li>&nbsp;</li>
                         <li>Top Quotes</li>
                         <li>Top Files</li>
