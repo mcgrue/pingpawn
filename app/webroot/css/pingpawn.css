@@ -101,6 +101,11 @@ body {
     bottom: 0px;
 }
 
+#leftbar_bottom #menu ul li a {
+    text-decoration: none;
+    color: #666;
+}
+
 #twitter {
     padding-top: 6px;
 }
@@ -157,3 +162,36 @@ body {
 #content p {
     padding-top: 8px;
 }
+
+
+
+
+#sparky {
+    margin-top: 86px;
+}
+
+#sparky h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+#sparky a {
+    color: #666;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#sparky label {
+    width: 120px;
+    float: left;
+    text-align: right;
+    margin-right: 5px;
+    display: block
+}
+
+#sparky .submit input {
+    margin-top: 20px;
+    margin-left: 0px;
+}
+
+

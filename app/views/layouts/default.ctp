@@ -23,11 +23,12 @@
             <div id="leftbar_top">
                 <h1>PING PAWN</h1>
             </div>
+                        
             <div id="leftbar_bottom">
                 <div id="menu">
                     <ul>
-                        <li>Register</li>
-                        <li>Login</li>
+                        <li><?= $html->link('Register', '/users/Register')  ?></li>
+                        <li><?= $html->link('Login', '/users/Login')  ?></li>
                         <li>&nbsp;</li>
                         <li>Random</li>
                         <li>&nbsp;</li>
@@ -41,7 +42,7 @@
                     Site by 
                     <?php echo $this->Html->link(
                             'Ben McGraw (grue)',
-                            'http://www.egometry.com/',
+                            'http://www.gruniverse.com/',
                             array('target' => '_blank', 'escape' => false)
                         );
                     ?><br /> All content &copy; their respective posters and/or actors.
