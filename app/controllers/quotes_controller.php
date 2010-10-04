@@ -11,6 +11,8 @@ class QuotesController extends AppController {
             
             if(isset($res['Quote'])) {
                 $this->set('quote', $res['Quote']);
+            } else {
+                $this->cakeError('error404');
             }
         }
     }
