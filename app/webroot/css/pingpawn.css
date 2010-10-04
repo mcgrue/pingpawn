@@ -125,7 +125,8 @@ body {
     background-color: pink;
     padding: 10px;
     height: 32px;
-    padding-left: 42px;
+    padding-left: 48px;
+    padding-top: 16px;
     font-size: 24px;
     background-image: url('../img/Stop-32.png');
     background-position: 10px 10px;
