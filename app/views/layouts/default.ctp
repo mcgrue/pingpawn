@@ -6,6 +6,9 @@
 		<?php __('Ping Pawn: Social Quotes'); ?>
 		<?php echo $title_for_layout; ?>
 	</title>
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" /> 
+    
 	<?php
 		echo $this->Html->css('reset');
         echo $this->Html->css('font');
