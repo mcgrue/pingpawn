@@ -8,8 +8,7 @@
         var $uses = array('SparkPlug.UserGroup');
         
         function beforeFilter() {
-            
             parent::beforeFilter();
-            SparkPlugIt($this);
+            //SparkPlugIt($this);
         }
     }
