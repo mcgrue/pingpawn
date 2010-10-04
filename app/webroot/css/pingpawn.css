@@ -121,7 +121,7 @@ body {
     border: dotted #d8d2d9 3px;
 }
 
-#error-message {
+.error-message {
     background-color: pink;
     padding: 10px;
 }
