@@ -57,7 +57,9 @@
                 <div class="when">Last posted like a day ago, dude</div>
             </div>
             
-            <?php echo $this->Session->flash(); ?>
+            <div id="flash">
+                <?php echo $this->Session->flash(); ?>
+            </div>
     
             <?php echo $content_for_layout; ?>
         </div>
