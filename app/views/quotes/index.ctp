@@ -4,7 +4,6 @@ $str = str_replace( '<', '<p>&lt;', $quote['quote'] );
 
 $title = $quote['title'] ? $quote['title'] : 'Untitled Quote (#'.$quote['id'].')';
 
-prf_name
 ?>
 
 <h1><?=$title ?></h1>
