@@ -131,6 +131,8 @@ body {
     background-image: url('../img/Stop-32.png');
     background-position: 10px 10px;
     background-repeat: no-repeat;
+    margin-top: 2px;
+    margin-bottom: 20px;
 }
 
 #twitter {
