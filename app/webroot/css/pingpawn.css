@@ -128,6 +128,7 @@ body {
     padding-left: 42px;
     font-size: 24px;
     background-image: url('../img/Stop-32.png');
+    background-position: 10px 10px;
     background-repeat: no-repeat;
 }
 
