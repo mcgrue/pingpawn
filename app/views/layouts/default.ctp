@@ -130,12 +130,19 @@
         
     </style>
     
+    <?
+        $prefill = '';
+        if( isset($_SESSION['quick_prf']) ) {
+            $prefill = $_SESSION['quick_prf'];
+        }
+    ?>
+    
     <!-- modal content -->
     <div id="basic-modal-content" style='display:none'>
         <h3>Add Quote</h3>
         
         <?= $this->Form->create('Quote', array('action' => 'add')); ?>
-        <?= $this->Form->input('prf', array('label' => 'quotefile name')); ?>
+        <?= $this->Form->input('prf', array('label' => 'quotefile name', 'value' => $prefill)); ?>
         <label for="quote">quote</label><?= $this->Form->textarea('quote'); ?>
         <?= $this->Form->submit('add quote'); ?>
         

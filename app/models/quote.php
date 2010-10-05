@@ -7,6 +7,8 @@ class Quote extends AppModel {
     
     function easy_save( $name, $quote ) {
         
+        $_SESSION['quick_prf'] = $name;
+        
         $name = mysql_real_escape_string(stripslashes($name));
         $quote = mysql_real_escape_string(stripslashes($quote));
         
