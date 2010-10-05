@@ -9,6 +9,7 @@
 	<li><?php echo $html->link($trans->__('Manage Permissions'),'/user_group_permissions/index'); ?>
 	</li>
 	<?php endif;?>
+    <li><?php echo $html->link($trans->__('Manage Quotes'),'/quotes/manage'); ?></li>
 	<li><?php echo $html->link($trans->__('Change Password'),'/users/change_password'); ?></li>
 	<?php if ($this->Session->read('SparkPlug.facebookEnabled') && $this->Session->read('SparkPlug.Users.loggedInByFacebook')) { ?>
 	<li><?php echo $facebook->logout(array('redirect' => '/users/logout')); ?></li>

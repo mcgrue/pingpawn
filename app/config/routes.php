@@ -3,14 +3,9 @@
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
 
-
+    Router::connect('/quotes/manage/*', array('controller' => 'quotes', 'action' => 'manage'));
+    Router::connect('/quotes/add/*', array('controller' => 'quotes', 'action' => 'add'));
     Router::connect('/quotes/*', array('controller' => 'quotes', 'action' => 'index'));
-
-
-
-
-
-
 
 
 

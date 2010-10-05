@@ -16,4 +16,18 @@ class QuotesController extends AppController {
             }
         }
     }
+    
+    function manage() {
+        $userID = $this->Session->read('User.id');
+        if(!$userID) {
+            $this->cakeError('error404', 'You must be logged in to perform that action.');
+        }
+    }
+    
+    function add() {
+        $userID = $this->Session->read('User.id');
+        if(!$userID) {
+            $this->cakeError('error404', 'You must be logged in to perform that action.');
+        }
+    }
 }
