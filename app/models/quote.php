@@ -7,10 +7,8 @@ class Quote extends AppModel {
     
     function easy_save( $name, $quote ) {
         
-        
-        
-        $name = mysql_real_escape_string($name);
-        $quote = mysql_real_escape_string($quote);
+        $name = mysql_real_escape_string(stripslashes($name));
+        $quote = mysql_real_escape_string(stripslashes($quote));
         
         $this->query( "
             INSERT INTO `quotes`( `prf_name`, `quote`, `active`, `time_added` )
