@@ -310,5 +310,9 @@ class UsersController extends SparkPlugAppController {
 			}
 		}
 	}
+    
+    function beforeFilter() {
+        parent::beforeFilter();
+    }
 }
 ?>

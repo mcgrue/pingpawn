@@ -13,7 +13,12 @@
 		echo $this->Html->css('reset');
         echo $this->Html->css('font');
         echo $this->Html->css('pingpawn');
+        echo $this->Html->css('modal');
 		echo $scripts_for_layout;
+        
+        echo $this->Html->script('jquery');
+        echo $this->Html->script('jquery.simplemodal');
+        echo $this->Html->script('basic');
 	?>
 </head>
 <body>
@@ -89,6 +94,64 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     
+    </script>
+    
+    <style>
+        #basic-modal-content h3 {
+            font-size: 32px;
+            font-family: 'ChunkFiveRegular', sans-serif;
+            font-weight: normal;
+            color: #888;
+            padding-bottom: 32px;
+        }
+        
+        #basic-modal-content label {
+            width: 120px;
+            float: left;
+            text-align: right;
+            margin: 0 10px 10px 0;
+            clear: both;
+        }
+        
+        #basic-modal-content textarea, #basic-modal-content input {
+            background-color: #aaa;
+            border: 1px solid #aaa;
+            margin-bottom: 10px;
+        }
+        
+        #basic-modal-content textarea  {
+            width: 300px;
+            height: 100px;
+        }
+        
+        #basic-modal-content .submit {
+            padding-left: 130px;
+        }
+        
+    </style>
+    
+    <!-- modal content -->
+    <div id="basic-modal-content" style='display:none'>
+        <h3>Add Quote</h3>
+        
+        <?= $this->Form->create('Quote', array('action' => 'add')); ?>
+        <?= $this->Form->input('prf', array('label' => 'quotefile name')); ?>
+        <label for="quote">quote</label><?= $this->Form->textarea('quote'); ?>
+        <?= $this->Form->submit('add quote'); ?>
+        
+        <?= $this->Form->end(); ?>
+    </div>
+
+    <!-- preload the images -->
+    <div style='display:none'>
+        <img src='img/basic/x.png' alt='' />
+    </div>
+    
+    <script>
+        $('#rightbar').click(function (e) {
+            $('#basic-modal-content').modal();
+            return false;
+        });
     </script>
     
 </body>

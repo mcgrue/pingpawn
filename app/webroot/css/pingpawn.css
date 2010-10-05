@@ -159,6 +159,10 @@ body {
     height: 174px;
     position: fixed;
     bottom: 0px;
+    
+    cursor: hand;
+    cursor: pointer;
+    
 }
 
 #rightbar h2 {
