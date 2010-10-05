@@ -34,6 +34,7 @@
                             <li><?= $html->link('Login', '/users/Login')  ?></li>
                             <li>&nbsp;</li>
                         <? else: ?>
+                            <li>Hello, <?= $sessuser['User']['username'] ?>!</li>
                             <li><?= $html->link('Your Dashboard', '/users/dashboard')  ?></li>
                             <li>&nbsp;</li>
                         <? endif; ?>
