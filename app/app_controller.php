@@ -10,5 +10,6 @@
         function beforeFilter() {
             parent::beforeFilter();
             //SparkPlugIt($this);
+            $this->set('sessuser', Authsome::get());
         }
     }

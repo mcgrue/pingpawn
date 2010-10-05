@@ -29,9 +29,14 @@
             <div id="leftbar_bottom">
                 <div id="menu">
                     <ul>
-                        <li><?= $html->link('Register', '/users/Register')  ?></li>
-                        <li><?= $html->link('Login', '/users/Login')  ?></li>
-                        <li>&nbsp;</li>
+                        <? if(!$sessuser): ?>
+                            <li><?= $html->link('Register', '/users/Register')  ?></li>
+                            <li><?= $html->link('Login', '/users/Login')  ?></li>
+                            <li>&nbsp;</li>
+                        <? else: ?>
+                            <li><?= $html->link('Your Dashboard', '/users/dashboard')  ?></li>
+                            <li>&nbsp;</li>
+                        <? endif; ?>
                         <li><?= $html->link('Random', '/random')  ?></li>
                         <li>&nbsp;</li>
                         <li>Top Quotes</li>
