@@ -30,7 +30,9 @@
     }
 */
 
-
+.unimplemented {
+    color: #ddd;
+}
 
 html {
     font-family: arial, helvetica, clean, sans-serif; 

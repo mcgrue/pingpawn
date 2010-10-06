@@ -44,9 +44,9 @@
                         <li>&nbsp;</li>
                         <li><?= $html->link('Random', '/random')  ?></li>
                         <li>&nbsp;</li>
-                        <li>Top Quotes</li>
-                        <li>Top Files</li>
-                        <li>About</li>
+                        <li class="unimplemented">Top Quotes</li>
+                        <li class="unimplemented">Top Files</li>
+                        <li><?= $html->link('About', '/about')  ?></li>
                     </ul>
                 </div>
         
