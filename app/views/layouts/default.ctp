@@ -34,15 +34,14 @@
             <div id="leftbar_bottom">
                 <div id="menu">
                     <ul>
-                        <? if(!$sessuser): ?>
-                            <li><?= $html->link('Register', '/users/Register')  ?></li>
-                            <li><?= $html->link('Login', '/users/Login')  ?></li>
-                            <li>&nbsp;</li>
-                        <? else: ?>
+                        <? if(isset($sessuser['User']['username']) ): ?>
                             <li>Hello, <?= $sessuser['User']['username'] ?>!</li>
                             <li><?= $html->link('Your Dashboard', '/users/dashboard')  ?></li>
-                            <li>&nbsp;</li>
+                        <? else: ?>
+                            <li><?= $html->link('Register', '/users/Register')  ?></li>
+                            <li><?= $html->link('Login', '/users/Login')  ?></li>
                         <? endif; ?>
+                        <li>&nbsp;</li>
                         <li><?= $html->link('Random', '/random')  ?></li>
                         <li>&nbsp;</li>
                         <li>Top Quotes</li>
