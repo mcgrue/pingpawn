@@ -94,50 +94,17 @@
       })();
     
     </script>
-    
-    <style>
-        #basic-modal-content h3 {
-            font-size: 32px;
-            font-family: 'ChunkFiveRegular', sans-serif;
-            font-weight: normal;
-            color: #888;
-            padding-bottom: 32px;
-        }
         
-        #basic-modal-content label {
-            width: 120px;
-            float: left;
-            text-align: right;
-            margin: 0 10px 10px 0;
-            clear: both;
-        }
-        
-        #basic-modal-content textarea, #basic-modal-content input {
-            background-color: #aaa;
-            border: 1px solid #aaa;
-            margin-bottom: 10px;
-        }
-        
-        #basic-modal-content textarea  {
-            width: 300px;
-            height: 100px;
-        }
-        
-        #basic-modal-content .submit {
-            padding-left: 130px;
-        }
-        
-    </style>
-    
-    <?
+<?
         $prefill = '';
         if( isset($_SESSION['quick_prf']) ) {
             $prefill = $_SESSION['quick_prf'];
         }
-    ?>
+
+?>
     
     <!-- modal content -->
-    <div id="basic-modal-content" style='display:none'>
+    <div id="basic-modal-content" style='display:none' class="modal-dialog-form">
         <h3>Add Quote</h3>
         
         <?= $this->Form->create('Quote', array('action' => 'add')); ?>
@@ -159,6 +126,6 @@
             return false;
         });
     </script>
-    
+
 </body>
 </html>

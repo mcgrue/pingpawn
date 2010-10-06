@@ -194,12 +194,23 @@ body {
     font-size: 32px;    
 }
 
+#content h3 {
+    color: #999;
+}
+
+#content .tags {
+    color: #aaa;
+}
+
+
+
 #content p {
     padding-top: 8px;
 }
 
 #content .quote {
     margin-top: 12px;
+    margin-bottom: 100px;
 }
 
 
@@ -233,4 +244,22 @@ body {
     margin-left: 0px;
 }
 
+#add-tag-link {
+    cursor: hand;
+    cursor: pointer;
+    color: #ccc;
+}
 
+/*
+.modal-dialog-form label {
+    width: 120px;
+    float: left;
+    text-align: right;
+    margin-right: 5px;
+    display: block
+}
+
+.modal-dialog-form label {
+    
+}
+*/

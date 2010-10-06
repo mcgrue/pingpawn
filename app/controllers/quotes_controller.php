@@ -9,8 +9,8 @@ class QuotesController extends AppController {
         if( $id ) {
             $res = $this->Quote->findById($id);
             
-            if(isset($res['Quote'])) {
-                $this->set('quote', $res['Quote']);
+            if(isset($res)) {
+                $this->set('res', $res);
             } else {
                 $this->cakeError('error404');
             }

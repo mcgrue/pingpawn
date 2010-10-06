@@ -4,6 +4,23 @@ class Quote extends AppModel {
 
     var $name = 'Quote';
     var $useTable = 'quotes';
+    var $hasAndBelongsToMany =
+        array(
+            'Tag' => 
+                array(
+                    'className'                 => 'Tag', 
+                    'joinTable'                 => 'quotes_tags', 
+                    'foreignKey'                => 'quote_id', 
+                    'associationForeignKey'     => 'tag_id', 
+                    'conditions'                => '', 
+                    'order'                     => '', 
+                    'limit'                     => '', 
+                    'unique'                    => true, 
+                    'finderQuery'               => '', 
+                    'deleteQuery'               => '', 
+                ) 
+            ); 
+
     
     function easy_save( $name, $quote ) {
         
