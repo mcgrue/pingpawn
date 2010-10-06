@@ -1,5 +1,8 @@
 <?
 	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
+	Router::connect('/about', array('controller' => 'pages', 'action' => 'display', 'about'));
+    Router::connect('/about/', array('controller' => 'pages', 'action' => 'display', 'about'));
+
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
 
