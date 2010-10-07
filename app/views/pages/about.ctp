@@ -14,16 +14,19 @@ blockquote {
     font-size: 16px;
     padding: 20px;
     color: #aaa;
+    margin-top: 30px;
 }
 
 .quote {
     text-align: left;
-    padding-left: 100px;
+    padding: 20px;
 }
 
 .attribution {
     text-align: right;
-    padding-right: 100px;
+    padding: 20px;
+    padding-right: 120px;
+    padding-bottom: 0px;
 }
 
 </style>
@@ -34,10 +37,12 @@ blockquote {
 <p>Actually, there were several rooms each with their own set of snarky assholes.</p>
 <p>Some of these assholes, in an act of rare magnanitmity, would save the snark of the other assholes in plain textfiles.  (Ostensibly to encourage others to recognize and save their own wit.)  These textfiles would then be wired up to send a random entry at a willing victim whenever said victim sent a CTCP PING to the quote-file owner on IRC.</p>
 <p>We called these files Ping Reply Files.</p>
+
 <blockquote>
-    <div class="quote">Nobody likes being quoted at.</div>
-    <div class="attribution">Wyatt Peterson, 2001</div>
+    Nobody likes being quoted at.
+    <div class="attribution">&mdash; Wyatt Peterson, 2001</div>
 </blockquote>
+
 <h2>It's Not a Party, It's a Bash!</h2>
 <p>After the snarky assholes had accumulated a wealth of hoarded wit, an innernets-famous site was born to share the snark with the world.  This site, <a href="http://bash.org">bash.org</a>, existed to share the funny of the most horrible internet people (ie, IRC users) and have their visitors rank the funny.  This was good, and this worked well for a very long time, and much time was wasted by all.  However, general stupidity erodes all things, and after many years actually funny, unique content was crowded out by copypasta and/or boring racist tirades.</p>
 <p>And so a mighty king faded into being less mighty and kinda meh.</p>
