@@ -156,15 +156,14 @@ body {
 
 #rightbar {
     margin-left: 750px;
-    background-image: url(../img/greenpawn.png);
+    background-image: url(../img/greenpawn2.png);
     width: 150px;
     height: 174px;
     position: fixed;
     bottom: 0px;
     
     cursor: hand;
-    cursor: pointer;
-    
+    cursor: pointer;    
 }
 
 #rightbar h2 {
