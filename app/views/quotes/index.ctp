@@ -93,11 +93,4 @@ $title = $quote['title'] ? $quote['title'] : 'Untitled Quote (#'.$quote['id'].')
         }
     );
     
-    $(function(){ // jQuery DOM ready function.
-        debugger;
-        var myForm = $("#CommentAddForm");
-        myForm.validation();
-    });
-    
 </script>
-<?= $this->Html->script('validate'); ?>

@@ -3,7 +3,22 @@
 class Comment extends AppModel { 
 
     var $name = 'Comment';  
-    var $belongsTo = array('Quote'=>array('className'=>'Quote'));  
+    var $belongsTo = array('Quote'=>array('className'=>'Quote'));
+    
+    var $validate = array(
+        'name' => array(
+            'rule' => 'alphaNumeric',
+            'required' => true,
+        ),
+        'body' => array(
+            'rule' => 'alphaNumeric',
+            'required' => true,
+        ),
+        'email' => array(
+            'rule' => 'alphaNumeric',
+            'required' => true,
+        ),
+    );
 
 /*
     var $validate = array(
