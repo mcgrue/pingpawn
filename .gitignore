@@ -1,5 +1,7 @@
 /app/config/database.php
+/app/config/bootstrap.php
 *database.php
+*bootstrap.php
 app/tmp/*
 app/webroot/index.php
 *index.php

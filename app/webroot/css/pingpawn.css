@@ -73,7 +73,7 @@ body {
 }
 
 #leftbar_top {
-    background-image: url(../img/pawn2.png);
+    background-image: url(../img/pawn5.png);
     height: 369px;
     width: 150px;
     text-align: center;
@@ -244,10 +244,10 @@ body {
     margin-left: 0px;
 }
 
-#add-tag-link {
+#add-tag-link, #add-comment-link {
     cursor: hand;
     cursor: pointer;
-    color: #ccc;
+    color: #9b9;
 }
 
 /*
@@ -263,3 +263,16 @@ body {
     
 }
 */
+
+.tags {
+    margin-bottom: 48px;
+}
+
+.comments {
+    margin-bottom: 48px;
+}
+
+.no-tags, no-comments {
+    color: #ccc;
+    font-style: italic;
+}

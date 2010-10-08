@@ -296,8 +296,8 @@ class UsersController extends SparkPlugAppController {
 		}
 	}
 
-	function forgotPassword()
-	{
+	function forgotPassword() {
+        
 		$this->layout = Configure::read('front_end_layout');
 		if ($this->data)
 		{

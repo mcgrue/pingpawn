@@ -3,7 +3,7 @@
 class QuotesController extends AppController {
 
 	var $name = 'Quotes';
-    
+        
     function index( $id=null ) {
         //SELECT count(*) as total, prf_name FROM quotes GROUP BY prf_name ORDER BY total DESC
         if( $id ) {
@@ -26,7 +26,7 @@ class QuotesController extends AppController {
     
     function add() {
         
-        if(
+        if( 
             isset($_POST['data']['Quote']['prf']) &&
             isset($_POST['data']['Quote']['quote'])   
         ) {
@@ -39,8 +39,8 @@ class QuotesController extends AppController {
             $this->cakeError('error404', 'You must be logged in to perform that action.');
         }
     }
-    
-    function beforeFilter() {
-        parent::beforeFilter();
-    }
+       
+	public function beforeFiler() {
+		parent::beforeFiler();
+	}
 }
