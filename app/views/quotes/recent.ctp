@@ -20,7 +20,6 @@
 }
 </style>
 
-
     <h1 style="font-size: 20px; margin-bottom: 20px;">Most recent quotes</h1>
     <? foreach( $res as $q ):
             $q = $q['Quote'];
