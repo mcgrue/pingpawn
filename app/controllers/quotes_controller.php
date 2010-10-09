@@ -43,4 +43,19 @@ class QuotesController extends AppController {
 	public function beforeFiler() {
 		parent::beforeFiler();
 	}
+    
+    public function recent($limit=5) {
+        $limit = (int)$limit;
+        if(!$limit) {
+            $limit = 5;
+        }
+        
+        if( $limit > 20 ) {
+            $this->Session->setFlash('Too many quotes requested, limiting to 20.');
+            $limit = 20;
+        }
+        
+        $res = $this->Quote->find( 'all', array('order' => 'id DESC', 'limit' => $limit) );
+        $this->set('res', $res);
+    }
 }
