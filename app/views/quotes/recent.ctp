@@ -1,5 +1,10 @@
 <style>
 
+.title a {
+    color: #666;
+    text-decoration: none;
+}
+
 .recent_quote {
     margin-bottom: 50px;   
 }
@@ -20,14 +25,14 @@
 }
 </style>
 
-    <h1 style="font-size: 20px; margin-bottom: 20px;">Most recent quotes</h1>
-    <? foreach( $res as $q ):
-            $q = $q['Quote'];
-            $str = str_replace( '<', '<p>&lt;', $q['quote'] );
-            $title = $q['title'] ? $q['title'] : 'Untitled Quote (#'.$q['id'].')';
-    ?>
-    <div class="recent_quote">
-        <div class="title"><?= $title ?> <span class="byline">in the <?= $q['prf_name'] ?> quotefile</span></div>
-        <div class="body"><?= $str ?></div>
-    </div>
-    <? endforeach; ?>
+<h1 style="font-size: 20px; margin-bottom: 20px;">Most recent quotes</h1>
+<? foreach( $res as $q ):
+    $q = $q['Quote'];
+    $str = str_replace( '<', '<p>&lt;', $q['quote'] );
+    $title = $q['title'] ? $q['title'] : 'Untitled Quote (#'.$q['id'].')';
+?>
+<div class="recent_quote">
+    <div class="title"><?= $this->Html->link($title, '/quotes/'.$q['id'])  ?> <span class="byline">in the <?= $q['prf_name'] ?> quotefile</span></div>
+    <div class="body"><?= $str ?></div>
+</div>
+<? endforeach; ?>
