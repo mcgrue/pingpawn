@@ -3,7 +3,9 @@
 class QuotesController extends AppController {
 
 	var $name = 'Quotes';
-        
+    
+    var $components = array('Cookie'); 
+    
     function index( $id=null ) {
         //SELECT count(*) as total, prf_name FROM quotes GROUP BY prf_name ORDER BY total DESC
         if( $id ) {
@@ -15,6 +17,19 @@ class QuotesController extends AppController {
                 $this->cakeError('error404');
             }
         }
+        
+        $pf_name = $this->Cookie->read('Comments.name');
+        $pf_email = $this->Cookie->read('Comments.email');
+        $pf_www = $this->Cookie->read('Comments.website');
+
+        if( isset($sessuser['User']['username']) ) {
+            $pf_name = $sessuser['User']['username'];
+            pr2($sessuser, 'hi');
+        }
+        
+        $this->set('pf_name', $pf_name);
+        $this->set('pf_email', $pf_email);
+        $this->set('pf_www', $pf_www);
     }
     
     function manage() {

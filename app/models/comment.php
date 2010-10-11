@@ -7,17 +7,21 @@ class Comment extends AppModel {
     
     var $validate = array(
         'name' => array(
-            'rule' => 'alphaNumeric',
+            'rule' => array('minLength', 1),  
             'required' => true,
         ),
         'body' => array(
-            'rule' => 'alphaNumeric',
+            'rule' => array('minLength', 1),
             'required' => true,
         ),
         'email' => array(
-            'rule' => 'alphaNumeric',
+            'rule' => 'email',
             'required' => true,
         ),
+        'quote_id' => array(
+            'rule' => 'numeric',
+            'required' => true,
+        )
     );
 
 /*
