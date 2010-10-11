@@ -113,7 +113,7 @@ $title = $quote['title'] ? $quote['title'] : 'Untitled Quote (#'.$quote['id'].')
                     }?>
                 </div> 
     
-                <p><?= htmlentities($c['body'], ENT_QUOTES) ?></p>
+                <p><?= nl2br(htmlentities($c['body'], ENT_QUOTES)) ?></p>
             </div> 
         </div>
         
