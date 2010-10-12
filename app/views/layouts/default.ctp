@@ -76,6 +76,12 @@
                 padding: 0px;
                 padding-top: 4px;
             }
+
+            #twtr-widget-1 .twtr-tweet a {
+                font-size: 10px;
+                color: #aaa;
+                font-weight: bold;
+            }
             
         </style>
         
