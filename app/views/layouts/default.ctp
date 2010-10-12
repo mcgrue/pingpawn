@@ -66,11 +66,54 @@
             </div>
         </div>
         
+        <style>
+            .twtr-hd, .twtr-ft { display: none; }
+            .#twtr-widget-1 .twtr-tweet-text  {
+                
+            }
+            
+            .twtr-widget .twtr-tweet-wrap {
+                padding: 0px;
+                padding-top: 4px;
+            }
+            
+        </style>
+        
         <div id="content">
             <div id="twitter">
                 <div class="call_to_action"><a href="http://twitter.com/sexymans/">follow @sexymans on twitter</a></div>
-                <div class="current_quote">&lt;Hahn&gt; Hmm... assassins are cool because they have two asses.</div>
-                <div class="when">Last posted like a day ago, dude</div>
+                
+                <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+                <script>
+                new TWTR.Widget({
+                  version: 2,
+                  type: 'profile',
+                  rpp: 1,
+                  interval: 6000,
+                  width: 'auto',
+                  height: 100,
+                  theme: {
+                    shell: {
+                      background: 'transparent',
+                      color: '255'
+                    },
+                    tweets: {
+                      background: '0',
+                      color: '0',
+                      links: '0'
+                    }
+                  },
+                  features: {
+                    scrollbar: false,
+                    loop: false,
+                    live: false,
+                    hashtags: false,
+                    timestamp: true,
+                    avatars: false,
+                    behavior: 'all'
+                  }
+                }).render().setUser('sexymans').start();
+                </script>
             </div>
             
             <div id="flash">
