@@ -85,6 +85,10 @@ class QuotesController extends AppController {
         
         $res = $this->Quote->find( 'all', array('order' => 'id DESC', 'limit' => $limit) );
         $this->set('res', $res);
+        
+        $this->set('rssurl', '/quotes/index.rss');
+        $this->set('rssname', 'Ping Pawn RSS Feed');
+        
         return $res;
     }
 }

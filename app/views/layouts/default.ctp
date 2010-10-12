@@ -7,6 +7,10 @@
 		<?php echo $title_for_layout; ?>
 	</title>
     
+    <? if(isset($rssurl)):  ?>
+        <link rel="alternate" type="application/rss+xml" title="<?= $rssname ?>" href="<?= $rssurl ?>" />
+    <? endif; ?>
+    
     <link rel="shortcut icon" href="/img/favicon.ico" /> 
     
 	<?php
@@ -52,7 +56,7 @@
         
                 <div id="footer">
                     Site by 
-                    <?php echo $this->Html->link(
+                    <?php echo $html->link(
                             'Ben McGraw (grue)',
                             'http://www.gruniverse.com/',
                             array('target' => '_blank', 'escape' => false)
@@ -75,6 +79,13 @@
     
             <?php echo $content_for_layout; ?>
         </div>
+        
+        <? if(isset($rssurl)):  ?>
+        <div id="rss_button">
+            <a href="<?= $rssurl ?>"><?= $html->image('rss.png', array('alt'=>$rssname)) ?></a>
+        </div>
+        <? endif; ?>
+        
         
         <div id="rightbar">
             <h2>ADD QUOTE?</h2>

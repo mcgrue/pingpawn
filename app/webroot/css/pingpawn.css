@@ -283,3 +283,17 @@ body {
     color: #ccc;
     font-style: italic;
 }
+
+#rss_button {
+    width: 150px;
+    height: 150px;
+    
+    margin-left: 750px;
+    width: 150px;
+    height: 174px;
+    position: fixed;
+    top: 0px;
+    
+    cursor: hand;
+    cursor: pointer;    
+}
