@@ -58,5 +58,4 @@ foreach ($quotes as $quote) {
                 'pubDate' => $time
             )
         );
-
     }

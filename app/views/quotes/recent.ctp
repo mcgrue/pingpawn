@@ -1,3 +1,5 @@
+<link rel="alternate" type="application/rss+xml" title="Ping Pawn RSS Feed" href="/quotes/index.rss" />
+
 <style>
 
 .title a {
