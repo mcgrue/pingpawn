@@ -5,6 +5,7 @@
     
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
     
+    Router::connect('/quotes/rss/*', array('controller' => 'quotes', 'action' => 'rss'));
     Router::connect('/quotes/recent/*', array('controller' => 'quotes', 'action' => 'recent'));
     Router::connect('/quotes/manage/*', array('controller' => 'quotes', 'action' => 'manage'));
     Router::connect('/quotes/add/*', array('controller' => 'quotes', 'action' => 'add'));

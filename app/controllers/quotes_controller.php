@@ -6,8 +6,13 @@ class QuotesController extends AppController {
     
     var $components = array('RequestHandler', 'Cookie'); 
     
-    function index( $id=null ) {
-        //SELECT count(*) as total, prf_name FROM quotes GROUP BY prf_name ORDER BY total DESC
+    function _rss($limit=5) {
+        $quotes = $this->recent($limit);
+            
+        $this->set(compact('quotes'));
+    }
+    
+    function _index( $id=null ) {
         if( $id ) {
             $res = $this->Quote->findById($id);
             
@@ -29,7 +34,15 @@ class QuotesController extends AppController {
         
         $this->set('pf_name', $pf_name);
         $this->set('pf_email', $pf_email);
-        $this->set('pf_www', $pf_www);
+        $this->set('pf_www', $pf_www);        
+    }
+    
+    function index( $id=null ) {
+        if( $this->RequestHandler->isRss() ) {
+            $this->_rss();
+        } else {
+            $this->_index($id);
+        }
     }
     
     function manage() {
@@ -72,5 +85,6 @@ class QuotesController extends AppController {
         
         $res = $this->Quote->find( 'all', array('order' => 'id DESC', 'limit' => $limit) );
         $this->set('res', $res);
+        return $res;
     }
 }
