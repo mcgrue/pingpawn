@@ -430,7 +430,7 @@ class TimeHelper extends AppHelper {
  * @link http://book.cakephp.org/view/1471/Formatting
  */
 	function toRSS($dateString, $userOffset = null) {
-		$date = $this->fromString($dateString, $userOffset);
+		$date = self::fromString($dateString, $userOffset);      
 		return date("r", $date);
 	}
 

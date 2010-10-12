@@ -44,6 +44,13 @@ function ext($res) {
     }
 }
 
+function pr2($data, $title=NULL) {
+    if($title!=NULL) echo("<h1>$title</h1>");
+    print '<pre>';
+    print_r($data);
+    die();
+}
+
 function is_sandbox() {
     return $_SERVER['HTTP_HOST'] == 'localhost:8888';
 }

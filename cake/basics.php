@@ -72,7 +72,7 @@ if (!function_exists('clone')) {
 			}
 		}
 		return true;
-	}
+    }
 
 /**
  * Loads component/components from LIBS. Takes optional number of parameters.

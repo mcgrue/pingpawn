@@ -178,6 +178,7 @@ class RssHelper extends XmlHelper {
  * @access public
  */
 	function items($items, $callback = null) {
+        
 		if ($callback != null) {
 			$items = array_map($callback, $items);
 		}

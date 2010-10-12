@@ -24,6 +24,8 @@ foreach ($quotes as $quote) {
             [time_added] => 2010-10-10 15:56:01
         )
 */
+
+
         $time = strtotime($quote['Quote']['time_added']);
         
         $title = $quote['Quote']['title'] or '#'.$quote['Quote']['id'];
@@ -31,14 +33,12 @@ foreach ($quotes as $quote) {
         $link = array(
             'controller' => 'quotes',
             'action' => 'index',
-            'year' => date('Y', $time),
-            'month' => date('m', $time),
-            'day' => date('d', $time),
-            $title
+            $quote['Quote']['id']
         );
+        
         // You should import Sanitize
         App::import('Sanitize');
-        
+
         // This is the part where we clean the body text for output as the description 
         // of the rss item, this needs to have only text to make sure the feed validates
         $bodyText = preg_replace('=\(.*?\)=is', '', $quote['Quote']['quote']);
@@ -46,13 +46,17 @@ foreach ($quotes as $quote) {
         $bodyText = substr($bodyText, 0, 400);
         
         if( strlen($bodyText) == 400 ) $bodyText .= '...';
-        
-        echo  $this->Rss->item(array(), array(
-            'title' => $title,
-            'link' => $link,
-            'guid' => array('url' => $link, 'isPermaLink' => 'true'),
-            'description' =>  $bodyText,
-            'dc:creator' => $quote['Quote']['prf_name'],
-            'pubDate' => $quote['Quote']['time_added'])
+
+        echo  $this->Rss->item(
+            array(),
+            array(
+                'title' => $title,
+                'link' => $link,
+                'guid' => array('url' => $link, 'isPermaLink' => 'true'),
+                'description' =>  $bodyText,
+                'dc:creator' => $quote['Quote']['prf_name'],
+                'pubDate' => $time
+            )
         );
+
     }
