@@ -189,8 +189,16 @@ body {
 }
 
 #content h1 {
+    font-family: 'ChunkFiveRegular', sans-serif;
+    font-weight: normal;
+    color: #888;
+    
     padding-top: 32px;
     font-size: 32px;    
+}
+
+.recent_quote .title a {
+    color: #999;
 }
 
 #content h3 {

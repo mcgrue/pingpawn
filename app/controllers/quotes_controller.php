@@ -1,10 +1,10 @@
 <?
 
 class QuotesController extends AppController {
-
+    
 	var $name = 'Quotes';
     
-    var $components = array('Cookie'); 
+    var $components = array('RequestHandler', 'Cookie'); 
     
     function index( $id=null ) {
         //SELECT count(*) as total, prf_name FROM quotes GROUP BY prf_name ORDER BY total DESC
