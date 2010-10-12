@@ -285,8 +285,6 @@ class RssHelper extends XmlHelper {
  * @see TimeHelper::toRSS
  */
 	function time($time) {
-        pr2($this->Time, '$this->Time');
-        
 		return $this->Time->toRSS($time);
 	}
 }
