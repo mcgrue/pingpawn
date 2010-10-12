@@ -4,22 +4,24 @@ $this->set('documentData', array(
 );
 
 $this->set('channelData', array(
-    'title' => __("Most Recent Quotes", true),
+    'title' => __("Most Recent Comments", true),
     'link' => $this->Html->url('/', true),
-    'description' => __("Most recent quotes.", true),
+    'description' => __("Most recent comments.", true),
     'language' => 'en-us')
 );
     
-foreach ($quotes as $quote) {
+foreach ($comments as $c) {
+        $q = $c['Quote'];
+        $c = $c['Comment'];
 
-        $time = strtotime($quote['Quote']['time_added']);
+        $time = strtotime($c['created']);
         
-        $title = '('.$quote['Quote']['prf_name']. ') #'.$quote['Quote']['id'];
+        $title = $c['name'].' on ('.$q['prf_name']. ') #'.$q['id'];
         
         $link = array(
             'controller' => 'quotes',
             'action' => 'index',
-            $quote['Quote']['id']
+            $q['id']
         );
         
         // You should import Sanitize
@@ -27,12 +29,8 @@ foreach ($quotes as $quote) {
 
         // This is the part where we clean the body text for output as the description 
         // of the rss item, this needs to have only text to make sure the feed validates
-        $bodyText = preg_replace('=\(.*?\)=is', '', $quote['Quote']['quote']);
-        $bodyText = nl2br(htmlentities($bodyText));
+        $bodyText = preg_replace('=\(.*?\)=is', '', $c['body']);
         $bodyText = Sanitize::stripAll($bodyText);
-        $bodyText = substr($bodyText, 0, 400);
-        
-        if( strlen($bodyText) == 400 ) $bodyText .= '...';
 
         echo  $this->Rss->item(
             array(),
@@ -41,7 +39,7 @@ foreach ($quotes as $quote) {
                 'link' => $link,
                 'guid' => array('url' => $link, 'isPermaLink' => 'true'),
                 'description' =>  $bodyText,
-                'dc:creator' => $quote['Quote']['prf_name'],
+                'dc:creator' => $c['name'],
                 'pubDate' => $time
             )
         );

@@ -155,12 +155,6 @@ body {
     text-decoration: none;
 }
 
-#twtr-widget-1 .twtr-tweet a {
-    font-size: 10px;
-    color: #aaa;
-    font-weight: bold;
-}
-
 #rightbar {
     margin-left: 750px;
     background-image: url(../img/greenpawn2.png);

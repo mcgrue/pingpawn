@@ -3,7 +3,17 @@ class CommentsController extends AppController {
 
 	var $name = 'Comments';
     
-    var $components = array('Cookie'); 
+    var $components = array('RequestHandler', 'Cookie');
+    
+    function index() {
+        if( $this->RequestHandler->isRss() ) {
+
+            $res = $this->Comment->find( 'all', array('order' => 'Quote.id DESC', 'limit' => 20) );
+            $this->set( 'comments', $res );
+        } else {
+            $this->redirect('/', 301);
+        }
+    }
     
     function add() {
         
