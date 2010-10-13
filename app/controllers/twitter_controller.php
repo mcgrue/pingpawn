@@ -9,7 +9,15 @@ class TwitterController extends AppController {
     var $components = array('RequestHandler', 'Cookie', 'OauthConsumer');
 
     public function twitter() {
-        $requestToken = $this->OauthConsumer->getRequestToken('Twitter', 'http://twitter.com/oauth/request_token', 'http://test.localhost/example/twitter_callback');
+        
+        
+        if( is_localhost() ) {
+            $response_url = 'http://localhost/pingpawn/twitter/twitter_callback';    
+        } else {
+            $response_url = 'http://www.pingpawn.com/twitter/twitter_callback';    
+        }
+        
+        $requestToken = $this->OauthConsumer->getRequestToken('Twitter', 'http://twitter.com/oauth/request_token', $response_url );
         $this->Session->write('twitter_request_token', $requestToken);
         $this->redirect('http://twitter.com/oauth/authorize?oauth_token=' . $requestToken->key);
     }
