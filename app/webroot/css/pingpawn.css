@@ -301,3 +301,13 @@ h2 a:hover {
     color: #866;
     text-decoration: underline;
 }
+
+#inactive {
+    width: 189px;
+    height: 189px;
+    background-image: url(../img/inactive.png);
+    position: absolute;
+    z-index: 300;
+    right: 0px;
+    top: 0px;
+}

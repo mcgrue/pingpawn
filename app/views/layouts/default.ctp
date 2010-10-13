@@ -218,5 +218,9 @@
         
     </script>
 
+<? if(!empty($inactive)): ?>
+    <div id="inactive">&nbsp;</div>
+<? endif; ?>
+
 </body>
 </html>
