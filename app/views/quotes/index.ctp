@@ -18,6 +18,7 @@ if( isset($res['Comment']) ) {
     }
 }
 
+$users = $res['Commentors'];
 
 $str = str_replace( '<', '<p>&lt;', $quote['quote'] );
 
@@ -57,12 +58,12 @@ $title = $quote['title'] ? $quote['title'] : 'Untitled Quote (#'.$quote['id'].')
         position: relative;
         width: 480px ;
         
-        padding:20px;
+        padding:10px;
     }
 
     .c-gravitar {
-        width: 90px;
-        height: 90px;
+        width: 58px;
+        height: 58px;
         display: inline-block;
     }
     
@@ -92,13 +93,12 @@ $title = $quote['title'] ? $quote['title'] : 'Untitled Quote (#'.$quote['id'].')
     
 </style>
     <?    
-        foreach( $comments as $c ):
+        foreach( $comments as $c ): 
     ?>
         
         <div class="c-single clear" id="comment-<?= $c['id'] ?>" > 
             <div class="c-gravitar">
-                <!-- http://api.twitter.com/1/users/profile_image/bengrue.json -->
-                <img src="http://www.gravatar.com/avatar/<?= md5( strtolower( trim( $c['email'] ) ) ) ?>" class="avatar avatar-80 photo" height="80" width="80" />
+                <img src="http://api.twitter.com/1/users/profile_image/<?= $users[$c['user_id']]['twitter_name'] ?>.json ?>" />
             </div>
             <div class="c-body"> 
                 <div class="c-date">

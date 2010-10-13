@@ -4,8 +4,8 @@ class Comment extends AppModel {
 
     var $name = 'Comment';  
     var $belongsTo = array(
-        'Quote'=>array('className'=>'Quote'),
         'User'=>array('className'=>'User'),
+        'Quote'=>array('className'=>'Quote'),
     );
     
     var $validate = array(

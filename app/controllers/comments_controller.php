@@ -28,8 +28,6 @@ class CommentsController extends AppController {
         
         if( $this->Comment->validates() ) {
             
-
-            
             $this->Comment->save();
             $this->redirect('/quotes/'.$_POST['data']['Comment']['quote_id']);
         } else {

@@ -63,4 +63,8 @@ class User extends AppModel{
     
         return "${token}:${userId}";
     }
+    
+    public function beforeFind($foo) {
+        $this->query( 'DELETE FROM `login_tokens` WHERE `expires` < NOW(); ' );
+    }
 }

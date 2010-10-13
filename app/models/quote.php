@@ -23,8 +23,28 @@ class Quote extends AppModel {
                     'finderQuery'               => '', 
                     'deleteQuery'               => '', 
                 ) 
-            ); 
-
+            );
+        
+    function afterFind($results, $primary) {        
+        if( empty($results[0]['Comment']) ) return $results;
+        
+        $commenters = array();
+        foreach( $results[0]['Comment'] as $c ) {
+            $commenters[$c['user_id']] = (int)$c['user_id'];
+        }
+        
+        $res = $this->User->find('all', array('conditions' => array('id' => array_values($commenters) )));
+        
+        $commenters = array();
+        foreach( $res as $c ) {
+            $commenters[$c['User']['id']] = $c['User'];
+        }
+        
+        $results[0]['Commentors'] = $commenters;
+        
+        return $results;
+    }
+    
     
     function easy_save( $name, $quote, $user_id ) {
         
