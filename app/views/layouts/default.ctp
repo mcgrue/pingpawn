@@ -37,9 +37,9 @@
                         
             <div id="leftbar_bottom">
                 <div id="menu">
-                    <ul>                        
+                    <ul>                       
                         <? if( !empty($sessuser) ): ?>
-                            <li>Hello, <?= $sessuser['User']['twitter_name'] ?>!</li>
+                            <li class="identity">Hello, <?= $sessuser['User']['twitter_name'] ?>!</li>
                             <li><?= $html->link('Your Dashboard', '/users/home')  ?></li>
                             <li><?= $html->link('Logout?', '/users/logout')  ?></li>
                         <? else: ?>
@@ -182,9 +182,14 @@
     </div>
     
     <script>
+
         $('#rightbar').click(function (e) {
+<? if($sessuser) : ?>    
             $('#basic-modal-content').modal();
             return false;
+<? else: ?>
+            window.location.href = '/twitter/login/';
+<? endif ?>
         });
     </script>
 

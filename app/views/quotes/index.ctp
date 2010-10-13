@@ -153,15 +153,23 @@ $title = $quote['title'] ? $quote['title'] : 'Untitled Quote (#'.$quote['id'].')
 <script>
     $('#add-tag-link').click(
         function() {
+<? if($sessuser) : ?>    
             $('#add-tag-dialog').modal();
-            return false;    
+            return false;
+<? else: ?>
+            window.location.href = '/twitter/login/';
+<? endif ?>
         }
     );
     
     $('#add-comment-link').click(
         function() {
+<? if($sessuser) : ?>    
             $('#add-comment-dialog').modal();
-            return false;    
+            return false;
+<? else: ?>
+            window.location.href = '/twitter/login/';
+<? endif ?>
         }
     );
 </script>

@@ -117,8 +117,14 @@ body {
 
 
 .reassure {
-    color: #bbb;
-    
+    color: #bbb;    
+}
+
+.identity {
+    font-family: 'ChunkFiveRegular', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #b1d0b1;
 }
 
 #flash {
