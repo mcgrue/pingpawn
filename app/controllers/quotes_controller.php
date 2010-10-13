@@ -4,6 +4,8 @@ class QuotesController extends AppController {
     
 	var $name = 'Quotes';
     
+    var $uses = array( 'Quote', 'Vote' );
+    
     var $components = array('RequestHandler', 'Cookie'); 
     
     function _rss($limit=5) {
@@ -23,12 +25,16 @@ class QuotesController extends AppController {
                     $this->set('inactive', 1);
                 }
                 
+                if($this->sessuser) {
+                    $v = $this->Vote->get($id, $this->sessuser['User']['id']);
+                    if(!empty($v[0]['votes']['vote'])) {
+                        $this->set('vote', $v[0]['votes']['vote']);
+                    }
+                }
                 
             } else {
                 $this->cakeError('error404');
             }
-            
-            
             
         }
         

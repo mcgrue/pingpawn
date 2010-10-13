@@ -311,3 +311,48 @@ h2 a:hover {
     right: 0px;
     top: 0px;
 }
+
+#voting {
+    position: relative;
+    top: 12px;
+    left: 0px;
+    
+    font-size: 36px;
+}
+
+#voting a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+#voting #vote_down {
+    font-size: 48px;
+}
+
+#voting #vote_down:hover {
+    color: red;
+}
+
+#voting #vote_up:hover {
+    color: #2C2;
+}
+
+#tally {
+    font-family: 'ChunkFiveRegular', sans-serif;
+    color: #aaa;
+    font-size: 36px;
+}
+
+.voted {
+    font-weight: bold;
+    color: #aaa;
+}
+
+.voted.up {
+    color: #2C2;
+}
+
+.voted.down {
+    color: red;
+}

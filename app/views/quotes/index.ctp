@@ -31,6 +31,17 @@ $title = $quote['title'] ? $quote['title'] : 'Untitled Quote (#'.$quote['id'].')
 
 ?>
 
+<div id="voting">
+    <? if(empty($vote)): ?>
+        <?= $html->link('+','/vote/up/'.$quote['id'],array('id'=>'vote_up')); ?>
+        <span id="tally">(<?= $quote['tally'] ?>)</span>
+        <?= $html->link('-','/vote/down/'.$quote['id'],array('id'=>'vote_down')); ?>
+    <? else: ?>
+        <span class="voted <?= ($vote>0)?'up':'' ?>">+</span>
+        <span id="tally">(<?= $quote['tally'] ?>)</span>
+        <span class="voted <?= ($vote<0)?'down':'' ?>">-</span>
+    <? endif; ?>
+</div>
 <h1><?=$title ?></h1>
 <h2>from the <?= $html->link( $prf['name'].' quotefile','/quotefile/'.$prf['id'] )   ?></h2>
 
