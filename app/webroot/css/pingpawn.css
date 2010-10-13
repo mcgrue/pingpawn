@@ -372,5 +372,6 @@ h2 a:hover {
     margin-left: 765px;
     width: 130px;
     position: fixed;
-    top:20px;    
+    top:20px;
+    opacity: .5;
 }
