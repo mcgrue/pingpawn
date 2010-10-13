@@ -6,7 +6,7 @@ class TwitterController extends AppController {
     
 	var $name = 'Twitter';
     var $uses = array();
-    var $components = array('RequestHandler', 'Cookie', 'OauthConsumer');
+    var $components = array('Cookie', 'OauthConsumer');
     
     public function twitter() {
 
@@ -18,23 +18,23 @@ class TwitterController extends AppController {
         
         $requestToken = $this->OauthConsumer->getRequestToken('Twitter', 'http://twitter.com/oauth/request_token', $response_url );
 
-        $this->Session->write('twitter_request_token_2', $requestToken);
-        $_SESSION['caca'] = $requestToken;
+        $this->Cookie->write('twitter_request_token_2', $requestToken);
         
         $this->redirect('http://twitter.com/oauth/authorize?oauth_token=' . $requestToken->key);
     }
 
     public function twitter_callback() {
-        $requestToken = $this->Session->read('twitter_request_token_2');
+        
+        $requestToken = $this->Cookie->read('twitter_request_token_2');
         
         $accessToken = $this->OauthConsumer->getAccessToken('Twitter', 'http://twitter.com/oauth/access_token', $requestToken);
         
         pr2(
             array(
                 'requestToken' => $requestToken,
-                'accesstoken' => $accessToken,
+                'accessToken' => $accessToken
             ),
-            'THINGS!'
+            'things'
         );
         
         $this->OauthConsumer->post('Twitter', $accessToken->key, $accessToken->secret, 'http://twitter.com/statuses/update.json', array('status' => 'hello world!'));

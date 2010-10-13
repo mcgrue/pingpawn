@@ -38,6 +38,8 @@
             <div id="leftbar_bottom">
                 <div id="menu">
                     <ul>
+                        <li><?= $html->link('Twitter', '/twitter/twitter')  ?></li>
+                        
                         <? if(isset($sessuser['User']['username']) ): ?>
                             <li>Hello, <?= $sessuser['User']['username'] ?>!</li>
                             <li><?= $html->link('Your Dashboard', '/users/dashboard')  ?></li>
