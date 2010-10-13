@@ -105,7 +105,20 @@ body {
 
 #leftbar_bottom #menu ul li a {
     text-decoration: none;
-    color: #666;
+    color: #A88;
+    font-weight: bold;
+}
+
+#leftbar_bottom #menu ul li a:hover {
+    text-decoration: underline;
+    color: #755;
+    font-weight: bold;
+}
+
+
+.reassure {
+    color: #bbb;
+    
 }
 
 #flash {

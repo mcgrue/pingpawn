@@ -1,17 +1,17 @@
 <?php
 /**
  * Copyright (c) 2009 Debuggable Ltd (debuggable.com)
- *
+ * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- *
+ * 
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- *
+ * 
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -49,13 +49,7 @@ class AuthsomeComponent extends Object{
 			}
 		}
 	}
-	public function check($access=null)
-	{
-		$user = $this->__getActiveUser();
 
-		$userModel = $this->__getUserModel();
-		return $userModel->UserGroup->isUserGroupAccess($user['User']['user_group_id'],$access);
-	}
 	public function get($field = null) {
 		$user = $this->__getActiveUser();
 
@@ -79,7 +73,7 @@ class AuthsomeComponent extends Object{
 		$args = func_get_args();
 		if (!method_exists($userModel, 'authsomeLogin')) {
 			throw new Exception(
-			$userModel->alias.'::authsomeLogin() is not implemented!'
+				$userModel->alias.'::authsomeLogin() is not implemented!'
 			);
 		}
 
@@ -108,7 +102,7 @@ class AuthsomeComponent extends Object{
 
 		if (!method_exists($userModel, 'authsomePersist')) {
 			throw new Exception(
-			$userModel->alias.'::authsomePersist() is not implemented!'
+				$userModel->alias.'::authsomePersist() is not implemented!'
 			);
 		}
 
@@ -116,10 +110,10 @@ class AuthsomeComponent extends Object{
 		$token = $token.':'.$duration;
 
 		return $this->Cookie->write(
-		$this->settings['cookieKey'],
-		$token,
-		true, // encrypt = true
-		$duration
+			$this->settings['cookieKey'],
+			$token,
+			true, // encrypt = true
+			$duration
 		);
 	}
 
@@ -133,7 +127,7 @@ class AuthsomeComponent extends Object{
 		}
 
 		return $this->__userModel = ClassRegistry::init(
-		$this->settings['model']
+			$this->settings['model']
 		);
 	}
 
@@ -151,7 +145,7 @@ class AuthsomeComponent extends Object{
 		if (is_null($user)) {
 			throw new Exception(
 				'Unable to initilize user'
-				);
+			);
 		}
 
 		return $user;
@@ -209,16 +203,12 @@ class Authsome{
 		if (!$instance) {
 			throw new Exception(
 				'AuthsomeComponent not initialized properly!'
-				);
+			);
 		}
 
 		return $instance;
 	}
 
-	public static function check($access=null)
-	{
-		return self::instance()->check($access);
-	}
 	public static function get($field = null) {
 		return self::instance()->get($field);
 	}
@@ -235,7 +225,7 @@ class Authsome{
 		return self::instance()->persist($duration);
 	}
 
-	public static function hash($password, $method = 'md5', $salt = false) {
+	public static function hash($password, $method = 'sha1', $salt = true) {
 		return Security::hash($password, $method, $salt);
 	}
 }

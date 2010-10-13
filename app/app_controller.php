@@ -1,15 +1,20 @@
 <?
-    class AppController extends Controller {
-        var $components = array(
+	class AppController extends Controller {
+		public $components = array(
             'Session',
-            'SparkPlug.Authsome' => array('model' => 'User')
-        );
-        
-        var $uses = array('SparkPlug.UserGroup');
+			'Authsome.Authsome' => array(
+				'model' => 'User'
+			)
+		);
         
         function beforeFilter() {
             parent::beforeFilter();
-            //SparkPlugIt($this);
-            $this->set('sessuser', Authsome::get());
+            $this->sessuser = Authsome::get();
+            $this->set('sessuser', $this->sessuser);
+        }
+        
+        function flashAndGo( $flash, $go, $response=302 ) {
+            $this->Session->setFlash($flash);
+            $this->redirect($go, $response);            
         }
     }

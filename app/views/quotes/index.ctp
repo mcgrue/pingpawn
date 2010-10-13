@@ -95,7 +95,8 @@ $title = $quote['title'] ? $quote['title'] : 'Untitled Quote (#'.$quote['id'].')
         foreach( $comments as $c ): ?>
         
         <div class="c-single clear" id="comment-<?= $c['id'] ?>" > 
-            <div class="c-gravitar">                        
+            <div class="c-gravitar">
+                <!-- http://api.twitter.com/1/users/profile_image/bengrue.json -->
                 <img src="http://www.gravatar.com/avatar/<?= md5( strtolower( trim( $c['email'] ) ) ) ?>" class="avatar avatar-80 photo" height="80" width="80" />
             </div>
             <div class="c-body"> 

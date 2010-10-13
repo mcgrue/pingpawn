@@ -1,0 +1,3 @@
+<?
+	class LoginToken extends AppModel{
+	}

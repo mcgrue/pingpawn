@@ -37,15 +37,14 @@
                         
             <div id="leftbar_bottom">
                 <div id="menu">
-                    <ul>
-                        <li><?= $html->link('Twitter', '/twitter/twitter')  ?></li>
-                        
-                        <? if(isset($sessuser['User']['username']) ): ?>
-                            <li>Hello, <?= $sessuser['User']['username'] ?>!</li>
-                            <li><?= $html->link('Your Dashboard', '/users/dashboard')  ?></li>
+                    <ul>                        
+                        <? if( !empty($sessuser) ): ?>
+                            <li>Hello, <?= $sessuser['User']['twitter_name'] ?>!</li>
+                            <li><?= $html->link('Your Dashboard', '/users/home')  ?></li>
+                            <li><?= $html->link('Logout?', '/users/logout')  ?></li>
                         <? else: ?>
-                            <li><?= $html->link('Register', '/users/Register')  ?></li>
-                            <li><?= $html->link('Login', '/users/Login')  ?></li>
+                            <li><?= $html->link('Login via Twitter', '/twitter/login')  ?></li>
+                            <li class="reassure">(we won't post to your account, honest.)</li>
                         <? endif; ?>
                         <li>&nbsp;</li>
                         <li><?= $html->link('Random', '/random')  ?></li>

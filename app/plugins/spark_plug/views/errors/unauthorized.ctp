@@ -1,1 +1,0 @@
-<h1><?php echo $trans->__('Unauthorized');?></h1>

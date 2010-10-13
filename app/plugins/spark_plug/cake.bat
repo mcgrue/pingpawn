@@ -1,1 +1,0 @@
-..\..\..\..\..\php\php.exe ..\..\..\cake\console\cake.php i18n
