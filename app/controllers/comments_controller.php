@@ -22,7 +22,7 @@ class CommentsController extends AppController {
         
         $this->data['Comment']['name'] = $this->sessuser['User']['display_name'];
         $this->data['Comment']['user_id'] = $this->sessuser['User']['id'];
-        $this->data['Comment']['url'] = $this->sessuser['User']['url'];
+        $this->data['Comment']['website'] = $this->sessuser['User']['url'];
         
         $this->Comment->set( $this->data );
         
