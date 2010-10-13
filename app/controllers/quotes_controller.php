@@ -32,6 +32,8 @@ class QuotesController extends AppController {
                     }
                 }
                 
+                $this->set('ads_on', 1);
+                
             } else {
                 $this->cakeError('error404');
             }

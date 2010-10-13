@@ -144,6 +144,24 @@
         <div id="rightbar">
             <h2>ADD QUOTE?</h2>
         </div>
+        
+        
+    <? if(!empty($ads_on)): ?>
+        <div id="advertisement">
+            <script type="text/javascript"><!--
+            google_ad_client = "pub-7622698251658924";
+            /* 120x240, created 10/13/10 */
+            google_ad_slot = "6327028999";
+            google_ad_width = 120;
+            google_ad_height = 240;
+            //-->
+            </script>
+            <script type="text/javascript"
+            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+            </script>
+        </div>
+    <? endif; ?>
+        
     </div>
     
     <script type="text/javascript">
@@ -221,6 +239,7 @@
 <? if(!empty($inactive)): ?>
     <div id="inactive">&nbsp;</div>
 <? endif; ?>
+
 
 </body>
 </html>

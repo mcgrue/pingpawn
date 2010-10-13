@@ -197,6 +197,7 @@ body {
     cursor: pointer;    
 }
 
+
 #rightbar h2 {
     font-family: 'LeagueGothicRegular', sans-serif;
     font-weight: normal;
@@ -365,4 +366,11 @@ h2 a:hover {
 
 .voted.down {
     color: red;
+}
+
+#advertisement {
+    margin-left: 765px;
+    width: 130px;
+    position: fixed;
+    top:20px;    
 }
