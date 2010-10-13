@@ -66,12 +66,18 @@ class Quote extends AppModel {
         $quote = mysql_real_escape_string(stripslashes($quote));
         
         $this->query( "
-            INSERT IGNORE INTO `prfs`(user_id, name, url_key) VALUES (889031, '$name', '$name');
+            INSERT IGNORE INTO `prfs`(user_id, name, url_key) VALUES ($user_id, '$name', '$name');
         " );
         
+        $res = $this->QUERY( "
+            SELECT * FROM `prfs` WHERE `name` = '$name';
+        " );
+        
+        $prf_id = $res[0]['prfs']['id'];
+        
         $this->query( "
-            INSERT INTO `quotes`( `prf_name`, `quote`, `active`, `time_added`, `user_id` )
-                        VALUES( '$name', '$quote', 0, NOW(), $user_id );
+            INSERT INTO `quotes`( `prf_id`, `quote`, `active`, `time_added`, `user_id` )
+                        VALUES( $prf_id, '$quote', 0, NOW(), $user_id );
         " );
         
         $res = $this->query( "SELECT LAST_INSERT_ID() as taco" );
