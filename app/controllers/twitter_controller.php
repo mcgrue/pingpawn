@@ -62,11 +62,11 @@ class TwitterController extends AppController {
                 'profile_image_url' => $res->profile_image_url
             );
             
-            $res = $this->User->findById($user->id);
+            $res = $this->User->findById($user['id']);
             if( !$res ) {
                 $this->User->set($user);
                 $this->User->save();
-                $res = $this->User->findById($user->id);
+                $res = $this->User->findById($user['id']);
             }
             
             $user = Authsome::login($res['User']);
