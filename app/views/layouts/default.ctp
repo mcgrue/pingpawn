@@ -39,7 +39,7 @@
                 <div id="menu">
                     <ul>                       
                         <? if( !empty($sessuser) ): ?>
-                            <li class="identity">Hello, <?= $sessuser['User']['twitter_name'] ?>!</li>
+                            <li class="identity">Hello, <?= $sessuser['User']['display_name'] ?>!</li>
                             <li><?= $html->link('Your Dashboard', '/users/home')  ?></li>
                             <li><?= $html->link('Logout?', '/users/logout')  ?></li>
                         <? else: ?>

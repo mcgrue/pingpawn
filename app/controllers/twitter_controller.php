@@ -10,7 +10,7 @@ class TwitterController extends AppController {
     
     public function login() {
         if( isset($sessuser) ) {
-            $this->flashAndGo('You need to be logged out to log in, '.$sessuser['User']['twitter_name']);    
+            $this->flashAndGo('You need to be logged out to log in, '.$sessuser['User']['display_name']);    
         }
         
         if( is_sandbox() ) {
@@ -59,7 +59,8 @@ class TwitterController extends AppController {
                 'twitter_name' => $res->screen_name,
                 'description' => $res->description,
                 'url' => $res->url,
-                'profile_image_url' => $res->profile_image_url
+                'profile_image_url' => $res->profile_image_url,
+                'display_name' => $res->screen_name,
             );
             
             $res = $this->User->findById($user['id']);
@@ -78,7 +79,7 @@ class TwitterController extends AppController {
             
             Authsome::persist('2 weeks');
             
-            $this->flashAndGo( 'You are now logged in, '.$user['User']['twitter_name'], '/users/home' );   
+            $this->flashAndGo( 'You are now logged in, '.$user['User']['display_name'], '/users/home' );   
             
         } else {
             $this->flashAndGo( 'There was a weird problem: '.$res, '/' );   

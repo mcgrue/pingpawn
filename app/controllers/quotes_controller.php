@@ -53,12 +53,15 @@ class QuotesController extends AppController {
     }
     
     function add() {
+        if(!$this->sessuser) {
+            $this->flashAndGo('You must be logged in to quote.', '/');
+        }
         
-        if( 
+        if(
             isset($_POST['data']['Quote']['prf']) &&
             isset($_POST['data']['Quote']['quote'])   
         ) {
-            $res_id = $this->Quote->easy_save($_POST['data']['Quote']['prf'], $_POST['data']['Quote']['quote']);
+            $res_id = $this->Quote->easy_save($_POST['data']['Quote']['prf'], $_POST['data']['Quote']['quote'], $this->sessuser['User']['id']);
             $this->redirect('/quotes/'.$res_id);
         }
         
@@ -83,7 +86,7 @@ class QuotesController extends AppController {
             $limit = 20;
         }
         
-        $res = $this->Quote->find( 'all', array('order' => 'id DESC', 'limit' => $limit) );
+        $res = $this->Quote->find( 'all', array('order' => 'Quote.id DESC', 'limit' => $limit) );
         $this->set('res', $res);
         
         $this->set('rssurl', '/quotes/index.rss');

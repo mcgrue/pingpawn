@@ -16,14 +16,19 @@ class CommentsController extends AppController {
     }
     
     function add() {
+        if(!$this->sessuser) {
+            $this->flashAndGo('You must be logged in to make comments.', '/');
+        }
+        
+        $this->data['Comment']['name'] = $this->sessuser['User']['display_name'];
+        $this->data['Comment']['user_id'] = $this->sessuser['User']['id'];
+        $this->data['Comment']['url'] = $this->sessuser['User']['url'];
         
         $this->Comment->set( $this->data );
         
         if( $this->Comment->validates() ) {
             
-            $this->Cookie->write('Comments.name', $this->data['Comment']['name'] );
-            $this->Cookie->write('Comments.email', $this->data['Comment']['email'] );
-            $this->Cookie->write('Comments.website', $this->data['Comment']['website'] );
+
             
             $this->Comment->save();
             $this->redirect('/quotes/'.$_POST['data']['Comment']['quote_id']);

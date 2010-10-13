@@ -92,7 +92,8 @@ $title = $quote['title'] ? $quote['title'] : 'Untitled Quote (#'.$quote['id'].')
     
 </style>
     <?    
-        foreach( $comments as $c ): ?>
+        foreach( $comments as $c ):
+    ?>
         
         <div class="c-single clear" id="comment-<?= $c['id'] ?>" > 
             <div class="c-gravitar">
@@ -137,11 +138,16 @@ $title = $quote['title'] ? $quote['title'] : 'Untitled Quote (#'.$quote['id'].')
 
 <div id="add-comment-dialog" style='display:none' class="modal-dialog-form">
     <h3>Add Comment</h3>
+    <?
+        $pf_name = '';
+        if(!empty($sessuser['User']['display_name'])) {
+            $pf_name = $sessuser['User']['display_name'];
+        }
+    ?>
         
     <?= $this->Form->create('Comment', array('action' => 'add')); ?>
-    <?= $this->Form->input('name', array('label' => 'name', 'validation' => 'required', 'value' => $pf_name)); ?>
-    <?= $this->Form->input('email', array('label' => 'email', 'validation' => 'required email', 'value' => $pf_email)); ?>
-    <?= $this->Form->input('website', array('label' => 'website', 'value' => $pf_www)); ?>
+    <label for="name">logged in as </label> <span class='identity'><?=$pf_name ?></span> <br /><br />
+    
     <label for="body">comment</label><?= $this->Form->textarea('body', array('validation' => 'required')); ?>
     
     <?= $this->Form->hidden('quote_id', array('value' => $id)); ?>

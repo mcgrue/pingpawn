@@ -2,8 +2,9 @@
 
 class Tag extends AppModel { 
     var $name = 'Tag';
+    var $belongsTo = 'User';
     
-    function simple_save( $tag, $post_id ) {
+    function simple_save( $tag, $post_id, $user_id ) {
         
         $post_id = (int)$post_id;
         $res = $this->query( "SELECT * FROM `quotes` WHERE id = $post_id" );
@@ -26,7 +27,7 @@ class Tag extends AppModel {
             $tag_id = $res[0]['tags']['id'];
         }
         
-        $sql3 = "INSERT IGNORE INTO `quotes_tags`(`tag_id`, `quote_id`) VALUES ($tag_id, $post_id)";
+        $sql3 = "INSERT IGNORE INTO `quotes_tags`(`tag_id`, `quote_id`, `user_id`) VALUES ($tag_id, $post_id, $user_id)";
         $this->query( $sql3 );
         
         return true;
