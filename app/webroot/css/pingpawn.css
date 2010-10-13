@@ -142,6 +142,16 @@ body {
     border: dotted #d8d2d9 3px;
 }
 
+#flashMessage a{
+    text-decoration:none;
+    color: #6f5074;
+    font-weight: bold;
+}
+
+#flashMessage a:hover{
+    text-decoration:underline;
+}
+
 .error-message {
     background-color: pink;
     padding: 10px;
