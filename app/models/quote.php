@@ -22,6 +22,19 @@ class Quote extends AppModel {
                     'unique'                    => true, 
                     'finderQuery'               => '', 
                     'deleteQuery'               => '', 
+                ),
+            'Prf' => 
+                array(
+                    'className'                 => 'Prf', 
+                    'joinTable'                 => 'prfs_quotes', 
+                    'foreignKey'                => 'quote_id', 
+                    'associationForeignKey'     => 'prf_id', 
+                    'conditions'                => '', 
+                    'order'                     => '', 
+                    'limit'                     => '', 
+                    'unique'                    => true, 
+                    'finderQuery'               => '', 
+                    'deleteQuery'               => '', 
                 ) 
             );
         

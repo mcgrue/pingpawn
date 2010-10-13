@@ -84,6 +84,10 @@
                 font-weight: bold;
             }
             
+            .twtr-tweet-wrap {
+                display: none;
+            }
+            
         </style>
         
         <div id="content">
@@ -191,6 +195,26 @@
             window.location.href = '/twitter/login/';
 <? endif ?>
         });
+        
+        var interval = setInterval(function(){
+            
+            if(  $('.twtr-tweet-text p') && $('.twtr-tweet-text p').text() ) {
+                var cnt = $('.twtr-tweet-text p').html();
+                cnt = cnt.replace( /&lt;/g, '<br>  &lt;' ).replace('<a class="twtr-hyperlink', '<br><a class="twtr-hyperlink').replace('</a> <br>', '</a>');
+                $('.twtr-tweet-text p').html(cnt)
+                $('.twtr-tweet-wrap').fadeIn(300);
+                clearInterval(interval);
+            }
+        },500);
+
+        
+        /*
+        $('.twtr-tweet-text p').on(function() {
+            alert('beep.');
+            debugger;
+        });
+        */
+        
     </script>
 
 </body>
