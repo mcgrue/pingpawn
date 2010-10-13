@@ -1,5 +1,6 @@
 <?
 
+$prf = $res['Prf'];
 $quote = $res['Quote'];
 $id = $quote['id'];
 
@@ -31,7 +32,7 @@ $title = $quote['title'] ? $quote['title'] : 'Untitled Quote (#'.$quote['id'].')
 ?>
 
 <h1><?=$title ?></h1>
-<h2>from the <?=$quote['prf_name'] ?> quotefile</h2>
+<h2>from the <?= $html->link( $prf['name'].' quotefile','/quotefile/'.$prf['id'] )   ?></h2>
 
 <div class="quote">
     <?=$str ?>

@@ -27,12 +27,14 @@
 
 <h1 style="font-size: 20px; margin-bottom: 20px;">Most recent quotes</h1>
 <? foreach( $res as $q ):
+    $prf = $q['Prf'];
     $q = $q['Quote'];
+    
     $str = str_replace( '<', '<p>&lt;', $q['quote'] );
     $title = $q['title'] ? $q['title'] : 'Untitled Quote (#'.$q['id'].')';
 ?>
 <div class="recent_quote">
-    <div class="title"><?= $this->Html->link($title, '/quotes/'.$q['id'])  ?> <span class="byline">in the <?= $q['prf_name'] ?> quotefile</span></div>
+    <div class="title"><?= $this->Html->link($title, '/quotes/'.$q['id'])  ?> <span class="byline">in the <?= $html->link( $prf['name'].' quotefile','/quotefile/'.$prf['id'] ) ?></span></div>
     <div class="body"><?= $str ?></div>
 </div>
 <? endforeach; ?>

@@ -244,33 +244,6 @@ body {
 
 
 
-#sparky {
-    margin-top: 86px;
-}
-
-#sparky h2 {
-    margin-bottom: 20px;
-    font-size: 22px;    
-}
-
-#sparky a {
-    color: #666;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-#sparky label {
-    width: 120px;
-    float: left;
-    text-align: right;
-    margin-right: 5px;
-    display: block
-}
-
-#sparky .submit input {
-    margin-top: 20px;
-    margin-left: 0px;
-}
 
 #add-tag-link, #add-comment-link {
     cursor: hand;
@@ -317,4 +290,14 @@ body {
     
     cursor: hand;
     cursor: pointer;    
+}
+
+h2 a {
+    color: #666;
+    text-decoration: none;
+}
+
+h2 a:hover {
+    color: #866;
+    text-decoration: underline;
 }

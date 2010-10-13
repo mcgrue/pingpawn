@@ -14,7 +14,7 @@ foreach ($quotes as $quote) {
 
         $time = strtotime($quote['Quote']['time_added']);
         
-        $title = '('.$quote['Quote']['prf_name']. ') #'.$quote['Quote']['id'];
+        $title = '('.$quote['Prf']['name']. ') #'.$quote['Quote']['id'];
         
         $link = array(
             'controller' => 'quotes',
@@ -41,7 +41,7 @@ foreach ($quotes as $quote) {
                 'link' => $link,
                 'guid' => array('url' => $link, 'isPermaLink' => 'true'),
                 'description' =>  $bodyText,
-                'dc:creator' => $quote['Quote']['prf_name'],
+                'dc:creator' => $quote['Prf']['name'],
                 'pubDate' => $time
             )
         );

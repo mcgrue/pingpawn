@@ -16,7 +16,7 @@ foreach ($comments as $c) {
 
         $time = strtotime($c['created']);
         
-        $title = $c['name'].' on ('.$q['prf_name']. ') #'.$q['id'];
+        $title = $c['name'].' on  #'.$q['id'];
         
         $link = array(
             'controller' => 'quotes',

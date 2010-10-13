@@ -6,7 +6,7 @@ class Quote extends AppModel {
     var $useTable = 'quotes';
     
     var $hasMany = array('Comment'=>array('className'=>'Comment'));
-    var $belongsTo = 'User';
+    var $belongsTo = array('User', 'Prf');
     
     var $hasAndBelongsToMany =
         array(

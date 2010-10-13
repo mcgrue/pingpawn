@@ -15,7 +15,7 @@ class QuotesController extends AppController {
     function _index( $id=null ) {
         if( $id ) {
             $res = $this->Quote->findById($id);
-            
+
             if(isset($res)) {
                 $this->set('res', $res);
             } else {
