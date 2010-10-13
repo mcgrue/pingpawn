@@ -84,7 +84,7 @@
                 font-weight: bold;
             }
             
-            .twtr-tweet-wrap {
+            .call_to_action, .twtr-tweet-wrap {
                 display: none;
             }
             
@@ -203,6 +203,7 @@
                 cnt = cnt.replace( /&lt;/g, '<br>  &lt;' ).replace('<a class="twtr-hyperlink', '<br><a class="twtr-hyperlink').replace('</a> <br>', '</a>');
                 $('.twtr-tweet-text p').html(cnt)
                 $('.twtr-tweet-wrap').fadeIn(300);
+                $('.call_to_action').fadeIn(300);
                 clearInterval(interval);
             }
         },500);
