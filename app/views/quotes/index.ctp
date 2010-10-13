@@ -18,7 +18,11 @@ if( isset($res['Comment']) ) {
     }
 }
 
-$users = $res['Commentors'];
+$users = array();
+
+if(!empty($res['Commentors'])) {
+    $users = $res['Commentors'];
+}
 
 $str = str_replace( '<', '<p>&lt;', $quote['quote'] );
 
