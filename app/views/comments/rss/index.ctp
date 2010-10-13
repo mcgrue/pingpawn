@@ -4,7 +4,7 @@ $this->set('documentData', array(
 );
 
 $this->set('channelData', array(
-    'title' => __("Most Recent Comments", true),
+    'title' => __("PingPawn - Most Recent Comments", true),
     'link' => $this->Html->url('/', true),
     'description' => __("Most recent comments.", true),
     'language' => 'en-us')
