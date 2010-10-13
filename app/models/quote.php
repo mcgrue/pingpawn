@@ -58,13 +58,16 @@ class Quote extends AppModel {
         return $results;
     }
     
-    
     function easy_save( $name, $quote, $user_id ) {
         
         $_SESSION['quick_prf'] = $name;
         
         $name = mysql_real_escape_string(stripslashes($name));
         $quote = mysql_real_escape_string(stripslashes($quote));
+        
+        $this->query( "
+            INSERT IGNORE INTO `prfs`(user_id, name, url_key) VALUES (889031, '$name', '$name');
+        " );
         
         $this->query( "
             INSERT INTO `quotes`( `prf_name`, `quote`, `active`, `time_added`, `user_id` )
