@@ -301,6 +301,4 @@
  */
 	Cache::config('default', array('engine' => 'File'));
 
-
-
     include_once(ROOT.'/app/plugins/spark_plug/config/config.php');
