@@ -23,6 +23,7 @@
         echo $this->Html->script('jquery');
         echo $this->Html->script('jquery.simplemodal');
         echo $this->Html->script('basic');
+        echo $this->Html->script('eip');
 	?>
 </head>
 <body>

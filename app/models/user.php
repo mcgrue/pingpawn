@@ -87,4 +87,41 @@ class User extends AppModel{
             return 0;
         }
     }
+    
+    public function get_moderation_count($user_id) {
+        $res = $this->query(
+            "SELECT COUNT(*) as cnt
+               FROM quotes
+              WHERE
+                    quotes.active != 1
+                AND 
+                    quotes.user_id = $user_id;
+            "
+        );
+        
+        if(!empty($res[0][0]['cnt'])) {
+            return $res[0][0]['cnt'];
+        }
+        
+        return 0;
+    }
+    
+    public function get_top_moderation_item($user_id) {
+        $res = $this->query(
+            "SELECT * 
+               FROM quotes
+              WHERE
+                    quotes.active != 1
+                AND 
+                    quotes.user_id = $user_id
+              LIMIT 1;
+            "
+        );
+        
+        if(!empty($res[0]['quotes'])) {
+            return $res[0]['quotes'];
+        }
+        
+        return array();
+    }
 }

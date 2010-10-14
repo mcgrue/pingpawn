@@ -42,6 +42,8 @@ $title = $quote['title'] ? $quote['title'] : 'Untitled Quote (#'.$quote['id'].')
         <span class="voted <?= ($vote<0)?'down':'' ?>">-</span>
     <? endif; ?>
 </div>
+
+
 <h1><?=$title ?></h1>
 <h2>from the <?= $html->link( $prf['name'].' quotefile','/quotefile/'.$prf['id'] )   ?></h2>
 
