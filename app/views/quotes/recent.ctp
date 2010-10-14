@@ -1,5 +1,11 @@
 <style>
 
+h1.recent {
+    margin-bottom: 40px;
+    position: relative;
+    top: 10px;
+}
+
 .title a {
     color: #666;
     text-decoration: none;
@@ -25,7 +31,7 @@
 }
 </style>
 
-<h1 style="font-size: 20px; margin-bottom: 20px;">Most recent quotes</h1>
+<h1 class="recent">Most recent quotes</h1>
 <? foreach( $res as $q ):
     $prf = $q['Prf'];
     $q = $q['Quote'];
