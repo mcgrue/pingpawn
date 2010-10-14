@@ -143,9 +143,10 @@ body {
 }
 
 #flashMessage a{
+    font-family: LeagueGothicRegular, sans-serif;
     text-decoration:none;
-    color: #6f5074;
-    font-weight: bold;
+    color: black;
+    letter-spacing: 1px;
 }
 
 #flashMessage a:hover{

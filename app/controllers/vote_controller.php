@@ -8,7 +8,7 @@ class VoteController extends AppController {
     
     function _vote($id, $vote) {
         if(!$this->sessuser) {
-            $this->flashAndGo('You must be logged in to vote.', '/quotes/'.$id);
+            $this->flashAndGo('You must be <a href="/twitter/login/1/">logged in</a> to vote.', '/quotes/'.$id);
         }
         
         $id = (int)$id;

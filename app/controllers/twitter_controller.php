@@ -8,7 +8,8 @@ class TwitterController extends AppController {
     var $uses = array('User');
     var $components = array('Cookie', 'OauthConsumer');
     
-    public function login() {
+    public function login($return=false) {
+        
         if( isset($sessuser) ) {
             $this->flashAndGo('You need to be logged out to log in, '.$sessuser['User']['display_name']);    
         }
@@ -22,6 +23,12 @@ class TwitterController extends AppController {
         $requestToken = $this->OauthConsumer->getRequestToken('Twitter', 'http://twitter.com/oauth/request_token', $response_url );
 
         $this->Cookie->write('twitter_request_token_2', $requestToken);
+        
+        if( $return && !empty($_SERVER['HTTP_REFERER']) ) {
+            $this->Cookie->write('after_login',$_SERVER['HTTP_REFERER']);
+        } else {
+            $this->Cookie->write('after_login', false);
+        }
         
         $this->redirect('http://twitter.com/oauth/authorize?oauth_token=' . $requestToken->key);
     }
@@ -79,7 +86,14 @@ class TwitterController extends AppController {
             
             Authsome::persist('2 weeks');
             
-            $this->flashAndGo( 'You are now logged in, '.$user['User']['display_name'], '/users/home' );   
+            $return = $this->Cookie->read('after_login');
+            if($return) {
+                $this->Cookie->write('after_login', 'false');
+            } else {
+                $return = '/users/home';
+            }
+            
+            $this->flashAndGo( 'You are now logged in, '.$user['User']['display_name'], $return );   
             
         } else {
             $this->flashAndGo( 'There was a weird problem: '.$res, '/' );   
