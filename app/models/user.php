@@ -1,7 +1,7 @@
 <?
 class User extends AppModel{
 
-    public $hasMany = array('LoginToken');
+    public $hasMany = array('LoginToken', 'Prf');
     
     public function authsomeLogin($type, $credentials = array()) {
         switch ($type) {
@@ -66,5 +66,30 @@ class User extends AppModel{
     
     public function beforeFind($foo) {
         $this->query( 'DELETE FROM `login_tokens` WHERE `expires` < NOW(); ' );
+    }
+    
+    public function count_upvotes($uid) {
+        $res = $this->query( 'SELECT COUNT(*) as up_cnt FROM votes WHERE vote > 0; ' );
+        
+        if(!empty($res[0][0]['up_cnt'])) {
+            return $res[0][0]['up_cnt'];
+        } else {
+            return 0;
+        }
+    }
+
+    public function count_downvotes($uid) {
+        $res = $this->query( 'SELECT COUNT(*) as dwn_cnt FROM votes WHERE vote < 0; ' );
+
+        if(!empty($res[0][0]['dwn_cnt'])) {
+            return $res[0][0]['dwn_cnt'];
+        } else {
+            return 0;
+        }
+    }
+
+    
+    public function mass_import() {
+        
     }
 }
