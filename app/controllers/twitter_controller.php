@@ -88,9 +88,9 @@ class TwitterController extends AppController {
             
             $return = $this->Cookie->read('after_login');
             if($return) {
-                $return = substr($return, stripos($return, '/'));
+                $str = substr($return, stripos($return, '/')+1);
+                $return = substr($str, stripos($str, '/'));
                 error_log('$return: ('.$return.')');
-                $this->Cookie->write('after_login', 'false');
             } else {
                 $return = '/users/home';
             }
