@@ -88,8 +88,8 @@ class TwitterController extends AppController {
             
             $return = $this->Cookie->read('after_login');
             if($return) {
-                $str = substr($return, stripos($return, '/')+1);
-                $return = substr($str, stripos($str, '/'));
+                
+                $return = substr($str, stripos($str, 'pingpawn.com')+12);
                 error_log('$return: ('.$return.')');
             } else {
                 $return = '/users/home';
