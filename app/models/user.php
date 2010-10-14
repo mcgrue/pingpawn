@@ -69,7 +69,7 @@ class User extends AppModel{
     }
     
     public function count_upvotes($uid) {
-        $res = $this->query( 'SELECT COUNT(*) as up_cnt FROM votes WHERE vote > 0; ' );
+        $res = $this->query( "SELECT COUNT(*) as up_cnt FROM votes WHERE vote > 0 AND user_id = $uid; " );
         
         if(!empty($res[0][0]['up_cnt'])) {
             return $res[0][0]['up_cnt'];
@@ -79,7 +79,7 @@ class User extends AppModel{
     }
 
     public function count_downvotes($uid) {
-        $res = $this->query( 'SELECT COUNT(*) as dwn_cnt FROM votes WHERE vote < 0; ' );
+        $res = $this->query( "SELECT COUNT(*) as dwn_cnt FROM votes WHERE vote < 0 AND user_id = $uid; " );
 
         if(!empty($res[0][0]['dwn_cnt'])) {
             return $res[0][0]['dwn_cnt'];
