@@ -20,7 +20,7 @@ class UsersController extends AppController {
             $this->flashAndGo('You must be logged in to upload a quotefile.', '/');
         }
         
-        if( isset($_POST) ) {
+        if( !empty($_POST) ) {
             pr2($_POST);
         }
 	}

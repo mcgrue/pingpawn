@@ -88,7 +88,6 @@ class TwitterController extends AppController {
             
             $return = $this->Cookie->read('after_login');
             if($return) {
-                
                 $return = substr($return, stripos($return, 'pingpawn.com')+12);
                 error_log('$return: ('.$return.')');
             } else {
