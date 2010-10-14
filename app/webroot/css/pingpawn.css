@@ -235,17 +235,16 @@ body {
 }
 
 #content h3 {
-    color: #999;
+    color: #888;
 }
 
 #content .tags {
     color: #aaa;
 }
 
-
-
 #content p {
     padding-top: 8px;
+    color: #666;
 }
 
 #content .quote {
