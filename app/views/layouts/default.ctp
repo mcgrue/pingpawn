@@ -87,7 +87,6 @@
             .call_to_action, .twtr-tweet-wrap {
                 display: none;
             }
-            
         </style>
         
         <div id="content">
@@ -239,7 +238,9 @@
 <? if(!empty($inactive)): ?>
     <div id="inactive">&nbsp;</div>
 <? endif; ?>
-
+<? if(!empty($pending)): ?>
+    <div id="pending">&nbsp;</div>
+<? endif; ?>
 
 </body>
 </html>

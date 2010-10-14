@@ -87,9 +87,4 @@ class User extends AppModel{
             return 0;
         }
     }
-
-    
-    public function mass_import() {
-        
-    }
 }

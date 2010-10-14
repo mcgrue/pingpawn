@@ -15,6 +15,17 @@ class UsersController extends AppController {
         
 	}
     
+    function mass_upload() {
+        if(!$this->sessuser) {
+            $this->flashAndGo('You must be logged in to upload a quotefile.', '/');
+        }
+        
+        if( isset($_POST) ) {
+            pr2($_POST);
+        }
+	}
+
+    
     function logout() {
         Authsome::logout();
         $this->flashAndGo('You are now logged out.', '/');

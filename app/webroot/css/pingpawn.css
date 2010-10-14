@@ -262,6 +262,7 @@ body {
     color: #9b9;
 }
 
+
 /*
 .modal-dialog-form label {
     width: 120px;
@@ -374,4 +375,9 @@ h2 a:hover {
     position: fixed;
     top:20px;
     opacity: .5;
+}
+
+hr {
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
 }
