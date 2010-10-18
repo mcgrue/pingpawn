@@ -34,7 +34,7 @@ class QuotesController extends AppController {
                 $this->set('ads_on', 1);
                 
             } else {
-                $this->cakeError('error404');
+                $this->cakeError('error404', array());
             }
         }
         
@@ -63,7 +63,7 @@ class QuotesController extends AppController {
     function manage() {
         $userID = $this->Session->read('User.id');
         if(!$userID) {
-            $this->cakeError('error404', 'You must be logged in to perform that action.');
+            $this->flashAndGo('You must be logged in to perform that action.', '/');
         }
     }
     
@@ -82,7 +82,7 @@ class QuotesController extends AppController {
         
         $userID = $this->Session->read('User.id');
         if(!$userID) {
-            $this->cakeError('error404', 'You must be logged in to perform that action.');
+            $this->flashAndGo('You must be logged in to perform that action.', '/');
         }
     }
        
