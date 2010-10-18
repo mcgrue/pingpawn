@@ -247,5 +247,9 @@
     <div id="pending">&nbsp;</div>
 <? endif; ?>
 
+<? if(!empty($sessuser)): ?>
+<script type="text/javascript" src="http://www.getachievements.com/unlock/notifier.js?set=4db58145f7f070ecf66437d25c358fc7&email_hash=<?=get_achievements_md5($sessuser)  ?>"></script>
+<? endif; ?>
+
 </body>
 </html>
