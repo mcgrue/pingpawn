@@ -13,4 +13,18 @@ class RandomController extends AppController {
         
         $this->cakeError('error500');
 	}
+    
+    function unvoted() {
+        if(!$this->sessuser) {
+            $this->flashAndGo('You must be logged in to see random quotes that you haven\'t met yet.', '/');
+        }
+        
+        $id = $this->Quote->get_random_unvoted($this->sessuser['User']['id']);
+                
+        if( $id ) {
+            $this->redirect(array('controller'=>'quotes', 'action'=>'index', $id) );
+        }
+        
+        $this->cakeError('error500');        
+    }
 }

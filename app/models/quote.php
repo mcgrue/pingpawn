@@ -95,4 +95,27 @@ class Quote extends AppModel {
         
         return $this->save_quote( $prf_id, $user_id, $quote );
     }
+    
+    function get_random_unvoted($uid) {
+        $uid = (int)$uid;
+        if( $uid <= 0 ) {
+            return false;
+        }
+        
+        $sql = "
+            SELECT *
+              FROM quotes
+             WHERE id NOT IN ( SELECT quote_id FROM votes WHERE user_id = $uid )
+             ORDER BY RAND()
+             LIMIT 1
+        ";
+        
+        $res = $this->query( $sql );
+        
+        if( !empty($res[0]['quotes']['id']) ) {
+            return $res[0]['quotes']['id'];
+        }
+        
+        return false;
+    }
 }

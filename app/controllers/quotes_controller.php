@@ -37,7 +37,6 @@ class QuotesController extends AppController {
             } else {
                 $this->cakeError('error404');
             }
-            
         }
         
         $pf_name = $this->Cookie->read('Comments.name');

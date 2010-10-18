@@ -3,6 +3,19 @@ class User extends AppModel{
 
     public $hasMany = array('LoginToken', 'Prf');
     
+    public function afterSave($created) {
+        if($created) {
+            $uid = (int)$this->data['User']['id'];
+            if($uid <= 0) {
+                return false;
+            }
+            
+            $this->query(
+                "UPDATE `users` SET `first_joined` = NOW() WHERE id = $uid "
+            );
+        }
+    }
+    
     public function authsomeLogin($type, $credentials = array()) {
         switch ($type) {
             case 'guest':

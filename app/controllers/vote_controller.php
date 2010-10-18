@@ -34,7 +34,7 @@ class VoteController extends AppController {
         
         $this->Vote->perform_civic_duty($id, $this->sessuser['User']['id'], $vote);
         
-        $help = '<a href=/random>Go to Random Quote?</a>';
+        $help = '<a href="/random/unvoted">Go to Random Quote?</a>';
         
         if($vote > 0) {
             $this->flashAndGo('Successfully voted UP.<br /><br />'.$help, '/quotes/'.$id);
