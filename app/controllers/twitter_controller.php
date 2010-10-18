@@ -87,7 +87,6 @@ class TwitterController extends AppController {
             Authsome::persist('2 weeks');
             
             get_achievements('36db707fd0c7995bff4cf4bcc6b19dc6', $user);
-            get_achievements('acb59b9fdf7fe01cd2c6e56e411204ff', $user);
             
             $return = $this->Cookie->read('after_login');
             if($return) {

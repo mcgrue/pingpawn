@@ -3,10 +3,9 @@
 class QuotesController extends AppController {
     
 	var $name = 'Quotes';
-    
     var $uses = array( 'Quote', 'Vote' );
-    
-    var $components = array('RequestHandler', 'Cookie'); 
+    var $components = array('RequestHandler', 'Cookie');
+    var $helpers = array('Edit');
     
     function _rss($limit=5) {
         $quotes = $this->recent($limit);

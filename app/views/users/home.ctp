@@ -26,4 +26,5 @@
 <ul>
     <li><?= $html->link('mass upload', '/users/mass_upload/'); ?></li>
     <li><?= $html->link('moderation queue', '/users/moderation_queue/'); ?></li>
+    <li><?= $html->link('logout', '/users/logout/'); ?></li>
 </ul>
