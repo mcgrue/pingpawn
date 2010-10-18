@@ -32,12 +32,12 @@
     margin-bottom: 10px;
 }
 
-#basic-modal-content textarea  {
+#add-quote-form textarea  {
     width: 300px;
     height: 100px;
 }
 
-#basic-modal-content .submit {
+#add-quote-form .submit {
     padding-left: 130px;
 }
 
