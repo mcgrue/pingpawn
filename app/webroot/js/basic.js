@@ -14,7 +14,7 @@
 
 jQuery(function ($) {
 	$('#basic-modal .basic').click(function (e) {
-		$('#basic-modal-content').modal();
+		$('#add-quote-form').modal();
 		
 		  return false;
 	});

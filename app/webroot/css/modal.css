@@ -1,4 +1,4 @@
-#basic-modal-content {display:none;}
+#add-quote-form {display:none;}
 
 /* Overlay */
 #simplemodal-overlay {background-color:#000; cursor:wait;}
@@ -8,9 +8,9 @@
 #simplemodal-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; margin-bottom:12px; padding:4px 6px 6px;}
 #simplemodal-container a {color:#ddd;}
 #simplemodal-container a.modalCloseImg {background:url(../img/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
-#simplemodal-container #basic-modal-content {padding:8px;}
+#simplemodal-container #add-quote-form {padding:8px;}
 
-#basic-modal-content h3 {
+#add-quote-form h3 {
     font-size: 32px;
     font-family: 'ChunkFiveRegular', sans-serif;
     font-weight: normal;
@@ -18,7 +18,7 @@
     padding-bottom: 32px;
 }
 
-#basic-modal-content label {
+#add-quote-form label {
     width: 120px;
     float: left;
     text-align: right;
@@ -26,7 +26,7 @@
     clear: both;
 }
 
-#basic-modal-content textarea, #basic-modal-content input {
+#add-quote-form textarea, #add-quote-form input {
     background-color: #aaa;
     border: 1px solid #aaa;
     margin-bottom: 10px;
