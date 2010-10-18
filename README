@@ -1,3 +1,16 @@
 1. You probably want to set up a database.
 2. You probably want to run the scemas in the schemas directory.
 3. You probably want to change app/config/database.php to reflect your database settings.
+
+TODO
+=========
+Editing posts
+SEARCH
+List Management
+Leaderboards
+pretty-urls and titles
+memcache on quotes pages
+
+mobile layout
+
+Achievements?
