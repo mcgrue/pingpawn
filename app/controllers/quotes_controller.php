@@ -5,9 +5,10 @@ class QuotesController extends AppController {
 	var $name = 'Quotes';
     var $uses = array( 'Quote', 'Vote' );
     var $components = array('RequestHandler', 'Cookie');
-    var $helpers = array('Edit');
+    var $helpers = array();
     
     function _rss($limit=5) {
+        
         $quotes = $this->recent($limit);
             
         $this->set(compact('quotes'));
@@ -17,7 +18,7 @@ class QuotesController extends AppController {
         if( $id ) {
             $res = $this->Quote->findById($id);
 
-            if(isset($res)) {
+            if(!empty($res)) {
                 $this->set('res', $res);
                 
                 if(!$res['Quote']['active']) {
@@ -53,6 +54,7 @@ class QuotesController extends AppController {
     }
     
     function index( $id=null ) {
+        
         if( $this->RequestHandler->isRss() ) {
             $this->_rss();
         } else {
@@ -88,6 +90,8 @@ class QuotesController extends AppController {
        
 	public function beforeFiler() {
 		parent::beforeFiler();
+        
+        //$this->helpers[] = array('Edit' => array('sessUser'=>$this->sessuser) );
 	}
     
     public function recent($limit=5) {

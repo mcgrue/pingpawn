@@ -6,6 +6,15 @@ $id = $quote['id'];
 
 $tags = array();
 
+/*
+function can_edit() {
+    global $sessuser, $quote;
+    
+    pr2($sessuser);
+    pr2($quote);
+}
+*/
+
 if( isset($res['Tag']) ) {
     foreach( $res['Tag'] as $t ) {
         $tags[] = $t['tag'];
