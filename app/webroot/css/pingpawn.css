@@ -136,7 +136,7 @@ body {
     font-family: 'ChunkFiveRegular', sans-serif;
     color: #B1D0B1;
     font-size: 32px;
-    background-color: #ccc;
+    background-color: transparent;
     padding: 20px;
     padding-bottom: 30px;
     margin-top: 75px;
