@@ -386,3 +386,7 @@ hr {
     margin-bottom: 30px;
     border: 1px solid #ccc;
 }
+
+#achievement-notifier-wrapper {
+    overflow: hidden;
+}
