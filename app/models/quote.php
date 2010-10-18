@@ -78,8 +78,8 @@ class Quote extends AppModel {
         $quote = mysql_real_escape_string(stripslashes($quote));
         
         $this->query( "
-            INSERT INTO `quotes`( `prf_id`, `quote`, `active`, `time_added`, `user_id` )
-                        VALUES( $prf_id, '$quote', 0, NOW(), $user_id );
+            INSERT INTO `quotes`( `prf_id`, `quote`, `original_quote`, `active`, `time_added`, `user_id` )
+                        VALUES( $prf_id, '$quote', '$quote', 0, NOW(), $user_id );
         " );
         
         $res = $this->query( "SELECT LAST_INSERT_ID() as taco" );
