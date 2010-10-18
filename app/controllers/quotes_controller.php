@@ -113,4 +113,21 @@ class QuotesController extends AppController {
         
         return $res;
     }
+    
+    public function update( $id, $field ) {
+        $this->layout = 'ajax';
+        $this->set('error_text', '');
+        //$this->set('html', json_encode(print_r($_POST, true)) );
+        $this->set('html', 'This is not a true ending.');
+
+/*
+[url] => 'http://localhost/pingpawn/quotes/6399'
+[id] => 'quote_body'
+[form_type] => 'textarea'
+[orig_value] => 'blah blah blah'
+[new_value] => 'blah blah blah'
+[data] => false
+*/
+        
+    }
 }

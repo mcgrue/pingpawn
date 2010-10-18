@@ -4,7 +4,8 @@
     Router::connect('/about/', array('controller' => 'pages', 'action' => 'display', 'about'));
     
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
-    
+
+    Router::connect('/quotes/update/*', array('controller' => 'quotes', 'action' => 'update'));    
     Router::connect('/quotes/rss/*', array('controller' => 'quotes', 'action' => 'rss'));
     Router::connect('/quotes/recent/*', array('controller' => 'quotes', 'action' => 'recent'));
     Router::connect('/quotes/manage/*', array('controller' => 'quotes', 'action' => 'manage'));

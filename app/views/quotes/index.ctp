@@ -6,15 +6,6 @@ $id = $quote['id'];
 
 $tags = array();
 
-/*
-function can_edit() {
-    global $sessuser, $quote;
-    
-    pr2($sessuser);
-    pr2($quote);
-}
-*/
-
 if( isset($res['Tag']) ) {
     foreach( $res['Tag'] as $t ) {
         $tags[] = $t['tag'];
@@ -36,7 +27,11 @@ if(!empty($res['Commentors'])) {
 
 $str = str_replace( '<', '<p>&lt;', $quote['quote'] );
 
-$title = $quote['title'] ? $quote['title'] : 'Untitled Quote (#'.$quote['id'].')';
+$title = $quote['title'] ? $quote['title'] : 'Untitled Quote';
+
+$title_chaser = ' (#'.$quote['id'].')';
+
+$canedit = can_edit($sessuser, $res);
 
 ?>
 
@@ -53,11 +48,11 @@ $title = $quote['title'] ? $quote['title'] : 'Untitled Quote (#'.$quote['id'].')
 </div>
 
 
-<h1><?=$title ?></h1>
+<h1 class="title"><span class="quote_title" id="quote_title"><?=$title ?></span><?= $title_chaser?></h1>
 <h2>from the <?= $html->link( $prf['name'].' quotefile','/quotefile/'.$prf['id'] )   ?></h2>
 
 <div class="quote">
-    <?=$str ?>
+    <div class="body" id="quote_body"><?=$str ?></div>
 </div>
 
 <h3>tags</h3>
@@ -205,4 +200,39 @@ $title = $quote['title'] ? $quote['title'] : 'Untitled Quote (#'.$quote['id'].')
 <? endif ?>
         }
     );
+    
+<? if($canedit): ?>
+    
+    $(".title").append("<div class='edit'></div>");
+    $(".quote").append("<div class='edit'></div>");
+    
+    var _title_init = false;
+    var _body_init = false;
+    
+    $(".title .edit").click(
+        function() {
+            if( !_title_init ) {
+                $( ".title .quote_title" ).eip( "<?=$this->webroot ?>quotes/update/<?=$id?>/title", { cancel_on_esc: true, max_size: 255 } );
+                _title_init = 1;
+            }
+            
+            $(".title .quote_title").click();
+        }
+    )
+    $(".quote .edit").click(
+        function() {
+            if( !_body_init ) {
+                $( ".quote .body" ).eip( "<?=$this->webroot ?>quotes/update/<?=$id?>/body", { form_type: "textarea", cancel_on_esc: true } );
+                _body_init = 1;
+            }
+            
+            $(".quote .body").click();
+        }
+    )
+    
+    //$( "#content" ).eip( "save.php" );
+
+    
+<? endif; ?>
+    
 </script>

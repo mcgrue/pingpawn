@@ -204,7 +204,7 @@
 
     <!-- preload the images -->
     <div style='display:none'>
-        <img src='img/basic/x.png' alt='' />
+        <img src='<?= $this->webroot ?>img/x.png' alt='' />
     </div>
     
     <script>

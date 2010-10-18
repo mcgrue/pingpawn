@@ -390,3 +390,42 @@ hr {
 #achievement-notifier-wrapper {
     overflow: hidden;
 }
+
+.edit {
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/pencil.png);
+    
+    cursor: hand;
+    cursor: pointer;
+    position: absolute;
+}
+
+.title .edit {
+    bottom: 10px;
+    left: -20px;    
+}
+
+.quote .edit {
+    top: 0px;
+    left: -20px;    
+}
+
+.quote {
+    position: relative;
+}
+
+.title {
+    position: relative;
+}
+
+.jeip-editor span {
+    font-size: 16px;
+    color: black;
+    font-weight: normal;
+    font-family: sans-serif;
+}
+
+.jeip-editor {
+    
+}

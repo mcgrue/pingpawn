@@ -242,6 +242,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		};
 		
 		var _saveEdit = function( self, orig_option_value ) {
+            debugger;
 			var orig_value = $( self ).html( );
 			var new_value = $( "#edit-" + self.id ).attr( "value" );
 

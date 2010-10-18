@@ -28,3 +28,17 @@ class AppController extends Controller {
         $this->redirect($go, $response);            
     }
 }
+
+function can_edit($sessuser, $quote) {
+    if(empty($sessuser)) {
+        return false;
+    }
+    
+    if( $sessuser['User']['is_admin'] ) {
+        return true;
+    }
+    
+    $uid = $sessuser['User']['id'];
+    
+    return ( $uid == $quote['Quote']['user_id'] || $uid == $quote['Prf']['user_id'] );    
+}
