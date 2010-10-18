@@ -48,7 +48,11 @@
                             <li class="reassure">(we won't post to your account, honest.)</li>
                         <? endif; ?>
                         <li>&nbsp;</li>
-                        <li><?= $html->link('Random', '/random')  ?></li>
+                        <? if( !empty($sessuser) ): ?>
+                            <li><?= $html->link('Random', '/random/unvoted')  ?></li>
+                        <? else: ?>
+                            <li><?= $html->link('Random', '/random')  ?></li>
+                        <? endif; ?>
                         <li>&nbsp;</li>
                         <li class="unimplemented">Top Quotes</li>
                         <li class="unimplemented">Top Files</li>
