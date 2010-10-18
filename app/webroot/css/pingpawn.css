@@ -136,10 +136,11 @@ body {
     font-family: 'ChunkFiveRegular', sans-serif;
     color: #6f5074;
     font-size: 32px;
-    background-color: #afa6b0;
+    background-color: #aaa;
     padding: 20px;
     padding-bottom: 30px;
-    border: dotted #d8d2d9 3px;
+    border: dotted #999 3px;
+    margin-top: 75px;
 }
 
 #flashMessage a{
