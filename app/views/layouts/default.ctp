@@ -243,9 +243,6 @@
 <? if(!empty($inactive)): ?>
     <div id="inactive">&nbsp;</div>
 <? endif; ?>
-<? if(!empty($pending)): ?>
-    <div id="pending">&nbsp;</div>
-<? endif; ?>
 
 <? if( false /*!empty($sessuser)*/): ?>
 <script type="text/javascript" src="http://www.getachievements.com/unlock/notifier.js?set=4db58145f7f070ecf66437d25c358fc7&email_hash=<?=get_achievements_md5($sessuser)  ?>"></script>

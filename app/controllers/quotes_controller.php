@@ -21,7 +21,7 @@ class QuotesController extends AppController {
             if(!empty($res)) {
                 $this->set('res', $res);
                 
-                if(!$res['Quote']['active']) {
+                if(!$res['Quote']['active'] && can_edit($this->sessuser, $res) ) {
                     $this->set('inactive', 1);
                 }
                 
