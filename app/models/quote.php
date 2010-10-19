@@ -128,12 +128,35 @@ class Quote extends AppModel {
         $this->_updatePrettyUrl($qid, $title);
     }
     
+    function find_info_for_prettyurl( $pretty ) {
+        
+        $pretty = mysql_real_escape_string($pretty);
+        
+        $sql = "SELECT * FROM `quotes_permalinks` WHERE pretty_url = '$pretty';";
+        $res = $this->query($sql);
+        if( !empty($res[0]) ) {
+            return $res[0];
+        }
+        
+        return false; 
+    }
+    
+    function find_permalink_for_id($qid) {
+        $sql = "SELECT * FROM `quotes_permalinks` WHERE quote_id = $qid AND is_current = 1;";
+        $res = $this->query($sql);
+        
+        if(isset($res[0]['quotes_permalinks']['pretty_url'])) {
+            return $res[0]['quotes_permalinks']['pretty_url'];
+        }
+        
+        return false;
+    }
     
 	function _updatePrettyUrl( $qid, $title ) {
         
         $pretty = url_token::tokenize($title);
 		
-        $sql = "UPDATE `quotes_permalinks` SET is_current = 0 WHERE quote_id = $qid";
+        $sql = "UPDATE `quotes_permalinks` SET is_current = 0 WHERE quote_id = $qid;";
         
         $this->query( $sql );
         		

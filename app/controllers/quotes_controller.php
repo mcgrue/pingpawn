@@ -16,6 +16,32 @@ class QuotesController extends AppController {
     
     function _index( $id=null ) {
         if( $id !== null ) {
+            
+            /// inefficient right now, but eh.
+            if( is_numeric($id) ) {
+                $link = $this->Quote->find_permalink_for_id( $id );
+                
+                if($link) {
+                    $this->redirect( '/quotes/'.$link, 301 );
+                    return;
+                }
+            } else {
+                $res = $this->Quote->find_info_for_prettyurl( $id );
+                
+                if( !$res ) {
+                    $this->cakeError('error404', array());
+                    return;
+                } else if( !$res['quotes_permalinks']['is_current'] ) {
+                    
+                    $link = $this->Quote->find_permalink_for_id( $res['quotes_permalinks']['quote_id'] );
+                    
+                    $this->redirect( '/quotes/'.$link, 301 );
+                    return;
+                } else {
+                    $id = $res['quotes_permalinks']['quote_id'];
+                }
+            }
+            
             $res = $this->Quote->findById($id);
             
             if(!empty($res)) {
