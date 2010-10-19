@@ -15,7 +15,7 @@ class QuotesController extends AppController {
     }
     
     function _index( $id=null ) {
-        if( $id && $id > 0 ) {
+        if( $id !== null ) {
             $res = $this->Quote->findById($id);
             
             if(!empty($res)) {
@@ -43,7 +43,9 @@ class QuotesController extends AppController {
                 $this->cakeError('error404', array());
             }
         } else {
-            $this->cakeError('error404', array());
+            $this->recent(20);
+            $this->render('recent');
+            return;
         }
     }
     
