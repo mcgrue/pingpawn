@@ -114,34 +114,47 @@ class QuotesController extends AppController {
     }
     
     public function update( $id, $field ) {
-        
-        $quo = $this->Quote->findById((int)$id);
+        $id = (int)$id;
+        $quo = $this->Quote->findById($id);
         
         $error_text = '';
         $html = '';
         
         if( can_edit($this->sessuser,$quo) ) {
             
+            if( empty($_POST['new_value']) || !trim($_POST['new_value']) ) {
+                $error_text = 'Invalid new value.';
+            } else {
+                if( $field == 'title' ) {
+                    
+                    $title = stripslashes(strip_tags($_POST['new_value']));
+                    
+                    if( is_numeric($title) ) {
+                        $error_text = 'Invalid name: must contain layers.';
+                    } else {
+                        $this->Quote->update_title( $id, $title );
+                        $html = $title;
+                    }
+                } else if( $field == 'body' ) {
+                    $error_text = 'editing quote bodies not implemented yet.';
+                } else {
+                    $error_text = 'Invalid field name.';
+                }
+            }
+            
         } else {
-            $error_text = 'You do not have permission to edit that.';
+            $error_text = 'You do not have permission to edit that. ' + print_r($quo, true);
         }
         
         $data = new Object;
         $data->html = $html;
         $data->error_text = $error_text;
+        $data->is_error = (boolean)$error_text;
         
         $json = json_encode($data);
         
         $this->set('json', $json);
-
-/*
-[url] => 'http://localhost/pingpawn/quotes/6399'
-[id] => 'quote_body'
-[form_type] => 'textarea'
-[orig_value] => 'blah blah blah'
-[new_value] => 'blah blah blah'
-[data] => false
-*/
+        
         $this->layout = 'ajax';
     }
 }

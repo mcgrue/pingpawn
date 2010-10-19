@@ -229,10 +229,6 @@ $canedit = can_edit($sessuser, $res);
             $(".quote .body").click();
         }
     )
-    
-    //$( "#content" ).eip( "save.php" );
-
-    
 <? endif; ?>
     
 </script>

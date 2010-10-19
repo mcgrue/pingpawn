@@ -43,6 +43,21 @@ function can_edit($sessuser, $quote) {
     return ( $uid == $quote['Quote']['user_id'] || $uid == $quote['Prf']['user_id'] );    
 }
 
+function is_alphanum($char) {
+    
+    if( strlen($char) != 1 ) {
+        return false;
+    }
+
+    $ascii = ord($char);
+
+    if( !(($ascii >= 48 && $ascii <= 57) || ($ascii >= 65 && $ascii <= 90) || ($ascii >= 97 && $ascii <= 122)) ) {
+        return false;
+    }
+    
+    return true;
+}
+
 class url_token {
 
     function tokenize($input) {

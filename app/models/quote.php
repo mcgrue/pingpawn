@@ -118,4 +118,42 @@ class Quote extends AppModel {
         
         return false;
     }
+    
+    function update_title( $qid, $title ) {
+        $safetitle = mysql_escape_string($title);
+        
+        $sql = "UPDATE `quotes` SET title = '$safetitle' WHERE id = $qid; ";
+        
+        $this->query($sql);
+        $this->_updatePrettyUrl($qid, $title);
+    }
+    
+    
+	function _updatePrettyUrl( $qid, $title ) {
+        
+        $pretty = url_token::tokenize($title);
+		
+        $sql = "UPDATE `quotes_permalinks` SET is_current = 0 WHERE quote_id = $qid";
+        
+        $this->query( $sql );
+        		
+        $i = 0;
+        do {
+            $url = $pretty;
+            
+            if( $i ) {
+                $url .= '-'.$i;
+            }
+            
+            $sql2 = "
+                INSERT INTO `quotes_permalinks`(`quote_id`, `pretty_url`, `is_current`)
+                                        VALUES ($qid, '$url', 1);
+            ";
+            
+            mysql_query( $sql2 );
+            
+            $i++;
+            
+        } while( mysql_errno() > 0 );
+	}   
 }
