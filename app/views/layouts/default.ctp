@@ -3,8 +3,8 @@
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php __('Ping Pawn: Social Quotes'); ?>
 		<?php echo $title_for_layout; ?>
+        - Ping Pawn: Social Quotes
 	</title>
     
     <? if(isset($rssurl)):  ?>
