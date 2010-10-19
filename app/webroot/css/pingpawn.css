@@ -237,6 +237,14 @@ body {
     font-size: 32px;    
 }
 
+#content .title {
+    color: #AAA;
+}
+
+#quote_title {
+    color: #555;
+}
+
 .recent_quote .title a {
     color: #666;
 }
