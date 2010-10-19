@@ -114,10 +114,25 @@ class QuotesController extends AppController {
     }
     
     public function update( $id, $field ) {
-        $this->layout = 'ajax';
-        $this->set('error_text', '');
-        //$this->set('html', json_encode(print_r($_POST, true)) );
-        $this->set('html', 'This is not a true ending.');
+        
+        $quo = $this->Quote->findById((int)$id);
+        
+        $error_text = '';
+        $html = '';
+        
+        if( can_edit($this->sessuser,$quo) ) {
+            
+        } else {
+            $error_text = 'You do not have permission to edit that.';
+        }
+        
+        $data = new Object;
+        $data->html = $html;
+        $data->error_text = $error_text;
+        
+        $json = json_encode($data);
+        
+        $this->set('json', $json);
 
 /*
 [url] => 'http://localhost/pingpawn/quotes/6399'
@@ -127,6 +142,6 @@ class QuotesController extends AppController {
 [new_value] => 'blah blah blah'
 [data] => false
 */
-        
+        $this->layout = 'ajax';
     }
 }

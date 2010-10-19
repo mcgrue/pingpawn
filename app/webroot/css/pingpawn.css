@@ -51,15 +51,17 @@ body {
 
 
 #footer {
+    font-family: sans-serif;
     margin-top: 20px;
     border-top: 1px dotted #aaa;
+    letter-spacing: 1px;
     font-size: 8px;
     line-height: 10px;
     color: #aaa;
 }
 
 #footer a {
-    color: rose;
+    color: #888;
     text-decoration: none;
 }
 

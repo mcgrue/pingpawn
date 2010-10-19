@@ -42,3 +42,46 @@ function can_edit($sessuser, $quote) {
     
     return ( $uid == $quote['Quote']['user_id'] || $uid == $quote['Prf']['user_id'] );    
 }
+
+class url_token {
+
+    function tokenize($input) {
+        
+        $input = str_replace( "'", '', $input );
+        $input = str_replace( "'", '', $input );
+        $input = strtolower($input);
+        
+        $output = '';
+        $last = '';
+        
+        for( $i=0; $i<strlen($input); $i++ ) {
+            $c = substr( $input, $i, 1 );
+            
+            if( !is_alphanum($c) ) {
+                $c = '-';
+            }
+            
+            if( $c != '-' ) {
+                $output .= $c;
+            } else if( $last != '-' ) {
+                $output .= $c;
+            }
+            
+            $last = $c;
+        }
+        
+        if( substr($output, strlen($output)-1, 1) == '-' ) {
+            $output = substr($output, 0, strlen($output)-1);
+        }
+        
+        if( substr($output, 0, 1) == '-' ) {
+            $output = substr($output, 1);
+        }
+        
+        if(!$output) {
+        	$output = 'unk';
+        }
+        
+        return $output;
+    }
+}
