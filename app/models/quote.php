@@ -119,13 +119,13 @@ class Quote extends AppModel {
         return false;
     }
     
-    function update_title( $qid, $title ) {
+    function update_title( $qid, $title, $uid ) {
         $safetitle = mysql_escape_string($title);
         
         $sql = "UPDATE `quotes` SET title = '$safetitle' WHERE id = $qid; ";
         
         $this->query($sql);
-        $this->_updatePrettyUrl($qid, $title);
+        $this->_updatePrettyUrl($qid, $title, $uid);
     }
     
     function find_info_for_prettyurl( $pretty ) {
@@ -152,7 +152,7 @@ class Quote extends AppModel {
         return false;
     }
     
-	function _updatePrettyUrl( $qid, $title ) {
+	function _updatePrettyUrl( $qid, $title, $uid ) {
         
         $pretty = url_token::tokenize($title);
 		
@@ -169,8 +169,8 @@ class Quote extends AppModel {
             }
             
             $sql2 = "
-                INSERT INTO `quotes_permalinks`(`quote_id`, `pretty_url`, `is_current`)
-                                        VALUES ($qid, '$url', 1);
+                INSERT INTO `quotes_permalinks`(`quote_id`, `pretty_url`, `is_current`, `user_id`)
+                                        VALUES ($qid, '$url', 1, $uid);
             ";
             
             mysql_query( $sql2 );

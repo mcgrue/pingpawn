@@ -158,7 +158,7 @@ class QuotesController extends AppController {
                     if( is_numeric($title) ) {
                         $error_text = 'Invalid name: must contain layers.';
                     } else {
-                        $this->Quote->update_title( $id, $title );
+                        $this->Quote->update_title( $id, $title, $this->sessuser['User']['id'] );
                         $html = $title;
                     }
                 } else if( $field == 'body' ) {
