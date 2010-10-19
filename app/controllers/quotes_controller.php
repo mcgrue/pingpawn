@@ -15,9 +15,9 @@ class QuotesController extends AppController {
     }
     
     function _index( $id=null ) {
-        if( $id ) {
+        if( $id && $id > 0 ) {
             $res = $this->Quote->findById($id);
-
+            
             if(!empty($res)) {
                 
                 if( !isset($res['Prf']) && !isset($res['Quote']) ) {
@@ -42,20 +42,9 @@ class QuotesController extends AppController {
             } else {
                 $this->cakeError('error404', array());
             }
+        } else {
+            $this->cakeError('error404', array());
         }
-        
-        $pf_name = $this->Cookie->read('Comments.name');
-        $pf_email = $this->Cookie->read('Comments.email');
-        $pf_www = $this->Cookie->read('Comments.website');
-
-        if( isset($sessuser['User']['username']) ) {
-            $pf_name = $sessuser['User']['username'];
-            pr2($sessuser, 'hi');
-        }
-        
-        $this->set('pf_name', $pf_name);
-        $this->set('pf_email', $pf_email);
-        $this->set('pf_www', $pf_www);        
     }
     
     function index( $id=null ) {
