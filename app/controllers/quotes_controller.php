@@ -19,6 +19,11 @@ class QuotesController extends AppController {
             $res = $this->Quote->findById($id);
 
             if(!empty($res)) {
+                
+                if( !isset($res['Prf']) && !isset($res['Quote']) ) {
+                    pr2($res, 'res');
+                }
+                
                 $this->set('res', $res);
                 
                 if(!$res['Quote']['active'] && can_edit($this->sessuser, $res) ) {

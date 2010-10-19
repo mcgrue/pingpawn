@@ -289,6 +289,9 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 				type	: "POST",
 				dataType: "json",
 				data	: ajax_data,
+                complete : function( a, b ) {
+                    debugger;  
+                },
 				success	: function( data ) {
 					$( "#editor-" + self.id ).fadeOut( "fast" );
 					$( "#editor-" + self.id ).remove( );
