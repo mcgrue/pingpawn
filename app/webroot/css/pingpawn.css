@@ -259,8 +259,6 @@ body {
 
 
 
-
-
 #add-tag-link, #add-comment-link {
     cursor: hand;
     cursor: pointer;
@@ -402,12 +400,12 @@ hr {
 }
 
 .title .edit {
-    bottom: 10px;
+    bottom: 9px;
     left: -20px;    
 }
 
 .quote .edit {
-    top: 0px;
+    top: 8px;
     left: -20px;    
 }
 
