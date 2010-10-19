@@ -128,6 +128,14 @@ class Quote extends AppModel {
         $this->_updatePrettyUrl($qid, $title, $uid);
     }
     
+    function update_body( $qid, $body, $uid ) {
+        $safebody = mysql_escape_string($body);
+        
+        $sql = "UPDATE `quotes` SET quote = '$safebody', last_edited_by = $uid, is_formatted = 1 WHERE id = $qid; ";
+        
+        $this->query($sql);
+    }
+    
     function find_info_for_prettyurl( $pretty ) {
         
         $pretty = mysql_real_escape_string($pretty);

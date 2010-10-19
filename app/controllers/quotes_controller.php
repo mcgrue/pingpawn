@@ -158,13 +158,22 @@ class QuotesController extends AppController {
                     $title = stripslashes(strip_tags($_POST['new_value']));
                     
                     if( is_numeric($title) ) {
-                        $error_text = 'Invalid name: must contain layers.';
+                        $error_text = 'Invalid name: must contain letters.';
                     } else {
                         $this->Quote->update_title( $id, $title, $this->sessuser['User']['id'] );
                         $html = $title;
                     }
                 } else if( $field == 'body' ) {
-                    $error_text = 'editing quote bodies not implemented yet.';
+                    
+                    $body = stripslashes($_POST['new_value']);
+                    
+                    if($body) {
+                        $this->Quote->update_body( $id, $body, $this->sessuser['User']['id'] );
+                        $html = $body;                        
+                    } else {
+                        $error_text = 'Invalid body: must contain... content.';   
+                    }
+                    
                 } else {
                     $error_text = 'Invalid field name.';
                 }

@@ -30,7 +30,7 @@
     <div id="container">
         
         <div id="leftbar">
-            <a href="/">
+            <a href="<?= $this->webroot ?>">
             <div id="leftbar_top">
                 <h1>PING PAWN</h1>
             </div>

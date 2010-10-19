@@ -1,4 +1,17 @@
+<script>
+    function do_formatting(str) {
+        str = str.replace( /</g, '&lt;' );
+        str = str.replace( /\n/g, '</p><p>' );
+        return str;
+    }
+</script>
 <?
+    function do_formatting($str) {
+        $str = str_replace( '<', '&lt;', $str );
+        $str = preg_replace ( '/\n/' , '</p><p>' , $str );
+        return $str;
+    }
+
 
 $prf = $res['Prf'];
 $quote = $res['Quote'];
@@ -25,7 +38,11 @@ if(!empty($res['Commentors'])) {
     $users = $res['Commentors'];
 }
 
-$str = str_replace( '<', '<p>&lt;', $quote['quote'] );
+if( $quote['is_formatted'] ) {
+    $str = do_formatting( $quote['quote'] );        
+} else {
+    $str = str_replace( '<', '<p>&lt;', $quote['quote'] );
+}
 
 $title = $quote['title'] ? $quote['title'] : 'Untitled Quote';
 
@@ -219,12 +236,27 @@ $canedit = can_edit($sessuser, $res);
             $(".title .quote_title").click();
         }
     )
+    
+    var pre_edit_body;
+    
+    var body_error = function() {
+        $(".quote .body").html(pre_edit_body);
+    }
+    
+    var body_success = function(o, reshtml) {
+        $(o).html(do_formatting(reshtml));
+    }
+    
     $(".quote .edit").click(
         function() {
             if( !_body_init ) {
-                $( ".quote .body" ).eip( "<?=$this->webroot ?>quotes/update/<?=$id?>/body", { form_type: "textarea", cancel_on_esc: true } );
+                $( ".quote .body" ).eip( "<?=$this->webroot ?>quotes/update/<?=$id?>/body", { form_type: "textarea", cancel_on_esc: true, on_error: body_error, after_save: body_success } );
                 _body_init = 1;
             }
+            
+            pre_edit_body = $(".quote .body").html();
+            
+            $(".quote .body").html( $("#original_quote").html() );
             
             $(".quote .body").click();
         }
@@ -232,3 +264,4 @@ $canedit = can_edit($sessuser, $res);
 <? endif; ?>
     
 </script>
+<textarea id="original_quote" style="display: none;"><?= $quote['original_quote']; ?></textarea>
