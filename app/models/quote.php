@@ -8,6 +8,8 @@ class Quote extends AppModel {
     var $hasMany = array('Comment'=>array('className'=>'Comment'));
     var $belongsTo = array('User', 'Prf');
     
+    var $conditions = array('is_public'=>1);
+    
     var $hasAndBelongsToMany =
         array(
             'Tag' => 
@@ -85,6 +87,13 @@ class Quote extends AppModel {
         $res = $this->query( "SELECT LAST_INSERT_ID() as taco" );
         
         return $res[0][0]['taco'];        
+    }
+    
+    function deactivate($id) {
+        $id = (int)$id;
+        $this->query( "
+            UPDATE `quotes` SET `is_public` = 0 WHERE id = $id;
+        " );
     }
     
     function easy_save( $name, $quote, $user_id ) {

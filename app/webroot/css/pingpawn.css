@@ -411,6 +411,16 @@ hr {
     position: absolute;
 }
 
+.delete {
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/delete.png);
+    
+    cursor: hand;
+    cursor: pointer;
+    position: absolute;
+}
+
 h1.title {
     padding-left: 30px;
 }
@@ -421,6 +431,11 @@ h2.fromfile {
 
 .title .edit {
     bottom: 9px;
+    left: -20px;    
+}
+
+.title .delete {
+    bottom: -14px;
     left: -20px;    
 }
 

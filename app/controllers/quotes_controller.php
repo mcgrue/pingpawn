@@ -137,13 +137,26 @@ class QuotesController extends AppController {
             $limit = 20;
         }
         
-        $res = $this->Quote->find( 'all', array('order' => 'Quote.id DESC', 'limit' => $limit) );
+        $res = $this->Quote->find( 'all', array('conditions' => $this->Quote->conditions, 'order' => 'Quote.id DESC', 'limit' => $limit) );
         $this->set('res', $res);
         
         $this->set('rssurl', '/quotes/index.rss');
         $this->set('rssname', 'Ping Pawn RSS Feed');
         
         return $res;
+    }
+    
+    public function delete( $id ) {
+        $id = (int)$id;
+        $quo = $this->Quote->findById($id);
+        
+        if( can_edit($this->sessuser,$quo) ) {
+            $this->Quote->deactivate($id);
+            $this->flashAndGo( 'Quote DELETED from website.', '/' );
+        } else {
+            $this->flashAndGo( 'You cannot do that.', '/' );
+        }
+        
     }
     
     public function update( $id, $field ) {

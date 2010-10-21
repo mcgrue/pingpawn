@@ -221,6 +221,7 @@ $canedit = can_edit($sessuser, $res);
 <? if($canedit): ?>
     
     $(".title").append("<div class='edit'></div>");
+    $(".title").append("<div class='delete'></div>");
     $(".quote").append("<div class='edit'></div>");
     
     var _title_init = false;
@@ -234,6 +235,16 @@ $canedit = can_edit($sessuser, $res);
             }
             
             $(".title .quote_title").click();
+        }
+    )
+    
+    $(".title .delete").click(
+        function() {
+            
+            var i = confirm('Are you sure you want to remove this quote from the website?');
+            if( i ) {
+                window.location.href = '<?=$this->webroot ?>quotes/delete/<?=$id?>';
+            }
         }
     )
     
