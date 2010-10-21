@@ -46,6 +46,11 @@ class QuotesController extends AppController {
             
             if(!empty($res)) {
                 
+                if( !$res['Quote']['is_public'] ) {
+                    $this->cakeError('error404', array());
+                    return;
+                }
+                
                 $this->set('res', $res);
                 
                 if( trim($res['Quote']['title']) ) {
