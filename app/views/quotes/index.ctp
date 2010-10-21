@@ -66,7 +66,7 @@ $canedit = can_edit($sessuser, $res);
 
 
 <h1 class="title"><span class="quote_title" id="quote_title"><?=$title ?></span><?= $title_chaser?></h1>
-<h2>from the <?= $html->link( $prf['name'].' quotefile','/quotefile/'.$prf['id'] )   ?></h2>
+<h2 class="fromfile">from the <?= $html->link( $prf['name'].' quotefile','/quotefile/'.$prf['id'] )   ?></h2>
 
 <div class="quote">
     <div class="body" id="quote_body"><?=$str ?></div>

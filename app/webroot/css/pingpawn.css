@@ -343,6 +343,8 @@ h2 a:hover {
     left: 0px;
     
     font-size: 36px;
+    padding-top: 30px;
+    padding-left: 30px;
 }
 
 #voting a {
@@ -407,6 +409,14 @@ hr {
     cursor: hand;
     cursor: pointer;
     position: absolute;
+}
+
+h1.title {
+    padding-left: 30px;
+}
+
+h2.fromfile {
+    padding-left: 30px;
 }
 
 .title .edit {
