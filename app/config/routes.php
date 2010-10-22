@@ -14,4 +14,22 @@
     Router::connect('/quotes/*', array('controller' => 'quotes', 'action' => 'index'));
     Router::connect('/q/*', array('controller' => 'quotes', 'action' => 'index'));
 
+    Router::connect(
+        '/quotefile/:id',
+        array('controller' => 'quotefile', 'action' => 'lookup'),
+        array(
+            'id' => '[0-9]+',
+            'pass' => array('id')
+        )
+    );
+    
+    Router::connect(
+        '/quotefile/*',
+        array('controller' => 'quotefile', 'action' => 'view')
+    );
+    
+    
+
     Router::parseExtensions('rss');
+    
+    
