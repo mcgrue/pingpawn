@@ -4,7 +4,7 @@ class QuotefileController extends AppController {
 	var $name = 'Quotefile';
     var $uses = 'Prf';
     
-    function view($pretty_url=NULL) {
+    function view($pretty_url=NULL, $action=NULL) {
         $res = $this->Prf->findByUrlKey($pretty_url);
         
         if( !empty($res['Prf']) ) {
@@ -15,6 +15,17 @@ class QuotefileController extends AppController {
             $this->set('stats', $stats);
         } else {
             $this->cakeError('error404', array());
+        }
+        
+        if( $action != NULL ) {
+            switch($action) {
+                case 'listing':
+                    $res = $this->Prf->getQuotefileListing($res['Prf']['id']);
+                    pr2($res, 'listing');
+                    break;
+                default:
+                    $this->cakeError('error404', array());
+            }
         }
     }
     

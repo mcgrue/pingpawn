@@ -55,4 +55,10 @@ class Prf extends AppModel {
         
         return $ret;
     }
+    
+    function getQuotefileListing( $id ) {
+        $sql = "SELECT id, title, tally FROM quotes WHERE prf_id = $id AND is_public = 1;";
+        return mysql_query_assoc($sql);
+        //$this->query($sql);
+    }
 }

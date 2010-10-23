@@ -328,6 +328,7 @@ h2 a:hover {
 }
 
 #inactive {
+    /*
     width: 189px;
     height: 189px;
     background-image: url(../img/inactive.png); 
@@ -335,6 +336,7 @@ h2 a:hover {
     z-index: 300;
     right: 0px;
     top: 0px;
+    */
 }
 
 #voting {
