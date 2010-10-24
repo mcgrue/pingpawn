@@ -2,7 +2,7 @@
 class QuotefileController extends AppController {
 
 	var $name = 'Quotefile';
-    var $uses = 'Prf';
+    var $uses = array('Prf','Quote');
     
     function view($pretty_url=NULL, $action=NULL) {
         $res = $this->Prf->findByUrlKey($pretty_url);
@@ -13,6 +13,21 @@ class QuotefileController extends AppController {
             
             $this->set('prf', $res);
             $this->set('stats', $stats);
+            
+            $this->paginate = array(
+                'limit' => 10,
+                'conditions' => array(
+                    'Quote.is_public' => 1,
+                    'Quote.prf_id' => $res['Prf']['id']
+                ), 
+                'order' => array(
+                    'Quote.tally' => 'desc'
+                )
+            );
+            
+            $data = $this->paginate('Quote');
+            $this->set( 'data', $data );            
+            
         } else {
             $this->cakeError('error404', array());
         }
