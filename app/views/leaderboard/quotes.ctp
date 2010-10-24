@@ -91,6 +91,6 @@ h1.recent {
         <?= $html->link('-','/vote/down/'.$q['id'],array('id'=>'vote_down')); ?>
     </div>
     <div class="title"><?= $this->Html->link($title, '/quotes/'.$q['id'])  ?> <span class="byline">in the <?= $html->link( $prf['name'].' quotefile','/quotefile/'.$prf['id'] ) ?></span></div>
-    <div class="body"><?= $str ?></div>
+    <div class="body"><p><?= $str ?></p></div>
 </div>
 <? endforeach; ?>
