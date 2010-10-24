@@ -54,8 +54,9 @@
                             <li><?= $html->link('Random', '/random')  ?></li>
                         <? endif; ?>
                         <li>&nbsp;</li>
-                        <li class="unimplemented">Top Quotes</li>
-                        <li class="unimplemented">Top Files</li>
+                        <li><?= $html->link('Top Quotes', '/leaderboard/quotes') ?></li>
+                        <li><?= $html->link('Top Quotefiles', '/leaderboard/quotefiles') ?></li>
+                        <li><?= $html->link('Top Voters', '/leaderboard/voters') ?></li>
                         <li><?= $html->link('About', '/about')  ?></li>
                     </ul>
                 </div>
@@ -247,6 +248,33 @@
 <? if( false /*!empty($sessuser)*/): ?>
 <script type="text/javascript" src="http://www.getachievements.com/unlock/notifier.js?set=4db58145f7f070ecf66437d25c358fc7&email_hash=<?=get_achievements_md5($sessuser)  ?>"></script>
 <? endif; ?>
+
+<!-- start uservoice -->
+<script type="text/javascript">
+var uservoiceOptions = {
+  /* required */
+  key: 'pingpawn',
+  host: 'pingpawn.uservoice.com', 
+  forum: '82879',
+  showTab: true,  
+  /* optional */
+  alignment: 'left',
+  background_color:'#bdb', 
+  text_color: 'black',
+  hover_color: '#06C',
+  lang: 'en'
+};
+
+function _loadUserVoice() {
+  var s = document.createElement('script');
+  s.setAttribute('type', 'text/javascript');
+  s.setAttribute('src', ("https:" == document.location.protocol ? "https://" : "http://") + "cdn.uservoice.com/javascripts/widgets/tab.js");
+  document.getElementsByTagName('head')[0].appendChild(s);
+}
+_loadSuper = window.onload;
+window.onload = (typeof window.onload != 'function') ? _loadUserVoice : function() { _loadSuper(); _loadUserVoice(); };
+</script>
+<!-- end uservoice -->
 
 </body>
 </html>
