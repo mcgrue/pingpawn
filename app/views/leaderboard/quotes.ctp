@@ -62,7 +62,6 @@ h1.recent {
 
 <h1 class="recent">Top Quotes</h1>
 <div class="paginator">
-
     <?= $this->Paginator->prev('prev', null, null, array('class' => 'disabled')); ?>
     <?= $this->Paginator->numbers( array('separator'=>' ') ); ?>
     <?= $this->Paginator->next('next', null, null, array('class' => 'disabled')); ?>
@@ -74,8 +73,7 @@ h1.recent {
             'format' => 'Page %page% of %pages%'
         ))
     ?>
-    </span>
-    
+    </span>    
 </div>
 <? foreach( $data as $q ):
     $prf = $q['Prf'];
@@ -94,3 +92,17 @@ h1.recent {
     <div class="body"><p><?= $str ?></p></div>
 </div>
 <? endforeach; ?>
+<div class="paginator">
+    <?= $this->Paginator->prev('prev', null, null, array('class' => 'disabled')); ?>
+    <?= $this->Paginator->numbers( array('separator'=>' ') ); ?>
+    <?= $this->Paginator->next('next', null, null, array('class' => 'disabled')); ?>
+
+    - <span class="page">
+
+    <?=
+        $this->Paginator->counter(array(
+            'format' => 'Page %page% of %pages%'
+        ))
+    ?>
+    </span>    
+</div>
