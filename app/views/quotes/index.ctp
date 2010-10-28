@@ -22,6 +22,7 @@ if(!empty($res['Commentors'])) {
 }
 
 $canedit = can_edit($sessuser, $res);
+
 $id = $res['Quote']['id'];
 
 ?>

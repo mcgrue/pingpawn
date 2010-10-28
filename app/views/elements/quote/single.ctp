@@ -35,6 +35,10 @@ $title_chaser = ' (#'.$quote['id'].')';
 
 $canedit = can_edit($sessuser, $quote);
 
+if( isset($noedit) ) {
+    $canedit = false;    
+}
+
 ?>
 
 <div id="voting">

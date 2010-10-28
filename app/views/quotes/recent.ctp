@@ -24,6 +24,6 @@ h2.fromfile, h2.fromfile a {
         $v = $vote[$qid]['votes']['vote'];
     }
 
-    echo $this->element('quote/single', array('quote'=>$q, 'vote' => $v));
+    echo $this->element('quote/single', array('quote'=>$q, 'vote' => $v, 'noedit' => true));
 
  endforeach;
