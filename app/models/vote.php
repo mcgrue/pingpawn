@@ -2,8 +2,23 @@
 class Vote extends AppModel {
     var $name = 'Vote';
     
-    function get( $qid, $uid ) {
+    function get( $unk, $cid ) {
+        if( is_array($unk) ) {
+            return $this->_get_many($unk, $cid);
+        } else {
+            return $this->_get_one($unk, $cid);
+        }
+    }
+    
+    function _get_one( $qid, $uid ) {
         return $this->query( "SELECT * FROM `votes` WHERE `quote_id`= $qid AND `user_id` = $uid;" );
+    }
+    
+    function _get_many( $qids, $uid ) {
+        
+        $csv = join(',',$qids);
+        
+        return $this->query( "SELECT * FROM `votes` WHERE `quote_id` IN ($csv) AND `user_id` = $uid;" );
     }
 
     function perform_civic_duty( $qid, $uid, $vote) {

@@ -1,21 +1,4 @@
-<script>
-    function do_formatting(str) {
-        str = str.replace( /</g, '&lt;' );
-        str = str.replace( /\n/g, '</p><p>' );
-        return str;
-    }
-</script>
 <?
-    function do_formatting($str) {
-        $str = str_replace( '<', '&lt;', $str );
-        $str = preg_replace ( '/\n/' , '</p><p>' , $str );
-        return $str;
-    }
-
-
-$prf = $res['Prf'];
-$quote = $res['Quote'];
-$id = $quote['id'];
 
 $tags = array();
 
@@ -38,39 +21,12 @@ if(!empty($res['Commentors'])) {
     $users = $res['Commentors'];
 }
 
-if( $quote['is_formatted'] ) {
-    $str = do_formatting( $quote['quote'] );        
-} else {
-    $str = str_replace( '<', '<p>&lt;', $quote['quote'] );
-}
-
-$title = $quote['title'] ? $quote['title'] : 'Untitled Quote';
-
-$title_chaser = ' (#'.$quote['id'].')';
-
 $canedit = can_edit($sessuser, $res);
+$id = $res['Quote']['id'];
 
 ?>
 
-<div id="voting">
-    <? if(empty($vote)): ?>
-        <?= $html->link('+','/vote/up/'.$quote['id'],array('id'=>'vote_up')); ?>
-        <span id="tally">(<?= $quote['tally'] ?>)</span>
-        <?= $html->link('-','/vote/down/'.$quote['id'],array('id'=>'vote_down')); ?>
-    <? else: ?>
-        <span class="voted <?= ($vote>0)?'up':'' ?>">+</span>
-        <span id="tally">(<?= $quote['tally'] ?>)</span>
-        <span class="voted <?= ($vote<0)?'down':'' ?>">-</span>
-    <? endif; ?>
-</div>
-
-
-<h1 class="title"><span class="quote_title" id="quote_title"><?=$title ?></span><?= $title_chaser?></h1>
-<h2 class="fromfile">from the <?= $html->link( $prf['name'].' quotefile','/quotefile/'.$prf['id'] )   ?></h2>
-
-<div class="quote">
-    <div class="body" id="quote_body"><?=$str ?></div>
-</div>
+<?= $this->element('quote/single', array('quote'=>$res)) ?>
 
 <h3>tags</h3>
 <div class="tags">
@@ -273,6 +229,6 @@ $canedit = can_edit($sessuser, $res);
         }
     )
 <? endif; ?>
-    
+
 </script>
 <textarea id="original_quote" style="display: none;"><?= $quote['original_quote']; ?></textarea>

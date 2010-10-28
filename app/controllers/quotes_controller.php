@@ -140,6 +140,25 @@ class QuotesController extends AppController {
         $res = $this->Quote->find( 'all', array('conditions' => $this->Quote->conditions, 'order' => 'Quote.id DESC', 'limit' => $limit) );
         $this->set('res', $res);
         
+        if(!empty($this->sessuser['User']['id'])) {
+            $vqids = array();
+            foreach($res as $q) {
+                $vqids[$q['Quote']['id']] = $q['Quote']['id'];
+            }
+            
+            $v = $this->Vote->get($vqids, $this->sessuser['User']['id']);
+            
+            $vote = array();
+            
+            foreach( $v as $row ) {
+                $vqid = $row['votes']['quote_id'];
+                
+                $vote[$vqid] = $row;
+            }
+            
+            $this->set('vote', $vote);
+        }
+        
         $this->set('rssurl', '/quotes/index.rss');
         $this->set('rssname', 'Ping Pawn RSS Feed');
         

@@ -237,14 +237,6 @@ body {
     font-size: 32px;    
 }
 
-#content .title {
-    color: #AAA;
-}
-
-#quote_title {
-    color: #555;
-}
-
 .recent_quote .title a {
     color: #666;
 }
@@ -421,6 +413,11 @@ hr {
     cursor: hand;
     cursor: pointer;
     position: absolute;
+}
+
+.title a {
+    color: #666;
+    text-decoration: none;
 }
 
 h1.title {
