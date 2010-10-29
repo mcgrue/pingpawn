@@ -42,15 +42,27 @@ if( isset($noedit) ) {
 ?>
 
 <div id="voting">
-    <? if(empty($vote)): ?>
-        <?= $html->link('+','/vote/up/'.$quote['id'],array('id'=>'vote_up')); ?>
-        <span id="tally">(<?= $quote['tally'] ?>)</span>
-        <?= $html->link('-','/vote/down/'.$quote['id'],array('id'=>'vote_down')); ?>
-    <? else: ?>
-        <span class="voted <?= ($vote>0)?'up':'' ?>">+</span>
-        <span id="tally">(<?= $quote['tally'] ?>)</span>
-        <span class="voted <?= ($vote<0)?'down':'' ?>">-</span>
-    <? endif; ?>
+    <?
+        $vote_up_class = '';
+        $vote_down_class = '';
+    
+    
+    if(!empty($vote)) {
+        $vote_up_class = 'voted';
+        $vote_down_class = 'voted';
+        if( $vote > 0 ) {
+            $vote_up_class .= ' up';
+        } else if( $vote < 0 ) {
+            $vote_down_class .= ' down';
+        }   
+    }
+        
+    ?>
+    
+    <?= $html->link('+','/vote/up/'.$quote['id'],array('id'=>'vote_up', 'class'=>$vote_up_class)); ?>
+    <span id="tally">(<?= $quote['tally'] ?>)</span>
+    <?= $html->link('-','/vote/down/'.$quote['id'],array('id'=>'vote_down', 'class'=>$vote_down_class)); ?>
+
 </div>
 
 <h1 class="title"><a href="<?=$PERMALINK ?>"><span class="quote_title" id="quote_title"><?=$title ?></span></a><span id="title_chaser"><?= $title_chaser?></span></h1>

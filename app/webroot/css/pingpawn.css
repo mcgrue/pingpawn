@@ -337,6 +337,8 @@ h2 a:hover {
     color: black;
 }
 
+
+
 #voting #vote_down:hover {
     color: red;
 }
@@ -360,17 +362,29 @@ h2 a:hover {
     color: #aaa;
 }
 
-.voted {
+.voted, #voting a.voted {
     font-weight: bold;
     color: #aaa;
 }
 
-.voted.up {
+.voted.up, #voting a.voted.up {
     color: #2C2;
 }
 
-.voted.down {
+.voted.down, #voting a.voted.down {
     color: red;
+}
+
+#voting a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+#voting a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
 }
 
 #advertisement {

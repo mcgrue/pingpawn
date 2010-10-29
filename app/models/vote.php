@@ -21,6 +21,12 @@ class Vote extends AppModel {
         return $this->query( "SELECT * FROM `votes` WHERE `quote_id` IN ($csv) AND `user_id` = $uid;" );
     }
 
+    function reverse_decision($qid, $uid, $vote) {
+        $this->query( "UPDATE `votes` SET `time_voted` = NOW(), `vote` =  $vote WHERE `quote_id` = $qid AND `user_id` = $uid;" );
+        $vote = $vote + $vote;
+        $this->query( "UPDATE `quotes` SET `tally` = `tally` + $vote WHERE id = $qid; " );
+    }
+
     function perform_civic_duty( $qid, $uid, $vote) {
         $this->query( "INSERT INTO `votes`(`quote_id`, `user_id`, `time_voted`, `vote` ) VALUES ($qid, $uid, NOW(), $vote);" );
         $this->query( "UPDATE `quotes` SET `tally` = `tally` + $vote WHERE id = $qid; " );

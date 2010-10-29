@@ -29,18 +29,26 @@ class VoteController extends AppController {
         
         $res = $this->Vote->get($id, $this->sessuser['User']['id']);
         if( $res ) {
-            $this->flashAndGo('You already voted on this quote.', '/quotes/'.$id);
-        }
-        
-        $this->Vote->perform_civic_duty($id, $this->sessuser['User']['id'], $vote);
-        
-        $help = '<a href="/random/unvoted">Go to Random Quote?</a><br><br>';
-        
-        if($vote > 0) {
-            $this->flashAndGo($help.'Successfully voted UP.', '/quotes/'.$id);
+            
+            $oldvote = $res[0]['votes']['vote'];
+            
+            if( $oldvote == $vote ) {
+                $this->flashAndGo('You already voted that way on this quote.', '/quotes/'.$id);
+            } else {
+                $this->Vote->reverse_decision($id, $this->sessuser['User']['id'], $vote);
+                $this->flashAndGo('Vote successfully switched.', '/quotes/'.$id);
+            }
         } else {
-            $this->flashAndGo($help.'Successfully voted DOWN.', '/quotes/'.$id);
-        }   
+            $this->Vote->perform_civic_duty($id, $this->sessuser['User']['id'], $vote);
+            
+            $help = '<a href="/random/unvoted">Go to Random Quote?</a><br><br>';
+            
+            if($vote > 0) {
+                $this->flashAndGo($help.'Successfully voted UP.', '/quotes/'.$id);
+            } else {
+                $this->flashAndGo($help.'Successfully voted DOWN.', '/quotes/'.$id);
+            }            
+        }
     }
     
     function up($id) {
