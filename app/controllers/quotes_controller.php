@@ -147,9 +147,7 @@ class QuotesController extends AppController {
             }
             
             $v = $this->Vote->get($vqids, $this->sessuser['User']['id']);
-            
             $vote = array();
-            
             foreach( $v as $row ) {
                 $vqid = $row['votes']['quote_id'];
                 

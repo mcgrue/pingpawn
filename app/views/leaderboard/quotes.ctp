@@ -1,43 +1,23 @@
 <style>
 
-h1.recent {
-    margin-bottom: 40px;
-    position: relative;
-    top: 10px;
+h1 .title a, #quote_title {
+    font-size: 24px;
 }
 
-.title a {
-    color: #666;
-    text-decoration: none;
+#voting {
+    font-size: 20px;
 }
 
-.top_quote {
-    margin-bottom: 50px;   
+#tally {
+    font-size: 20px;
 }
 
-.top_quote .title {
-    font-weight: bold;
-    font-size: 14px;
-    color: #888;
+#title_chaser {
+    font-size: 20px;
 }
 
-.top_quote .byline {
-    font-weight: normal;
-    font-size: 10px;
-}
-
-.top_quote .body {
-    color: #AAA;
-}
-
-.top_quote .votes a {
-    color: #888;
-    text-decoration: none;
-    font-size: 12px;
-}
-
-.top_quote .votes #tally {
-    font-size: 16px;
+h2.fromfile, h2.fromfile a {
+    color: #999;
 }
 
 .paginator {
@@ -75,23 +55,21 @@ h1.recent {
     ?>
     </span>    
 </div>
-<? foreach( $data as $q ):
-    $prf = $q['Prf'];
-    $q = $q['Quote'];
+<?
+    foreach( $data as $q ):
+        $qid = $q['Quote']['id'];
+        $v = false;
+        
+        if(isset($vote[$qid]['votes']['vote'])) {
+            $v = $vote[$qid]['votes']['vote'];
+        }
     
-    $str = str_replace( '<', '<p>&lt;', $q['quote'] );
-    $title = $q['title'] ? $q['title'] : 'Untitled Quote (#'.$q['id'].')';
 ?>
 <div class="top_quote">
-    <div class="votes">
-        <?= $html->link('+','/vote/up/'.$q['id'],array('id'=>'vote_up')); ?>
-        <span id="tally">(<?= $q['tally'] ?>)</span>
-        <?= $html->link('-','/vote/down/'.$q['id'],array('id'=>'vote_down')); ?>
-    </div>
-    <div class="title"><?= $this->Html->link($title, '/quotes/'.$q['id'])  ?> <span class="byline">in the <?= $html->link( $prf['name'].' quotefile','/quotefile/'.$prf['id'] ) ?></span></div>
-    <div class="body"><p><?= $str ?></p></div>
+<?= $this->element('quote/single', array('quote'=>$q, 'vote' => $v, 'noedit' => true)) ?>
 </div>
-<? endforeach; ?>
+
+<?  endforeach; ?>
 <div class="paginator">
     <?= $this->Paginator->prev('prev', null, null, array('class' => 'disabled')); ?>
     <?= $this->Paginator->numbers( array('separator'=>' ') ); ?>

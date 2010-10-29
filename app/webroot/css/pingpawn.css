@@ -233,7 +233,7 @@ body {
     font-weight: normal;
     color: #888;
     
-    padding-top: 32px;
+    padding-top: 20px;
     font-size: 32px;    
 }
 
@@ -256,7 +256,7 @@ body {
 
 #content .quote {
     margin-top: 12px;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
 }
 
 
@@ -331,24 +331,10 @@ h2 a:hover {
     */
 }
 
-#voting {
-    position: relative;
-    top: 12px;
-    left: 0px;
-    
-    font-size: 36px;
-    padding-top: 34px;
-    padding-left: 30px;
-}
-
 #voting a {
     text-decoration: none;
     font-weight: bold;
     color: black;
-}
-
-#voting #vote_down {
-    font-size: 48px;
 }
 
 #voting #vote_down:hover {
@@ -359,10 +345,19 @@ h2 a:hover {
     color: #2C2;
 }
 
+#voting {
+    font-size: 20px;
+    padding-left:28px;
+    padding-top:20px;
+}
+
+#tally {
+    font-size: 20px;
+}
+
 #tally {
     font-family: 'ChunkFiveRegular', sans-serif;
     color: #aaa;
-    font-size: 36px;
 }
 
 .voted {
@@ -420,8 +415,9 @@ hr {
     text-decoration: none;
 }
 
-h1.title {
+#content h1.title {
     padding-left: 30px;
+    padding-top: 0px;
 }
 
 h2.fromfile {

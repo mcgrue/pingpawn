@@ -1,3 +1,23 @@
+<style>
+#voting {
+    position: relative;
+    top: 12px;
+    left: 0px;
+    
+    font-size: 36px;
+    padding-top: 34px;
+    padding-left: 30px;
+}
+
+#voting #vote_down {
+    font-size: 48px;
+}
+
+#tally {
+    font-size: 36px;
+}
+
+</style>
 <?
 
 $tags = array();

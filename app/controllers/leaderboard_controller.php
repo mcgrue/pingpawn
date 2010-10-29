@@ -25,6 +25,22 @@ class LeaderboardController extends AppController {
     
     function quotes() {
         $data = $this->paginate('Quote');
+        
+        if( !empty($this->sessuser) ) {
+            $ar = array();
+            foreach($data as $caca) {
+                $ar[] = $caca['Quote']['id'];
+            }
+            $res = $this->Vote->get($ar, $this->sessuser['User']['id']);
+            
+            $ar = array();
+            foreach($res as $v) {
+                $ar[$v['votes']['quote_id']] = $v;
+            }
+            
+            $this->set( 'vote', $ar );
+        }
+        
         $this->set( 'data', $data );
     }
     
