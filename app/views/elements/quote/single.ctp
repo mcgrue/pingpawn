@@ -53,7 +53,7 @@ if( isset($noedit) ) {
     <? endif; ?>
 </div>
 
-<h1 class="title"><span class="quote_title" id="quote_title"><a href="<?=$PERMALINK ?>"><?=$title ?></a></span><span id="title_chaser"><?= $title_chaser?></span></h1>
+<h1 class="title"><a href="<?=$PERMALINK ?>"><span class="quote_title" id="quote_title"><?=$title ?></span></a><span id="title_chaser"><?= $title_chaser?></span></h1>
 <h2 class="fromfile">from the <?= $html->link( $prf['name'].' quotefile','/quotefile/'.$prf['id'] )   ?></h2>
 
 <div class="quote">
