@@ -61,4 +61,9 @@ class Prf extends AppModel {
         return mysql_query_assoc($sql);
         //$this->query($sql);
     }
+    
+    function getLeaderboard() {
+        $sql = " SELECT COUNT(*) as quotecount, SUM(quotes.tally) as tallysum, prf_id FROM quotes WHERE is_public = 1 GROUP BY prf_id ORDER BY tallysum; ";
+        return $this->query($sql);
+    }
 }

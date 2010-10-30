@@ -115,6 +115,7 @@ class Quote extends AppModel {
             SELECT *
               FROM quotes
              WHERE id NOT IN ( SELECT quote_id FROM votes WHERE user_id = $uid )
+               AND is_public = 1
              ORDER BY RAND()
              LIMIT 1
         ";
@@ -195,5 +196,5 @@ class Quote extends AppModel {
             $i++;
             
         } while( mysql_errno() > 0 );
-	}   
+	}
 }
