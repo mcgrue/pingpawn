@@ -40,6 +40,10 @@ function can_edit($sessuser, $quote) {
     
     $uid = $sessuser['User']['id'];
     
+    if(empty($quote['Quote']['user_id']) || empty($quote['Prf']['user_id'])) {
+        return false;
+    }
+    
     return ( $uid == $quote['Quote']['user_id'] || $uid == $quote['Prf']['user_id'] );    
 }
 
