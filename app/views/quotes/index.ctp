@@ -1,4 +1,9 @@
 <style>
+
+#content h1.title {
+    padding-top: 20px;
+}
+
 #voting {
     position: relative;
     top: 12px;
