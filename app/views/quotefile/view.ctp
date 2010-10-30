@@ -96,21 +96,18 @@ h1.recent {
     </span>    
 </div>
 <? foreach( $data as $q ):
-    $prf = $q['Prf'];
-    $q = $q['Quote'];
+
+    $qid = $q['Quote']['id'];
+    $v = false;
     
-    $str = str_replace( '<', '<p>&lt;', $q['quote'] );
-    $title = $q['title'] ? $q['title'] : 'Untitled Quote (#'.$q['id'].')';
+    if(isset($vote[$qid]['votes']['vote'])) {
+        $v = $vote[$qid]['votes']['vote'];
+    }
+    
 ?>
-<div class="top_quote">
-    <div class="votes">
-        <?= $html->link('+','/vote/up/'.$q['id'],array('id'=>'vote_up')); ?>
-        <span id="tally">(<?= $q['tally'] ?>)</span>
-        <?= $html->link('-','/vote/down/'.$q['id'],array('id'=>'vote_down')); ?>
-    </div>
-    <div class="title"><?= $this->Html->link($title, '/quotes/'.$q['id'])  ?> <span class="byline">in the <?= $html->link( $prf['name'].' quotefile','/quotefile/'.$prf['id'] ) ?></span></div>
-    <div class="body"><p><?= $str ?></p></div>
-</div>
+
+<?= $this->element('quote/single', array('quote'=>$q, 'vote' => $v, 'noedit' => true)) ?>
+
 <? endforeach; ?>
 <div class="paginator">
     <?= $this->Paginator->prev('prev', null, null, array('class' => 'disabled')); ?>

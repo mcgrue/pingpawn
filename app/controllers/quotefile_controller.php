@@ -2,7 +2,7 @@
 class QuotefileController extends AppController {
 
 	var $name = 'Quotefile';
-    var $uses = array('Prf','Quote');
+    var $uses = array('Prf','Quote','Vote');
     
     function view($pretty_url=NULL, $action=NULL) {
         $res = $this->Prf->findByUrlKey($pretty_url);
@@ -26,7 +26,22 @@ class QuotefileController extends AppController {
             );
             
             $data = $this->paginate('Quote');
-            $this->set( 'data', $data );            
+            $this->set( 'data', $data );
+                        
+            if( !empty($this->sessuser) ) {
+                $ar = array();
+                foreach($data as $caca) {                   
+                    $ar[] = $caca['Quote']['id'];
+                }
+                $res = $this->Vote->get($ar, $this->sessuser['User']['id']);
+                
+                $ar = array();
+                foreach($res as $v) {
+                    $ar[$v['votes']['quote_id']] = $v;
+                }
+                
+                $this->set( 'vote', $ar );
+            }
             
         } else {
             $this->cakeError('error404', array());
