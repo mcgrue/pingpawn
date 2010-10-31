@@ -29,7 +29,7 @@ a {
 
 <hr style="margin-bottom: 32px; border: 1px solid #ccc;">
 
-<h2>Actions</h2>
+<h1>Actions</h1>
 <ul>
     <li><?= $html->link('mass upload', '/users/mass_upload/'); ?></li>
     <!-- <li><?= $html->link('moderation queue', '/users/moderation_queue/'); ?></li> -->
