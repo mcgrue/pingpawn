@@ -3,7 +3,7 @@
 class UsersController extends AppController {
     
     var $name = 'Users';
-    var $uses = array('User', 'Quote');
+    var $uses = array('User', 'Quote', 'Prf');
     
     function home() {
         if(!$this->sessuser) {
@@ -14,6 +14,16 @@ class UsersController extends AppController {
         $this->set( 'downvotes', $this->User->count_downvotes($this->sessuser['User']['id']) );
         $this->set( 'modcount', $this->User->get_moderation_count($this->sessuser['User']['id']) );
         
+	}
+    
+    function my_files() {
+        if(!$this->sessuser) {
+            $this->flashAndGo('You must be logged in to view this.', '/');
+        }
+        
+        $res = $this->Prf->findByOwner($this->sessuser['User']['id']);
+        
+        $this->set( 'prfs', $res );
 	}
     
     function mass_upload() {

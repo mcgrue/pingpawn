@@ -9,7 +9,7 @@ a {
 <hr style="margin-bottom: 32px; border: 1px solid #ccc;">
     
 <? if(!empty($sessuser['Prf'])): ?>
-<p>You currently have <?= $html->link(count($sessuser['Prf']).' quotefiles', '/users/list') ?>.</p>
+<p>You currently have <?= $html->link(count($sessuser['Prf']).' quotefiles', '/users/my_files') ?>.</p>
 <? else: ?>
 <p>You currently don't have any quotefiles.  To make one, add a quote using the button on the bottom-right.  The name you choose for your quotefile will become your quotefile.</p>
 <? endif; ?>

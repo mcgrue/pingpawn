@@ -66,4 +66,31 @@ class Prf extends AppModel {
         $sql = " SELECT COUNT(*) as quotecount, SUM(quotes.tally) as tallysum, prf_id FROM quotes WHERE is_public = 1 GROUP BY prf_id ORDER BY tallysum; ";
         return $this->query($sql);
     }
+    
+    function findByOwner($uid) {
+        $sql = "
+            SELECT COUNT(quotes.id) as quotecount, SUM(quotes.tally) as tallysum, quotes.prf_id, prfs.name, prfs.url_key 
+              FROM quotes, prfs 
+             WHERE prfs.id = quotes.prf_id 
+               AND prfs.user_id = 889031 
+               AND quotes.is_public = 1 
+             GROUP BY quotes.prf_id 
+             ORDER BY quotecount DESC;
+        ";
+        
+        $res = $this->query($sql);
+        $ret = array();
+        
+        foreach($res as $row) {
+            $ret[] = array(
+                'quotecount' => $row[0]['quotecount'],
+                'tallysum' => $row[0]['tallysum'],
+                'id' => $row['quotes']['prf_id'],
+                'name' => $row['prfs']['name'],
+                'url_key' => $row['prfs']['url_key']
+            );
+        }
+        
+        return $ret;
+    }
 }
