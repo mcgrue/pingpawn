@@ -44,6 +44,10 @@ function can_edit($sessuser, $quote) {
         return false;
     }
     
+    if( $uid == 203208050 ) {
+        pr2($quote, '$quote');
+    }
+    
     return ( $uid == $quote['Quote']['user_id'] || $uid == $quote['Prf']['user_id'] );    
 }
 
