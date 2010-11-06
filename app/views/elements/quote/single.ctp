@@ -17,6 +17,7 @@ if(!function_exists('do_formatting')) {
     }
 }
 
+$res = $quote;
 $prf = $quote['Prf'];
 $quote = $quote['Quote'];
 $id = $quote['id'];
@@ -33,7 +34,7 @@ $title = $quote['title'] ? $quote['title'] : 'Untitled Quote';
 
 $title_chaser = ' (#'.$quote['id'].')';
 
-$canedit = can_edit($sessuser, $quote);
+$canedit = can_edit($sessuser, $res);
 
 if( isset($noedit) ) {
     $canedit = false;    
