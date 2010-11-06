@@ -67,12 +67,12 @@ class Prf extends AppModel {
         return $this->query($sql);
     }
     
-    function findByOwner($uid) {
+    function find_by_owner($uid) {
         $sql = "
             SELECT COUNT(quotes.id) as quotecount, SUM(quotes.tally) as tallysum, quotes.prf_id, prfs.name, prfs.url_key 
               FROM quotes, prfs 
              WHERE prfs.id = quotes.prf_id 
-               AND prfs.user_id = 889031 
+               AND prfs.user_id = $uid 
                AND quotes.is_public = 1 
              GROUP BY quotes.prf_id 
              ORDER BY quotecount DESC;
