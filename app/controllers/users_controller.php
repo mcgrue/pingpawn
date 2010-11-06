@@ -21,6 +21,8 @@ class UsersController extends AppController {
             $this->flashAndGo('You must be logged in to view this.', '/');
         }
         
+        pr2($this->sessuser);
+        
         $res = $this->Prf->findByOwner($this->sessuser['User']['id']);
         
         $this->set( 'prfs', $res );
