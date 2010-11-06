@@ -44,8 +44,6 @@ function can_edit($sessuser, $quote) {
         return false;
     }
     
-    pr2($quote, $uid);
-
     return ( $uid == $quote['Quote']['user_id'] || $uid == $quote['Prf']['user_id'] );    
 }
 
