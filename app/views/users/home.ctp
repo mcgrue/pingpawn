@@ -32,6 +32,7 @@ a {
 <h1>Actions</h1>
 <ul>
     <li><?= $html->link('mass upload', '/users/mass_upload/'); ?></li>
+    <li><?= $html->link('add quote', '/users/home', array(), 'do you see the big green pawn in the lower-right corner that says ADD QUOTE?  Click on that.'); ?></li>
     <!-- <li><?= $html->link('moderation queue', '/users/moderation_queue/'); ?></li> -->
     <li><?= $html->link('logout', '/users/logout/'); ?></li>
 </ul>
