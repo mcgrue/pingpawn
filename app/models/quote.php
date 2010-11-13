@@ -200,7 +200,7 @@ class Quote extends AppModel {
     
     function get_quote_count() {
         $sql = "
-            SELECT COUNT(*) as mycnt FROM `quotes` WHERE active = 1;
+            SELECT COUNT(*) as mycnt FROM `quotes` WHERE is_public = 1;
         ";
         
         $res = $this->query($sql);
