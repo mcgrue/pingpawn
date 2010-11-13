@@ -197,4 +197,32 @@ class Quote extends AppModel {
             
         } while( mysql_errno() > 0 );
 	}
+    
+    function get_quote_count() {
+        $sql = "
+            SELECT COUNT(*) as mycnt FROM `quotes` WHERE active = 1;
+        ";
+        
+        $res = $this->query($sql);
+        
+        if( !empty($res[0][0]['mycnt']) ) {
+            return $res[0][0]['mycnt'];
+        } else {
+            return NULL;
+        }
+    }
+    
+    function get_vote_count() {
+        $sql = "
+            SELECT COUNT(*) as mycnt FROM `votes`;
+        ";
+        
+        $res = $this->query($sql);
+        
+        if( !empty($res[0][0]['mycnt']) ) {
+            return $res[0][0]['mycnt'];
+        } else {
+            return NULL;
+        }
+    }
 }

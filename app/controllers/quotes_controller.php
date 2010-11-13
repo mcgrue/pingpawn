@@ -160,6 +160,11 @@ class QuotesController extends AppController {
         $this->set('rssurl', '/quotes/index.rss');
         $this->set('rssname', 'Ping Pawn RSS Feed');
         
+        $quotecount = $this->Quote->get_quote_count();
+        $votecount = $this->Quote->get_vote_count();
+        $this->set('quotecount', $quotecount);
+        $this->set('votecount', $votecount);
+        
         return $res;
     }
     
