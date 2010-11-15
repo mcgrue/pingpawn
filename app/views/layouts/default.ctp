@@ -45,6 +45,8 @@
                             <li><?= $html->link('Logout?', '/users/logout')  ?></li>
                         <? else: ?>
                             <li><?= $html->link('Login via Twitter', '/twitter/login')  ?></li>
+                            <li><?= $html->link('Signup via Twitter', 'https://twitter.com/signup')  ?></li>
+
                             <li class="reassure">(we won't post to your account, honest.)</li>
                         <? endif; ?>
                         <li>&nbsp;</li>
