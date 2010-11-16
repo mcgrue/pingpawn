@@ -20,7 +20,7 @@ class LeaderboardController extends AppController {
 	}
     
     function voters() {
-        $this->set( 'voters', $this->Vote->get_voter_counts(20) );
+        $this->set( 'voters', $this->Vote->get_voter_counts(50) );
 	}
     
     function quotes() {
