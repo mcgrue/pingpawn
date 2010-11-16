@@ -31,11 +31,24 @@ class ApiController extends AppController {
             $q = str_replace( '*', '%', $q );
             
             if($from===NULL) {
-                $res = $this->Quote->query( "SELECT * FROM `quotes` WHERE is_public = 1 AND original_quote LIKE '%$q%' ORDER BY RAND() LIMIT 1" );
+                $sql = "SELECT q.* FROM `quotes` q WHERE q.is_public = 1 AND q.original_quote LIKE '%$q%' ";
             } else {
                 $from = mysql_real_escape_string($from);
-                $res = $this->Quote->query( "SELECT q.* FROM `quotes` q, `prfs` p WHERE p.name = '$from' AND q.original_quote LIKE '%$q%' AND p.id = q.prf_id AND q.is_public = 1 ORDER BY RAND() LIMIT 1" );
+                $sql = "SELECT q.* FROM `quotes` q, `prfs` p WHERE p.name = '$from' AND q.original_quote LIKE '%$q%' AND p.id = q.prf_id AND q.is_public = 1 ";
             }
+
+            if( is_numeric($idx) ) {
+                $idx = (int)$idx;
+                $idx--;
+                if( $idx < 0 ) {
+                    $this->_output($res);
+                }
+                $sql .= " ORDER by q.id LIMIT $idx,1";
+            } else {
+                $sql .= " ORDER BY RAND() LIMIT 1 ";
+            }
+
+            $res = $this->Quote->query($sql);
         }
         $this->_output($res);
     }
