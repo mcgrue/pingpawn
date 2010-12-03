@@ -61,9 +61,10 @@ if( isset($noedit) ) {
     ?>
     
     <?= $html->link('+','/vote/up/'.$quote['id'],array('id'=>'vote_up', 'class'=>$vote_up_class)); ?>
-    <span id="tally">(<?= $quote['tally'] ?>)</span>
+    <span id="tally">(<?= (!empty($vote)) ? $quote['tally'] : '???' ?>)</span>
     <?= $html->link('-','/vote/down/'.$quote['id'],array('id'=>'vote_down', 'class'=>$vote_down_class)); ?>
 
+    <div class="totalvotes"><?=$quote['total_votes'] ?> people have voted on this so far.<? if(empty($vote)) { ?><br />(vote on it to see the score.)<? } ?></div>
 </div>
 
 <h1 class="title"><a href="<?=$PERMALINK ?>"><span class="quote_title" id="quote_title"><?=$title ?></span></a><span id="title_chaser"><?= $title_chaser?></span></h1>

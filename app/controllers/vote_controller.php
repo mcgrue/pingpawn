@@ -58,4 +58,12 @@ class VoteController extends AppController {
     function down($id) {
         $this->_vote($id, -1);
     }
+
+    function xyzzy_plugh() {
+        if(empty($this->sessuser) || $this->sessuser['User']['id'] != 889031 ) {
+            $this->flashAndGo('You aren\'t a god, Ray.', '/');
+        }
+
+        $this->Vote->_vote_schema_update_dec2010();
+    }
 }

@@ -39,7 +39,7 @@ function can_edit($sessuser, $quote) {
     }
     
     $uid = $sessuser['User']['id'];
-        
+    
     if(!isset($quote['Quote']['user_id']) && !isset($quote['Prf']['user_id'])) {
         return false;
     }

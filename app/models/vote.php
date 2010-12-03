@@ -29,7 +29,7 @@ class Vote extends AppModel {
 
     function perform_civic_duty( $qid, $uid, $vote) {
         $this->query( "INSERT INTO `votes`(`quote_id`, `user_id`, `time_voted`, `vote` ) VALUES ($qid, $uid, NOW(), $vote);" );
-        $this->query( "UPDATE `quotes` SET `tally` = `tally` + $vote WHERE id = $qid; " );
+        $this->query( "UPDATE `quotes` SET `tally` = `tally` + $vote, total_votes = total_votes + 1 WHERE id = $qid; " );
     }
     
     function get_voter_counts($limit) {
@@ -41,5 +41,18 @@ class Vote extends AppModel {
              ORDER BY votecount DESC
               LIMIT $limit;
         ");
+    }
+
+    function _vote_schema_update_dec2010() {
+        $res = $this->query( "SELECT quote_id, COUNT(*) FROM votes GROUP BY quote_id;" );
+        foreach( $res as $r ) {
+            
+            $qid = $r['votes']['quote_id'];
+            $cnt = $r[0]['COUNT(*)'];
+            
+            $this->query( "UPDATE quotes SET total_votes = $cnt WHERE id = $qid; " );
+        }
+        $this->query( "UPDATE quotes SET total_votes = 0 WHERE total_votes IS NULL; " );
+        pr2('JEGUS DOEN');
     }
 }

@@ -471,3 +471,14 @@ h2.fromfile {
 .jeip-editor {
     
 }
+
+.totalvotes {
+    color: #bbb;
+    font-size: 14px;
+    float: right;
+    padding-right: 100px;
+}
+
+#voting {
+    height: 28px;
+}
