@@ -6,7 +6,6 @@
 
 #voting {
     position: relative;
-    top: 12px;
     left: 0px;
     
     font-size: 36px;
