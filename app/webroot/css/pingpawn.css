@@ -477,6 +477,7 @@ h2.fromfile {
     font-size: 14px;
     float: right;
     padding-right: 100px;
+    padding-top: 15px;
 }
 
 #voting {

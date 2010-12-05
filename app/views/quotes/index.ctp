@@ -1,7 +1,7 @@
 <style>
 
 #content h1.title {
-    padding-top: 20px;
+    margin-top: 20px;
 }
 
 #voting {
@@ -9,7 +9,7 @@
     left: 0px;
     
     font-size: 36px;
-    padding-top: 34px;
+/*    padding-top: 34px; */
     padding-left: 30px;
 }
 

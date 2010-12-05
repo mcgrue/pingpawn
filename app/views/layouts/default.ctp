@@ -35,7 +35,7 @@
                 <h1>PING PAWN</h1>
             </div>
             </a>
-                        
+             
             <div id="leftbar_bottom">
                 <div id="menu">
                     <ul>                       
@@ -186,11 +186,10 @@
     </script>
         
 <?
-        $prefill = '';
-        if( isset($_SESSION['quick_prf']) ) {
-            $prefill = $_SESSION['quick_prf'];
-        }
-
+    $prefill = '';
+    if( isset($_SESSION['quick_prf']) ) {
+        $prefill = $_SESSION['quick_prf'];
+    }
 ?>
     
     <!-- modal content -->
