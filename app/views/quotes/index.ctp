@@ -21,6 +21,10 @@
     font-size: 36px;
 }
 
+.totalvotes {
+    padding-top: 15px; 
+}
+
 </style>
 <?
 
