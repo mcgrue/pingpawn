@@ -23,6 +23,9 @@ class RandomController extends AppController {
                 
         if( $id ) {
             $this->redirect(array('controller'=>'quotes', 'action'=>'index', $id) );
+        } else {
+            $this->index();
+            return;
         }
         
         $this->cakeError('error500');        
