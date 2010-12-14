@@ -8,7 +8,7 @@ class CommentsController extends AppController {
     function index() {
         if( $this->RequestHandler->isRss() ) {
 
-            $res = $this->Comment->find( 'all', array('order' => 'Quote.id DESC', 'limit' => 20) );
+            $res = $this->Comment->find( 'all', array('order' => 'created DESC', 'limit' => 20) );
             $this->set( 'comments', $res );
         } else {
             $this->redirect('/', 301);
