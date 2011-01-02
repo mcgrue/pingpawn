@@ -117,7 +117,7 @@ $id = $res['Quote']['id'];
     
 </style>
     <?    
-        foreach( $comments as $c ): 
+        foreach( $comments as $c ):
     ?>
         
         <div class="c-single clear" id="comment-<?= $c['id'] ?>" > 
@@ -126,7 +126,7 @@ $id = $res['Quote']['id'];
             </div>
             <div class="c-body"> 
                 <div class="c-date">
-                    <span><?= date('Y', time($c['created'])) ?></span> <?= date('F j', time($c['created'])) ?>
+                    <span><?= date('Y', strtotime($c['created'])) ?></span> <?= date('F j', strtotime($c['created'])) ?>
                 </div> 
                     
                 <div class="c-head">
