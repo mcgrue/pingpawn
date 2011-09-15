@@ -52,4 +52,19 @@ class ApiController extends AppController {
         }
         $this->_output($res);
     }
+
+    function count($from=NULL) {
+        $res = NULL;
+        if(!empty($_GET['q'])) {
+            if($from===NULL) {
+                $sql = "SELECT COUNT(q.*) as cnt FROM `quotes` q WHERE q.is_public = 1 AND q.original_quote LIKE '%$q%' ";
+            } else {
+                $from = mysql_real_escape_string($from);
+                $sql = "SELECT COUNT(q.*) as cnt FROM `quotes` q, `prfs` p WHERE p.name = '$from' AND q.original_quote LIKE '%$q%' AND p.id = q.prf_id AND q.is_public = 1 ";
+            }
+
+            $res = $this->Quote->query($sql);
+        }
+        $this->_output($res);
+    }
 }
