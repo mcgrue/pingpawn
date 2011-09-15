@@ -54,6 +54,9 @@ class ApiController extends AppController {
     }
 
     function count($from=NULL) {
+        echo 'hello!';
+        die();
+
         $res = NULL;
         if(!empty($_GET['q'])) {
             if($from===NULL) {
