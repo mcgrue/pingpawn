@@ -198,6 +198,7 @@
         
         <?= $this->Form->create('Quote', array('action' => 'add')); ?>
         <?= $this->Form->input('prf', array('label' => 'quotefile name', 'value' => $prefill)); ?>
+        <?= $this->Form->input('title', array('label' => 'quote title', 'value' => '')); ?>
         <label for="quote">quote</label><?= $this->Form->textarea('quote'); ?>
         <?= $this->Form->submit('add quote'); ?>
         

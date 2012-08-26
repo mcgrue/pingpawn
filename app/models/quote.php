@@ -76,17 +76,25 @@ class Quote extends AppModel {
         return $prf_id;
     }
     
-    function save_quote( $prf_id, $user_id, $quote ) {
+    function save_quote( $prf_id, $user_id, $quote, $title ) {
         $quote = mysql_real_escape_string(stripslashes($quote));
+        $title = mysql_real_escape_string(stripslashes($title));
         
-        $this->query( "
-            INSERT INTO `quotes`( `prf_id`, `quote`, `original_quote`, `active`, `time_added`, `user_id` )
-                        VALUES( $prf_id, '$quote', '$quote', 0, NOW(), $user_id );
-        " );
+        if( $title ) {
+            $this->query( "
+                INSERT INTO `quotes`( `prf_id`, `quote`, `original_quote`, `active`, `time_added`, `user_id`, `title` )
+                            VALUES( $prf_id, '$quote', '$quote', 0, NOW(), $user_id, '$title' );
+            " );
+        } else {
+            $this->query( "
+                INSERT INTO `quotes`( `prf_id`, `quote`, `original_quote`, `active`, `time_added`, `user_id` )
+                            VALUES( $prf_id, '$quote', '$quote', 0, NOW(), $user_id );
+            " );
+        }
         
         $res = $this->query( "SELECT LAST_INSERT_ID() as taco" );
         
-        return $res[0][0]['taco'];        
+        return $res[0][0]['taco'];
     }
     
     function deactivate($id) {
@@ -96,13 +104,13 @@ class Quote extends AppModel {
         " );
     }
     
-    function easy_save( $name, $quote, $user_id ) {
+    function easy_save( $name, $quote, $user_id, $title='' ) {
         
         $_SESSION['quick_prf'] = $name;
         
         $prf_id = $this->get_prf($name, $user_id);
         
-        return $this->save_quote( $prf_id, $user_id, $quote );
+        return $this->save_quote( $prf_id, $user_id, $quote, $title );
     }
     
     function get_random_unvoted($uid) {

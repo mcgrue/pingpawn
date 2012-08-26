@@ -107,7 +107,7 @@ class QuotesController extends AppController {
             isset($_POST['data']['Quote']['prf']) &&
             isset($_POST['data']['Quote']['quote'])   
         ) {
-            $res_id = $this->Quote->easy_save($_POST['data']['Quote']['prf'], $_POST['data']['Quote']['quote'], $this->sessuser['User']['id']);
+            $res_id = $this->Quote->easy_save($_POST['data']['Quote']['prf'], $_POST['data']['Quote']['quote'], $this->sessuser['User']['id'], $_POST['data']['Quote']['title']);
             
             $this->Vote->perform_civic_duty($res_id, $this->sessuser['User']['id'], 1);
             
