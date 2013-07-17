@@ -2,14 +2,18 @@
 
 // SELECT * FROM quotes WHERE length(quote) <= 118
 
+App::import('Vendor', 'Twitter');
+App::import('Vendor', 'HttpSocketOauth');
+
+
+
 class TwitterController extends AppController {
     
 	var $name = 'Twitter';
     var $uses = array('User');
-    var $components = array('Cookie', 'OauthConsumer');
-    
+    var $components = array('Cookie', 'OauthConsumer');    
+
     public function login($return=false) {
-        
         if( isset($sessuser) ) {
             $this->flashAndGo('You need to be logged out to log in, '.$sessuser['User']['display_name']);    
         }
@@ -19,8 +23,17 @@ class TwitterController extends AppController {
         } else {
             $response_url = 'http://www.pingpawn.com/twitter/twitter_callback';    
         }
-        
-        $requestToken = $this->OauthConsumer->getRequestToken('Twitter', 'http://twitter.com/oauth/request_token', $response_url );
+
+        $twitter = new Twitter(null, $this->Session);
+        $twitter->setupApp(get_oauth_consumer_key(), get_oauth_consumer_secret()); 
+        $twitter->connectApp(Router::url(array('action' => 'authorization'), true));        
+
+/*
+        //$requestToken = $this->OauthConsumer->getRequestToken('Twitter', 'http://twitter.com/oauth/request_token', $response_url );
+
+        if( !$requestToken ) {
+            die( "Didn't get a request token from twitter.  That's bad." );
+        }
 
         $this->Cookie->write('twitter_request_token_2', $requestToken);
         
@@ -31,43 +44,32 @@ class TwitterController extends AppController {
         }
         
         $this->redirect('http://twitter.com/oauth/authorize?oauth_token=' . $requestToken->key);
+*/        
     }
 
-    public function twitter_callback() {
-        
-        $requestToken = $this->Cookie->read('twitter_request_token_2');
-        
-        if( !$requestToken ) {
-            $this->flashAndGo( 'Invalid request token.', '/' );
-        }
-        
-        $accessToken = $this->OauthConsumer->getAccessToken('Twitter', 'http://twitter.com/oauth/access_token', $requestToken);
-        
-        if( !$accessToken ) {
-            $this->flashAndGo( 'Invalid access token.', '/' );
-        }
-        
-        $response = $this->OauthConsumer->get('Twitter', $accessToken->key, $accessToken->secret, 'http://api.twitter.com/1/account/verify_credentials.json', array());
-        
-        $res = json_decode($response);
-        
-        if( !$res ) {
-            $this->flashAndGo( 'Invalid login response.', '/' );
-        }
-        
-        if( is_object($res) ) {
-            if( isset($res->error) ) {
-                $this->flashAndGo( 'Error: '.$res->error, '/' );
-            }
-            
+
+/*
+http://localhost/pingpawn/twitter/authorization?oauth_token=1VW04LimUGcpWA9kRijdGo6Yet1X8BCNIAEMmPr1E&oauth_verifier=Reo1HJz3HrQrrFhYjx7HQrO6Xyqrkzh3Qbt8Z5qRN4
+*/
+    public function authorization() {
+
+        $twitter = new Twitter(null, $this->Session);
+        $twitter->setupApp(get_oauth_consumer_key(), get_oauth_consumer_secret()); 
+
+        if (!empty($_GET['oauth_token']) && !empty($_GET['oauth_verifier'])) {
+            $twitter->authorizeTwitterUser($_GET['oauth_token'], $_GET['oauth_verifier']);
+            # connect the user to the application
+            try {
+                $twitterUserObject = $twitter->getTwitterUser(true);
+
             $user = array(
-                'id' => $res->id,
-                'real_name' => $res->name,
-                'twitter_name' => $res->screen_name,
-                'description' => $res->description,
-                'url' => $res->url,
-                'profile_image_url' => $res->profile_image_url,
-                'display_name' => $res->screen_name,
+                'id' => $twitterUserObject['profile']['id'],
+                'real_name' => $twitterUserObject['profile']['name'],
+                'twitter_name' => $twitterUserObject['profile']['screen_name'],
+                'description' => $twitterUserObject['profile']['description'],
+                'url' => $twitterUserObject['profile']['url'],
+                'profile_image_url' => $twitterUserObject['profile']['profile_image_url'],
+                'display_name' => $twitterUserObject['profile']['screen_name'],
             );
             
             $res = $this->User->findById($user['id']);
@@ -79,14 +81,14 @@ class TwitterController extends AppController {
             
             $user = Authsome::login($res['User']);
                         
-			if (!$user) {
-				$this->flashAndGo('Unknown user or wrong password', '/');
-				return;
-			}
+            if (!$user) {
+                $this->flashAndGo('Unknown user or wrong password', '/');
+                return;
+            }
             
             Authsome::persist('2 weeks');
             
-            get_achievements('36db707fd0c7995bff4cf4bcc6b19dc6', $user);
+            //get_achievements('36db707fd0c7995bff4cf4bcc6b19dc6', $user);
             
             $return = $this->Cookie->read('after_login');
             if($return) {
@@ -95,11 +97,27 @@ class TwitterController extends AppController {
             } else {
                 $return = '/users/home';
             }
-            
-            $this->flashAndGo( 'You are now logged in, '.$user['User']['display_name'], $return );   
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                $this->flashAndGo( 'You are now logged in, '.$user['User']['display_name'], $return );   
+
+            } catch (Exception $e) {
+                $this->flashAndGo( 'There was a weird problem: '.$e->getMessage(), '/' );   
+            }
         } else {
-            $this->flashAndGo( 'There was a weird problem: '.$res, '/' );   
+            $this->flashAndGo( 'Invalid authorization request.', '/' );   
         }
     }
     

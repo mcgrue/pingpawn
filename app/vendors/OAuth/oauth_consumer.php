@@ -92,6 +92,7 @@ class OAuth_Consumer {
 	}
 	
 	private function createRequest($httpMethod, $url, $token, array $parameters) {
+die("Thisng");
 		$consumer = $this->createConsumer();
 		$request = OAuthRequest::from_consumer_and_token($consumer, $token, $httpMethod, $url, $parameters);
 		$request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $token);
@@ -110,11 +111,15 @@ class OAuth_Consumer {
 	}
 	
 	private function doRequest($request) {
+
+die( "DoRequest!" );
 		if ($request->get_normalized_http_method() == 'POST') {
 			$data = $this->doPost($this->url, $request->to_postdata());
 		} else {
 			$data = $this->doGet($request->to_url());
 		}
+
+die("DATA: " . $data);
 
 		$this->fullResponse = $data;
 		$response = array();

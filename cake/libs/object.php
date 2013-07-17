@@ -54,6 +54,7 @@ class Object {
 	function __construct() {
 	}
 
+
 /**
  * Object-to-string conversion.
  * Each class can override this method as necessary.

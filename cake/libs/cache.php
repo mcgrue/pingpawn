@@ -67,7 +67,7 @@ class Cache {
  * @access public
  * @static
  */
-	function &getInstance() {
+	static function &getInstance() {
 		static $instance = array();
 		if (!$instance) {
 			$instance[0] =& new Cache();
@@ -327,6 +327,7 @@ class Cache {
  * @static
  */
 	function read($key, $config = null) {
+
 		$self =& Cache::getInstance();
 
 		if (!$config) {
