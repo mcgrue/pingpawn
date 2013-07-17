@@ -217,7 +217,7 @@
             $('#add-quote-form').modal();
             return false;
 <? else: ?>
-            window.location.href = '<?= $this->webroot ?>/twitter/login/';
+            window.location.href = '<?= $this->webroot ?>twitter/login/';
 <? endif ?>
         });
         

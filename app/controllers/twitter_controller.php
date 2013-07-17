@@ -5,8 +5,6 @@
 App::import('Vendor', 'Twitter');
 App::import('Vendor', 'HttpSocketOauth');
 
-
-
 class TwitterController extends AppController {
     
 	var $name = 'Twitter';
@@ -22,6 +20,10 @@ class TwitterController extends AppController {
             $response_url = 'http://localhost/pingpawn/twitter/twitter_callback';    
         } else {
             $response_url = 'http://www.pingpawn.com/twitter/twitter_callback';    
+        }
+
+        if( ! class_exists ('Twitter') ) {
+            require_once( "vendors/Twitter/Twitter.php" );
         }
 
         $twitter = new Twitter(null, $this->Session);
@@ -52,6 +54,11 @@ class TwitterController extends AppController {
 http://localhost/pingpawn/twitter/authorization?oauth_token=1VW04LimUGcpWA9kRijdGo6Yet1X8BCNIAEMmPr1E&oauth_verifier=Reo1HJz3HrQrrFhYjx7HQrO6Xyqrkzh3Qbt8Z5qRN4
 */
     public function authorization() {
+
+
+        if( ! class_exists ('Twitter') ) {
+            require_once( "vendors/Twitter/Twitter.php" );
+        }
 
         $twitter = new Twitter(null, $this->Session);
         $twitter->setupApp(get_oauth_consumer_key(), get_oauth_consumer_secret()); 
