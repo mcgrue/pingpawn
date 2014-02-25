@@ -16,10 +16,12 @@
  * @conttrib mishu.drk@gmail.com
  */
 App::import('Vendor', 'Twitter.HttpSocketOauth');
-//App::uses('CakeSession', 'Model/Datasource');
-
+//`App::uses('CakeSession', 'Model/Datasource');
 
 class Twitter extends Object {
+
+    function __setError() {}
+    function __overwrite() {}
 
 /**
  * Twitter consumer key & consumer secret
@@ -31,6 +33,8 @@ class Twitter extends Object {
 	protected $_consumerKey;
 
 	protected $_consumerSecret;
+
+    public $watchKeys = array();
 
 /**
  * OAuth token and OAuth token secret (The user vars)
@@ -177,10 +181,7 @@ class Twitter extends Object {
 
 	protected $_defaultApiVersion = '1.1';
 
-	public $Session;
-
-	public function __construct($settings = array(), $sess = null) {
-		$this->Session = $sess;
+	public function __construct($settings = array()) {
 		parent::__construct();
 		$this->initialize($settings);
 		$this->_consumerKey = Configure::read('Twitter.consumerKey');
@@ -205,10 +206,6 @@ class Twitter extends Object {
 		return $apiVersion . '/' . $endPoint;
 	}
 
-	public function __setError() {
-		pr2( debug_backtrace() );
-	}
-
 /**
  * Setup the counsumer key and consumer secret for the app.
  *
@@ -223,10 +220,10 @@ class Twitter extends Object {
 			'consumer_key' => $this->_consumerKey,
 			'consumer_secret' => $this->_consumerSecret
 		);
-		if (!is_null($this->Session->read('Twitter.Consumer'))) {
-			$this->Session->delete('Twitter.Consumer');
+		if (!is_null(CakeSession::read('Twitter.Consumer'))) {
+			CakeSession::delete('Twitter.Consumer');
 		}
-		$this->Session->write('Twitter.Consumer', $content);
+		CakeSession::write('Twitter.Consumer', $content);
 	}
 
 /**
@@ -251,6 +248,7 @@ class Twitter extends Object {
 	public function connectApp($callbackUrl, $action='authorize') {
 		$request = array(
 			'uri' => array(
+				'scheme' => 'https',
 				'host' => 'api.twitter.com',
 				'path' => '/oauth/request_token',
 			),
@@ -262,9 +260,14 @@ class Twitter extends Object {
 				'oauth_consumer_secret' => $this->_consumerSecret,
 			),
 		);
-		$response = $this->_Oauth->request($request);
-		parse_str($response, $response);
-		header("Location: http://api.twitter.com/oauth/$action?oauth_token={$response['oauth_token']}");
+	
+    //pr2($request);
+    
+        $response = $this->_Oauth->request($request);
+		
+        
+        parse_str($response, $response);
+		header("Location: https://api.twitter.com/oauth/$action?oauth_token={$response['oauth_token']}");
 		exit();
 	}
 
@@ -289,6 +292,7 @@ class Twitter extends Object {
 	public function authorizeTwitterUser($oauthToken, $oauthVerifier) {
 		$request = array(
 			'uri' => array(
+				'scheme' => 'https',
 				'host' => 'api.twitter.com',
 				'path' => '/oauth/access_token',
 				),
@@ -321,7 +325,7 @@ class Twitter extends Object {
  * @param string $oauthTokenSecret The oauth secret
  */
 	public function loginTwitterUser($oauthToken, $oauthTokenSecret, $userId = null, $screenName = null) {
-		if (is_null($this->Session->read('Twitter.User'))) {
+		if (is_null(CakeSession::read('Twitter.User'))) {
 			$this->_oauthToken = $oauthToken;
 			$this->_oauthTokenSecret = $oauthTokenSecret;
 			$newSession = array(
@@ -330,7 +334,7 @@ class Twitter extends Object {
 				'user_id' => $userId,
 				'screen_name' => $screenName,
 			);
-			$this->Session->write('Twitter.User', $newSession);
+			CakeSession::write('Twitter.User', $newSession);
 		}
 	}
 
@@ -345,7 +349,7 @@ class Twitter extends Object {
 	public function getTwitterUser($showFullProfile = false) {
 		$userKeys = array();
 		if ($this->userStatus() == false) {
-			$session = $this->Session->read('Twitter.User');
+			$session = CakeSession::read('Twitter.User');
 			if (!is_null($session)) {
 				$userKeys['oauth_token'] = $session['oauth_token'];
 				$userKeys['oauth_token_secret'] = $session['oauth_token_secret'];
@@ -368,8 +372,8 @@ class Twitter extends Object {
 	public function logoutTwitterUser() {
 		$this->_oauthToken = null;
 		$this->_oauthTokenSecret = null;
-		if (!is_null($this->Session->read('Twitter.User'))) {
-			$this->Session->delete('Twitter.User');
+		if (!is_null(CakeSession::read('Twitter.User'))) {
+			CakeSession::delete('Twitter.User');
 		}
 	}
 
@@ -380,14 +384,14 @@ class Twitter extends Object {
 		$this->_Oauth = new HttpSocketOauth();
 		if ($this->status() == false) {
 			if ($this->appStatus() == false) {
-				$consumerSession = $this->Session->read('Twitter.Consumer');
+				$consumerSession = CakeSession::read('Twitter.Consumer');
 				if (!is_null($consumerSession)) {
 					$this->_oauthToken = !empty($consumerSession['oauth_token']) ? $consumerSession['oauth_token'] : null;
 					$this->_oauthTokenSecret = !empty($consumerSession['oauth_token_secret']) ? $consumerSession['oauth_token_secret'] : null;
 				}
 			}
 			if ($this->userStatus() == false) {
-				$oauthSession = $this->Session->read('Twitter.User');
+				$oauthSession = CakeSession::read('Twitter.User');
 				if (!is_null($oauthSession)) {
 					$this->_oauthToken = $oauthSession['oauth_token'];
 					$this->_oauthTokenSecret = $oauthSession['oauth_token_secret'];
@@ -482,6 +486,7 @@ class Twitter extends Object {
 			$twitterMethodUrl = substr($twitterMethodUrl, 1, strlen($twitterMethodUrl));
 		}
 		$request['uri'] = array(
+			'scheme' => 'https',
 			'host' => 'api.twitter.com',
 			'path' => $twitterMethodUrl
 		);

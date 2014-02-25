@@ -12,6 +12,7 @@ class TwitterController extends AppController {
     var $components = array('Cookie', 'OauthConsumer');    
 
     public function login($return=false) {
+
         if( isset($sessuser) ) {
             $this->flashAndGo('You need to be logged out to log in, '.$sessuser['User']['display_name']);    
         }
@@ -46,7 +47,7 @@ class TwitterController extends AppController {
         }
         
         $this->redirect('http://twitter.com/oauth/authorize?oauth_token=' . $requestToken->key);
-*/        
+   */ 
     }
 
 
